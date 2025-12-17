@@ -158,24 +158,27 @@ st.markdown("""
         margin-bottom: 0.5rem;
     }
     
-    /* Evidence lists */
+    /* Evidence lists - Professional muted palette */
     .evidence-item {
-        background: #fef3c7;
+        background: #fafafa;
         padding: 0.5rem 1rem;
-        border-radius: 6px;
+        border-radius: 4px;
         margin: 0.3rem 0;
-        border-left: 3px solid #f59e0b;
+        border-left: 3px solid #64748b;
         font-size: 0.9rem;
+        color: #334155;
     }
     
     .evidence-item.deception {
-        background: #fee2e2;
-        border-left-color: #dc2626;
+        background: #fef2f2;
+        border-left: 3px solid #dc2626;
+        color: #7f1d1d;
     }
     
     .evidence-item.credible {
-        background: #d1fae5;
-        border-left-color: #059669;
+        background: #f0fdf4;
+        border-left: 3px solid #16a34a;
+        color: #14532d;
     }
     
     /* Prescription box */
@@ -350,16 +353,84 @@ class SimpleReport:
 
 # --- MOCK ENGINE FOR DEMO ---
 class MockEngine:
-    """Demo mode when API key not available"""
+    """Demo mode when API key not available - Always shows impressive results"""
     
     def analyze(self, text: str, scan_id: str = None):
         time.sleep(1.5)  # Simulate processing
         
-        # Detect deception keywords
-        is_deceptive = any(word in text.lower() for word in 
-                          ['secret', 'slashed', 'leaked', 'hidden', 'privately'])
+        text_lower = text.lower()
         
-        if is_deceptive:
+        # Chicken game keywords (cars, standoff scenarios)
+        chicken_keywords = ['car', 'bridge', 'swerve', 'collide', 'chicken', 'crash', 'head-on']
+        is_chicken = any(word in text_lower for word in chicken_keywords)
+        
+        # Coordination keywords (date, preference, together)
+        coord_keywords = ['movie', 'opera', 'date', 'hang out', 'together', 'prefer']
+        is_coordination = any(word in text_lower for word in coord_keywords)
+        
+        # Price war keywords
+        price_keywords = ['price', 'competitor', 'war', 'market', 'customers', 'discount']
+        is_price_war = any(word in text_lower for word in price_keywords)
+        
+        if is_chicken:
+            return SimpleReport(
+                id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
+                game_type="Chicken",
+                risk_level="Critical",
+                confidence=0.91,
+                is_deceptive=False,
+                stated_game=None,
+                revealed_game=None,
+                summary="Classic game of Chicken. Both parties are escalating toward mutual destruction. The first to swerve 'loses face' but survives.",
+                player_a={"name": "Driver A", "motive": "Dominance/Reputation", "type": "Aggressive"},
+                player_b={"name": "Driver B", "motive": "Dominance/Reputation", "type": "Aggressive"},
+                equilibrium="Mixed Strategy (one swerves, other doesn't)",
+                advice="Create a credible commitment to not swerve (throw steering wheel out window) OR introduce face-saving exit (third party stops both).",
+                victim_warning="Both parties risk catastrophic loss. Rational calculation may fail under pressure.",
+                cheap_talk=["flashing high beams"],
+                contradictions=[],
+                credible_signals=["Neither slowing down"]
+            )
+        elif is_coordination:
+            return SimpleReport(
+                id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
+                game_type="Battle_of_Sexes",
+                risk_level="Low",
+                confidence=0.89,
+                is_deceptive=False,
+                stated_game=None,
+                revealed_game=None,
+                summary="Coordination problem with asymmetric preferences. Both prefer agreement over disagreement, but each prefers different outcomes.",
+                player_a={"name": "Partner A", "motive": "Preferred activity + togetherness", "type": "Cooperative"},
+                player_b={"name": "Partner B", "motive": "Preferred activity + togetherness", "type": "Cooperative"},
+                equilibrium="Two pure equilibria (both go to A's choice OR both go to B's choice)",
+                advice="Use randomization (coin flip) or take turns choosing. Establish precedent for fairness.",
+                victim_warning=None,
+                cheap_talk=[],
+                contradictions=[],
+                credible_signals=["Both prefer being together"]
+            )
+        elif is_price_war:
+            return SimpleReport(
+                id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
+                game_type="Prisoners_Dilemma",
+                risk_level="High",
+                confidence=0.93,
+                is_deceptive=False,
+                stated_game=None,
+                revealed_game=None,
+                summary="Classic Prisoner's Dilemma in market competition. Both firms would benefit from high prices, but each has incentive to undercut.",
+                player_a={"name": "Your Company", "motive": "Market share & profit", "type": "Rational"},
+                player_b={"name": "Competitor X", "motive": "Market share & profit", "type": "Rational"},
+                equilibrium="Defect/Defect (price war continues)",
+                advice="Signal commitment to match any price cuts (tit-for-tat). Consider price leadership or capacity constraints as commitment devices.",
+                victim_warning="Without coordination mechanism, both firms destroy margins.",
+                cheap_talk=[],
+                contradictions=[],
+                credible_signals=["Price matching behavior"]
+            )
+        else:
+            # Default: Show the impressive deception detection demo
             return SimpleReport(
                 id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
                 game_type="Prisoners_Dilemma",
@@ -368,33 +439,14 @@ class MockEngine:
                 is_deceptive=True,
                 stated_game="Stag_Hunt",
                 revealed_game="Prisoners_Dilemma",
-                summary="Target publicly signals cooperation but is privately incentivized to defect. Classic deception pattern detected.",
-                player_a={"name": "Company A", "motive": "Profit maximization", "type": "Deceptive"},
-                player_b={"name": "Company B", "motive": "Partnership", "type": "Trusting"},
+                summary="⚠️ DEMO MODE: Target publicly signals cooperation but private incentives suggest defection. Analysis based on textual signals.",
+                player_a={"name": "Party A", "motive": "Self-interest (hidden)", "type": "Potentially Deceptive"},
+                player_b={"name": "Party B", "motive": "Mutual benefit (stated)", "type": "Target"},
                 equilibrium="Defect/Cooperate (A exploits B)",
-                advice="Do not invest without verifiable commitments. Demand escrow or milestone-based funding.",
-                victim_warning="Company B should independently verify budget allocations before any investment.",
-                cheap_talk=["'fully committed'", "'right thing for the planet'", "'regardless of cost'"],
-                contradictions=["Public: 'committed' vs Private: 'budget = zero'"],
-                credible_signals=[]
-            )
-        else:
-            return SimpleReport(
-                id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
-                game_type="Chicken",
-                risk_level="High",
-                confidence=0.88,
-                is_deceptive=False,
-                stated_game=None,
-                revealed_game=None,
-                summary="Both parties are escalating. Mutual defection leads to catastrophic outcome. Neither wants to back down first.",
-                player_a={"name": "Player A", "motive": "Dominance", "type": "Aggressive"},
-                player_b={"name": "Player B", "motive": "Survival", "type": "Defensive"},
-                equilibrium="Mixed (unstable)",
-                advice="Create a face-saving exit for the opponent. Introduce a mediator to de-escalate.",
-                victim_warning=None,
-                cheap_talk=[],
-                contradictions=[],
+                advice="Verify stated commitments with observable actions. Demand escrow, milestones, or third-party verification before proceeding.",
+                victim_warning="Do not rely on verbal commitments alone. Look for credible signals.",
+                cheap_talk=["commitment language", "partnership framing", "mutual benefit claims"],
+                contradictions=["Stated vs. revealed preferences may differ"],
                 credible_signals=[]
             )
 
@@ -502,7 +554,7 @@ def render_sidebar():
         st.markdown("---")
         st.markdown(
             "<div style='text-align:center; opacity:0.6; font-size:0.8rem;'>"
-            "v3.0 • <a href='https://github.com/capraCoder/GTI' target='_blank'>GitHub</a>"
+            "v3.1 • <a href='https://github.com/capraCoder/GTI' target='_blank'>GitHub</a>"
             "</div>",
             unsafe_allow_html=True
         )
@@ -858,10 +910,10 @@ def render_dossier(report, view_mode=None):
             st.markdown("""
             <div style="text-align: center; padding: 1rem;">
                 <p style="color: #3b82f6; font-weight: bold;">STATED GAME: Coordination</p>
-                <table style="margin: auto; border-collapse: collapse;">
-                    <tr><td></td><td style="padding: 10px; font-weight: bold;">Cooperate</td><td style="padding: 10px; font-weight: bold;">Defect</td></tr>
-                    <tr><td style="font-weight: bold;">Cooperate</td><td style="padding: 15px; background: #d1fae5; border: 1px solid #ccc;">✓ Win-Win</td><td style="padding: 15px; background: #fee2e2; border: 1px solid #ccc;">Lose</td></tr>
-                    <tr><td style="font-weight: bold;">Defect</td><td style="padding: 15px; background: #fee2e2; border: 1px solid #ccc;">Lose</td><td style="padding: 15px; background: #fee2e2; border: 1px solid #ccc;">Lose-Lose</td></tr>
+                <table style="margin: auto; border-collapse: collapse; font-size: 0.9rem;">
+                    <tr><td></td><td style="padding: 10px; font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 10px; font-weight: bold; color: #475569;">Defect</td></tr>
+                    <tr><td style="font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 15px; background: #f0fdf4; border: 1px solid #e2e8f0;">✓ Win-Win</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose</td></tr>
+                    <tr><td style="font-weight: bold; color: #475569;">Defect</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose-Lose</td></tr>
                 </table>
                 <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">What they want you to believe</p>
             </div>
@@ -874,12 +926,12 @@ def render_dossier(report, view_mode=None):
                 st.markdown("""
                 <div style="text-align: center; padding: 1rem;">
                     <p style="color: #dc2626; font-weight: bold;">TRUE GAME: Prisoner's Dilemma</p>
-                    <table style="margin: auto; border-collapse: collapse;">
-                        <tr><td></td><td style="padding: 10px; font-weight: bold;">Cooperate</td><td style="padding: 10px; font-weight: bold;">Defect</td></tr>
-                        <tr><td style="font-weight: bold;">Cooperate</td><td style="padding: 15px; background: #fef3c7; border: 1px solid #ccc;">(3, 3)</td><td style="padding: 15px; background: #fee2e2; border: 1px solid #ccc;">(0, 5) 🎯</td></tr>
-                        <tr><td style="font-weight: bold;">Defect</td><td style="padding: 15px; background: #d1fae5; border: 1px solid #ccc;">(5, 0)</td><td style="padding: 15px; background: #fecaca; border: 1px solid #ccc; font-weight: bold;">★ (1, 1)</td></tr>
+                    <table style="margin: auto; border-collapse: collapse; font-size: 0.9rem;">
+                        <tr><td></td><td style="padding: 10px; font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 10px; font-weight: bold; color: #475569;">Defect</td></tr>
+                        <tr><td style="font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 15px; background: #f8fafc; border: 1px solid #e2e8f0;">(3, 3)</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">(0, 5) 🎯</td></tr>
+                        <tr><td style="font-weight: bold; color: #475569;">Defect</td><td style="padding: 15px; background: #f0fdf4; border: 1px solid #e2e8f0;">(5, 0)</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0; font-weight: bold;">★ (1, 1)</td></tr>
                     </table>
-                    <p style="color: #dc2626; font-size: 0.8rem; margin-top: 1rem;">★ Nash Equilibrium: Defect/Defect<br>🎯 Company A's target: Defect while B Cooperates</p>
+                    <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">★ Nash Equilibrium: Defect/Defect<br>🎯 Company A's target: Defect while B Cooperates</p>
                 </div>
                 """, unsafe_allow_html=True)
         

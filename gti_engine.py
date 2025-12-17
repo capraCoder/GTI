@@ -270,10 +270,12 @@ RETURN ONLY VALID JSON."""
 # VISUALIZATION ENGINE
 # =============================================================================
 
-def render_strategic_matrix(dossier, filename="strategic_matrix.png", show_shadow=False):
-    """Render publication-quality Game Theory Matrix."""
+def render_strategic_matrix(dossier, filename=None, show_shadow=False):
+    """Render publication-quality Game Theory Matrix. Returns BytesIO buffer for Streamlit."""
     if not HAS_MATPLOTLIB:
         return None
+    
+    from io import BytesIO
     
     fig, ax = plt.subplots(figsize=(10, 8))
     ax.set_xlim(-0.5, 2.5)
@@ -360,9 +362,23 @@ def render_strategic_matrix(dossier, filename="strategic_matrix.png", show_shado
     ax.text(1.0, -0.6, f"ID: {dossier.scan_id}", ha='center', fontsize=8, color=COLORS['light'])
     
     plt.tight_layout()
-    plt.savefig(filename, dpi=300, bbox_inches='tight', facecolor=COLORS['bg'])
+    
+    # Return BytesIO buffer instead of saving to file (fixes Streamlit Cloud crash)
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300, bbox_inches='tight', facecolor=COLORS['bg'])
+    buf.seek(0)
     plt.close()
-    return filename
+    
+    # Optionally also save to file if filename provided (for local/CLI use)
+    if filename:
+        try:
+            with open(filename, 'wb') as f:
+                f.write(buf.getvalue())
+            buf.seek(0)
+        except Exception:
+            pass  # Ignore file save errors in cloud environment
+    
+    return buf
 
 
 # =============================================================================
@@ -422,19 +438,24 @@ class GTIEngine:
             return StrategicDossier(**data)
         return type('Dossier', (), data)()
     
-    def analyze_with_viz(self, text: str, output_dir: str = ".", scan_id: str = None):
-        """Analyze and generate visualizations."""
+    def analyze_with_viz(self, text: str, output_dir: str = None, scan_id: str = None):
+        """Analyze and generate visualizations. Returns (dossier, list of BytesIO image buffers)."""
         dossier = self.analyze(text, scan_id)
         
-        Path(output_dir).mkdir(parents=True, exist_ok=True)
         images = []
         
-        img = render_strategic_matrix(dossier, f"{output_dir}/{dossier.scan_id}_matrix.png")
+        # Generate matrix visualization (returns BytesIO buffer)
+        filename = f"{output_dir}/{dossier.scan_id}_matrix.png" if output_dir else None
+        if output_dir:
+            Path(output_dir).mkdir(parents=True, exist_ok=True)
+        
+        img = render_strategic_matrix(dossier, filename)
         if img:
             images.append(img)
         
         if dossier.deception.is_deceptive:
-            img2 = render_strategic_matrix(dossier, f"{output_dir}/{dossier.scan_id}_revealed.png", True)
+            filename2 = f"{output_dir}/{dossier.scan_id}_revealed.png" if output_dir else None
+            img2 = render_strategic_matrix(dossier, filename2, True)
             if img2:
                 images.append(img2)
         
