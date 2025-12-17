@@ -378,6 +378,11 @@ def render_input_section():
     
     if clear_btn:
         st.session_state.input_text = ""
+        # Also clear previous analysis results
+        if 'last_report' in st.session_state:
+            del st.session_state.last_report
+        if 'last_input' in st.session_state:
+            del st.session_state.last_input
         st.rerun()
     
     return text, analyze_btn
