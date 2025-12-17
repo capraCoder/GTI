@@ -198,6 +198,11 @@ st.markdown("""
     /* Hide Streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
+    .stDeployButton {display: none;}
+    [data-testid="stStatusWidget"] {display: none;}
+    [data-testid="stToolbar"] {display: none;}
+    .viewerBadge_container__r5tak {display: none;}
+    .styles_viewerBadge__CvC9N {display: none;}
     
     /* Input text area styling */
     .stTextArea textarea {
