@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
 """
-GTI: Game Theory Intelligence
-=============================
-AI-powered strategic analysis engine that decodes conflicts,
-negotiations, and hidden games.
+Strategic Radar Dashboard
+=========================
+Production-ready Streamlit interface for the GTI Engine v3.0.
 
 Features:
-- Identifies game-theoretic structures in any text
-- Detects deception (words vs. actions mismatch)
-- Works in any language
-- Interactive payoff matrix visualization
-- Downloadable analysis reports
+- Real-time strategic analysis
+- Deception detection with visual toggle
+- Interactive payoff matrix
+- Downloadable JSON dossiers
+- Scientific visualization
 
 Usage:
   pip install streamlit anthropic pydantic matplotlib
   streamlit run app.py
 
-Author: GTI Project | github.com/capraCoder/GTI
+Author: GTI Project
 """
 
 import streamlit as st
@@ -31,172 +30,151 @@ import base64
 
 # --- PAGE CONFIG ---
 st.set_page_config(
-    page_title="GTI | Game Theory Intelligence",
-    page_icon="🎯",
+    page_title="Strategic Radar | GTI Engine v3.0",
+    page_icon="♟️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# --- ANALYTICS (GoatCounter - Pixel Tracker) ---
-# Using pixel tracker instead of JS for reliability in Streamlit iframes
-import urllib.parse
-def track_pageview(path="/"):
-    """Track a pageview using GoatCounter pixel"""
-    encoded_path = urllib.parse.quote(path, safe='')
-    pixel_url = f"https://capracoder-gti.goatcounter.com/count?p={encoded_path}"
-    st.markdown(
-        f'<img src="{pixel_url}" alt="" style="position:absolute;left:-9999px;">',
-        unsafe_allow_html=True
-    )
-
-# Track main page view
-track_pageview("/")
-
-# --- CUSTOM CSS (Enterprise Edition) ---
+# --- CUSTOM CSS ---
 st.markdown("""
 <style>
-    /* 1. GLOBAL RESET & TYPOGRAPHY */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    
-    html, body, [class*="css"] {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        background-color: #F1F5F9;
-        color: #0F172A;
-    }
-    
+    /* Main Background */
     .stApp {
-        background-color: #F1F5F9;
-    }
-
-    /* 2. INPUT AREA (The "Command Center") */
-    .stTextArea textarea {
-        background-color: #FFFFFF !important;
-        border: 1px solid #CBD5E1 !important;
-        border-radius: 8px !important;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
-        font-size: 16px !important;
-        padding: 1.5rem !important;
-        color: #334155 !important;
-        transition: all 0.2s ease;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+        font-family: 'Inter', 'Helvetica Neue', sans-serif;
     }
     
-    .stTextArea textarea:focus {
-        border-color: #2563EB !important;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+    /* Header styling */
+    .main-header {
+        background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        color: white;
     }
-
-    /* 3. BUTTONS (Flat & Modern) */
-    .stButton > button {
-        background-color: #0F172A !important;
+    
+    .main-header h1 {
         color: white !important;
-        border: none !important;
-        border-radius: 6px !important;
-        padding: 0.6rem 1.2rem !important;
-        font-weight: 500 !important;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
-        transition: all 0.1s;
+        margin: 0;
     }
     
-    .stButton > button:hover {
-        background-color: #334155 !important;
-        transform: translateY(-1px);
-    }
-
-    /* 4. CARDS (The "Dossier" Look) */
+    /* Dossier Card */
     .dossier-card {
         background: white;
-        padding: 2rem;
+        padding: 1.5rem;
         border-radius: 12px;
-        border: 1px solid #E2E8F0;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border-left: 5px solid #2c3e50;
+        margin-bottom: 1rem;
     }
     
-    /* 5. METRICS (KPI Style) */
-    div[data-testid="metric-container"] {
-        background-color: white;
+    .dossier-card h4 {
+        color: #1a1a2e;
+        margin-top: 0;
+    }
+    
+    /* Alert Banners */
+    .alert-deception {
         padding: 1rem 1.5rem;
+        background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        color: white;
         border-radius: 8px;
-        border: 1px solid #E2E8F0;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        font-weight: 600;
+        margin: 1rem 0;
+        box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
     }
     
-    div[data-testid="stMetricValue"] {
-        font-size: 28px !important;
-        font-weight: 700 !important;
-        color: #0F172A !important;
+    .alert-safe {
+        padding: 1rem 1.5rem;
+        background: linear-gradient(90deg, #059669 0%, #047857 100%);
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        margin: 1rem 0;
     }
     
-    div[data-testid="stMetricLabel"] {
-        font-size: 13px !important;
-        font-weight: 600 !important;
-        color: #64748B !important;
+    .alert-warning {
+        padding: 1rem 1.5rem;
+        background: linear-gradient(90deg, #d97706 0%, #b45309 100%);
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        margin: 1rem 0;
+    }
+    
+    .alert-scope {
+        padding: 1rem 1.5rem;
+        background: linear-gradient(90deg, #7c3aed 0%, #5b21b6 100%);
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        margin: 1rem 0;
+        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    }
+    
+    /* Metrics Cards */
+    .metric-card {
+        background: white;
+        padding: 1.2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .metric-card .value {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #1a1a2e;
+    }
+    
+    .metric-card .label {
+        font-size: 0.85rem;
+        color: #64748b;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    /* 6. HIDE STREAMLIT CHROME */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    .stDeployButton {display: none;}
-    [data-testid="stStatusWidget"] {display: none;}
-    [data-testid="stToolbar"] {display: none;}
-    .viewerBadge_container__r5tak {display: none;}
-    .styles_viewerBadge__CvC9N {display: none;}
-    [data-testid="stDecoration"] {display: none;}
-    
-    /* 7. CUSTOM ALERTS */
-    .alert-box {
-        padding: 1rem;
-        border-radius: 8px;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-size: 14px;
-        margin-bottom: 1.5rem;
+        letter-spacing: 0.5px;
     }
     
-    .alert-danger { background: #FEF2F2; color: #991B1B; border: 1px solid #FEE2E2; }
-    .alert-success { background: #F0FDF4; color: #166534; border: 1px solid #DCFCE7; }
-    .alert-warning { background: #FFFBEB; color: #92400E; border: 1px solid #FEF3C7; }
+    /* Matrix section */
+    .matrix-container {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
     
-    /* 8. PLAYER CARDS */
+    /* Player cards */
     .player-card {
-        background: #F8FAFC;
+        background: #f8fafc;
         padding: 1rem;
         border-radius: 8px;
-        border: 1px solid #E2E8F0;
+        border: 1px solid #e2e8f0;
         margin-bottom: 0.5rem;
     }
     
-    /* 9. EVIDENCE ITEMS */
+    /* Evidence lists */
     .evidence-item {
-        background: #F8FAFC;
+        background: #fef3c7;
         padding: 0.5rem 1rem;
-        border-radius: 4px;
+        border-radius: 6px;
         margin: 0.3rem 0;
-        border-left: 3px solid #64748B;
+        border-left: 3px solid #f59e0b;
         font-size: 0.9rem;
-        color: #334155;
     }
     
     .evidence-item.deception {
-        background: #FEF2F2;
-        border-left: 3px solid #DC2626;
-        color: #7F1D1D;
+        background: #fee2e2;
+        border-left-color: #dc2626;
     }
     
     .evidence-item.credible {
-        background: #F0FDF4;
-        border-left: 3px solid #16A34A;
-        color: #14532D;
+        background: #d1fae5;
+        border-left-color: #059669;
     }
     
-    /* 10. PRESCRIPTION BOX */
+    /* Prescription box */
     .prescription-box {
-        background: #0F172A;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         color: white;
         padding: 1.5rem;
         border-radius: 12px;
@@ -204,37 +182,29 @@ st.markdown("""
     }
     
     .prescription-box h4 {
-        color: #60A5FA;
+        color: #60a5fa;
         margin-top: 0;
     }
     
-    /* 11. MATRIX CONTAINER */
-    .matrix-container {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 12px;
-        border: 1px solid #E2E8F0;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
+    /* Hide Streamlit branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
     
-    /* 12. MINIMAL HEADER */
-    .app-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 0;
-        margin-bottom: 1.5rem;
-        border-bottom: 1px solid #E2E8F0;
-    }
-    
-    .status-badge {
-        background: #DCFCE7;
-        color: #166534;
-        padding: 4px 12px;
-        border-radius: 12px;
-        font-size: 12px;
+    /* Improve button styling */
+    .stButton > button {
+        background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+        color: white;
         font-weight: 600;
-        border: 1px solid #86EFAC;
+        padding: 0.75rem 2rem;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
     }
 </style>
 """, unsafe_allow_html=True)
@@ -269,84 +239,16 @@ class SimpleReport:
 
 # --- MOCK ENGINE FOR DEMO ---
 class MockEngine:
-    """Demo mode when API key not available - Always shows impressive results"""
+    """Demo mode when API key not available"""
     
     def analyze(self, text: str, scan_id: str = None):
         time.sleep(1.5)  # Simulate processing
         
-        text_lower = text.lower()
+        # Detect deception keywords
+        is_deceptive = any(word in text.lower() for word in 
+                          ['secret', 'slashed', 'leaked', 'hidden', 'privately'])
         
-        # Chicken game keywords (cars, standoff scenarios)
-        chicken_keywords = ['car', 'bridge', 'swerve', 'collide', 'chicken', 'crash', 'head-on']
-        is_chicken = any(word in text_lower for word in chicken_keywords)
-        
-        # Coordination keywords (date, preference, together)
-        coord_keywords = ['movie', 'opera', 'date', 'hang out', 'together', 'prefer']
-        is_coordination = any(word in text_lower for word in coord_keywords)
-        
-        # Price war keywords
-        price_keywords = ['price', 'competitor', 'war', 'market', 'customers', 'discount']
-        is_price_war = any(word in text_lower for word in price_keywords)
-        
-        if is_chicken:
-            return SimpleReport(
-                id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
-                game_type="Chicken",
-                risk_level="Critical",
-                confidence=0.91,
-                is_deceptive=False,
-                stated_game=None,
-                revealed_game=None,
-                summary="Classic game of Chicken. Both parties are escalating toward mutual destruction. The first to swerve 'loses face' but survives.",
-                player_a={"name": "Driver A", "motive": "Dominance/Reputation", "type": "Aggressive"},
-                player_b={"name": "Driver B", "motive": "Dominance/Reputation", "type": "Aggressive"},
-                equilibrium="Mixed Strategy (one swerves, other doesn't)",
-                advice="Create a credible commitment to not swerve (throw steering wheel out window) OR introduce face-saving exit (third party stops both).",
-                victim_warning="Both parties risk catastrophic loss. Rational calculation may fail under pressure.",
-                cheap_talk=["flashing high beams"],
-                contradictions=[],
-                credible_signals=["Neither slowing down"]
-            )
-        elif is_coordination:
-            return SimpleReport(
-                id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
-                game_type="Battle_of_Sexes",
-                risk_level="Low",
-                confidence=0.89,
-                is_deceptive=False,
-                stated_game=None,
-                revealed_game=None,
-                summary="Coordination problem with asymmetric preferences. Both prefer agreement over disagreement, but each prefers different outcomes.",
-                player_a={"name": "Partner A", "motive": "Preferred activity + togetherness", "type": "Cooperative"},
-                player_b={"name": "Partner B", "motive": "Preferred activity + togetherness", "type": "Cooperative"},
-                equilibrium="Two pure equilibria (both go to A's choice OR both go to B's choice)",
-                advice="Use randomization (coin flip) or take turns choosing. Establish precedent for fairness.",
-                victim_warning=None,
-                cheap_talk=[],
-                contradictions=[],
-                credible_signals=["Both prefer being together"]
-            )
-        elif is_price_war:
-            return SimpleReport(
-                id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
-                game_type="Prisoners_Dilemma",
-                risk_level="High",
-                confidence=0.93,
-                is_deceptive=False,
-                stated_game=None,
-                revealed_game=None,
-                summary="Classic Prisoner's Dilemma in market competition. Both firms would benefit from high prices, but each has incentive to undercut.",
-                player_a={"name": "Your Company", "motive": "Market share & profit", "type": "Rational"},
-                player_b={"name": "Competitor X", "motive": "Market share & profit", "type": "Rational"},
-                equilibrium="Defect/Defect (price war continues)",
-                advice="Signal commitment to match any price cuts (tit-for-tat). Consider price leadership or capacity constraints as commitment devices.",
-                victim_warning="Without coordination mechanism, both firms destroy margins.",
-                cheap_talk=[],
-                contradictions=[],
-                credible_signals=["Price matching behavior"]
-            )
-        else:
-            # Default: Show the impressive deception detection demo
+        if is_deceptive:
             return SimpleReport(
                 id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
                 game_type="Prisoners_Dilemma",
@@ -355,14 +257,33 @@ class MockEngine:
                 is_deceptive=True,
                 stated_game="Stag_Hunt",
                 revealed_game="Prisoners_Dilemma",
-                summary="⚠️ DEMO MODE: Target publicly signals cooperation but private incentives suggest defection. Analysis based on textual signals.",
-                player_a={"name": "Party A", "motive": "Self-interest (hidden)", "type": "Potentially Deceptive"},
-                player_b={"name": "Party B", "motive": "Mutual benefit (stated)", "type": "Target"},
+                summary="Target publicly signals cooperation but is privately incentivized to defect. Classic deception pattern detected.",
+                player_a={"name": "Company A", "motive": "Profit maximization", "type": "Deceptive"},
+                player_b={"name": "Company B", "motive": "Partnership", "type": "Trusting"},
                 equilibrium="Defect/Cooperate (A exploits B)",
-                advice="Verify stated commitments with observable actions. Demand escrow, milestones, or third-party verification before proceeding.",
-                victim_warning="Do not rely on verbal commitments alone. Look for credible signals.",
-                cheap_talk=["commitment language", "partnership framing", "mutual benefit claims"],
-                contradictions=["Stated vs. revealed preferences may differ"],
+                advice="Do not invest without verifiable commitments. Demand escrow or milestone-based funding.",
+                victim_warning="Company B should independently verify budget allocations before any investment.",
+                cheap_talk=["'fully committed'", "'right thing for the planet'", "'regardless of cost'"],
+                contradictions=["Public: 'committed' vs Private: 'budget = zero'"],
+                credible_signals=[]
+            )
+        else:
+            return SimpleReport(
+                id=scan_id or f"GTI-{datetime.now().strftime('%H%M%S')}",
+                game_type="Chicken",
+                risk_level="High",
+                confidence=0.88,
+                is_deceptive=False,
+                stated_game=None,
+                revealed_game=None,
+                summary="Both parties are escalating. Mutual defection leads to catastrophic outcome. Neither wants to back down first.",
+                player_a={"name": "Player A", "motive": "Dominance", "type": "Aggressive"},
+                player_b={"name": "Player B", "motive": "Survival", "type": "Defensive"},
+                equilibrium="Mixed (unstable)",
+                advice="Create a face-saving exit for the opponent. Introduce a mediator to de-escalate.",
+                victim_warning=None,
+                cheap_talk=[],
+                contradictions=[],
                 credible_signals=[]
             )
 
@@ -387,98 +308,97 @@ def render_metric_card(label: str, value: str, color: str = "#1a1a2e"):
 
 # --- UI COMPONENTS ---
 def render_header():
-    """Minimal enterprise header"""
-    col1, col2 = st.columns([3, 1])
-    with col1:
-        st.markdown("## ♟️ Strategic Radar")
-        st.caption("Game Theory Intelligence Engine • Enterprise Edition")
-    with col2:
-        st.markdown("""
-        <div style="text-align: right; padding-top: 10px;">
-            <span class="status-badge">● SYSTEM ONLINE</span>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="main-header">
+        <h1>♟️ Strategic Radar</h1>
+        <p style="margin:0; opacity:0.8;">Game Theory Intelligence Engine v3.0 | Deception Detection | Scientific Visualization</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 def render_sidebar():
     with st.sidebar:
-        st.markdown("### 🎯 GTI Engine")
+        st.markdown("### ⚙️ Configuration")
         
         # Mode selection
         mode = st.radio(
-            "Mode",
-            ["🔴 Demo Mode", "🟢 Live Mode (API)"],
-            index=0 if not HAS_ENGINE else 1,
-            help="Demo mode shows sample analysis. Live mode uses AI."
+            "Engine Mode",
+            ["🔴 Demo Mode (No API)", "🟢 Live Mode (API Required)"],
+            index=0 if not HAS_ENGINE else 1
         )
         
         st.markdown("---")
         
-        # Example scenarios - cleaner labels
-        st.markdown("### 🧪 Try an Example")
-        st.caption("Click to load a scenario:")
+        # Example scenarios
+        st.markdown("### 📋 Example Scenarios")
         
-        if st.button("🎭 Corporate Deception", use_container_width=True):
+        if st.button("🎭 Deception Test (BLIND-007)", use_container_width=True):
             st.session_state.input_text = """The CEO of Company A issued a press release today praising the new eco-friendly partnership with Company B: 'We are fully committed to this joint venture to reduce emissions. It is the right thing to do for the planet, regardless of the cost.' However, leaked internal memos reveal that Company A has secretly slashed the budget for this project to zero. They are waiting for Company B to invest the initial capital so they can use Company B's technology for free."""
         
-        if st.button("🐔 Game of Chicken", use_container_width=True):
+        if st.button("🐔 Chicken Game (Bridge)", use_container_width=True):
             st.session_state.input_text = """Two cars are speeding toward a one-lane bridge from opposite directions. Neither driver is slowing down. If one swerves, they look like a coward. If neither swerves, they collide head-on. Both are flashing their high beams."""
         
-        if st.button("🔒 Price War Trap", use_container_width=True):
+        if st.button("🔒 Prisoner's Dilemma (Price War)", use_container_width=True):
             st.session_state.input_text = """We're bleeding cash on this price war with Competitor X. Every time we drop our price, they match it. Ideally, we'd both raise prices. But if we raise ours and they keep theirs low, we lose 90% of customers overnight."""
         
-        if st.button("💑 Coordination Problem", use_container_width=True):
+        if st.button("💑 Battle of Sexes (Date Night)", use_container_width=True):
             st.session_state.input_text = """We both want to hang out tonight. I want the sci-fi movie, she wants the opera. The worst outcome is staying home alone. I'd rather suffer through opera with her than be alone."""
         
+        if st.button("⚖️ Zero-Sum (Matching Pennies)", use_container_width=True):
+            st.session_state.input_text = """Two players each put a penny on the table. If both show Heads or both show Tails, Player A wins both pennies. If they show different sides (Head/Tail or Tail/Head), Player B wins both pennies. One player's gain equals the other's loss exactly."""
+        
         st.markdown("---")
-        
-        # Compact footer
-        st.markdown("### ℹ️ How It Works")
-        st.caption("""
-        1. Paste any situation
-        2. AI identifies the "game"
-        3. Get strategic insights
-        
-        Based on Nobel Prize-winning game theory frameworks.
+        st.markdown("### 📊 About")
+        st.markdown("""
+        **GTI Engine** analyzes strategic interactions by:
+        - Extracting player incentives
+        - Mapping to game theory models
+        - Detecting deception (words vs actions)
+        - Predicting equilibrium outcomes
+        - Prescribing solutions
         """)
         
         return "demo" if "Demo" in mode else "live"
 
 def render_input_section():
-    """Clean enterprise input section"""
+    st.markdown("### 📥 Intelligence Input")
+    
     # Initialize session state
     if 'input_text' not in st.session_state:
         st.session_state.input_text = ""
     
-    st.markdown("##### Intelligence Source")
     text = st.text_area(
-        "Input",
+        "Paste scenario, news article, contract excerpt, or negotiation log:",
         value=st.session_state.input_text,
-        height=180,
-        placeholder="Paste negotiation emails, contract terms, or conflict scenarios here...",
-        label_visibility="collapsed"
+        height=150,
+        placeholder="e.g., 'Company A announced a partnership, but leaked documents reveal...'"
     )
     
-    col1, col2 = st.columns([1, 4])
+    col1, col2 = st.columns([3, 1])
     with col1:
-        analyze_btn = st.button("RUN ANALYSIS", type="primary", use_container_width=True)
+        analyze_btn = st.button("🔍 RUN STRATEGIC ANALYSIS", type="primary", use_container_width=True)
     with col2:
-        if st.button("Clear", type="secondary"):
-            st.session_state.input_text = ""
-            if 'last_report' in st.session_state:
-                del st.session_state.last_report
-            if 'last_input' in st.session_state:
-                del st.session_state.last_input
-            st.rerun()
+        clear_btn = st.button("🗑️ Clear", use_container_width=True)
+    
+    if clear_btn:
+        st.session_state.input_text = ""
+        st.rerun()
     
     return text, analyze_btn
 
 def render_metrics(report):
     """Render the key metrics row"""
+    
+    # Check if out of scope
+    game_type = report.game_type if isinstance(report.game_type, str) else report.game_type.value
+    is_out_of_scope = game_type == "Out_of_Scope"
+    
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        game_type = report.game_type if isinstance(report.game_type, str) else report.game_type.value
-        render_metric_card("Game Detected", game_type.replace("_", " "))
+        if is_out_of_scope:
+            render_metric_card("Classification", "OUT OF SCOPE", "#9333ea")
+        else:
+            render_metric_card("Game Detected", game_type.replace("_", " "))
     
     with col2:
         # Handle both SimpleReport (confidence) and StrategicDossier (confidence_score)
@@ -489,7 +409,11 @@ def render_metrics(report):
         else:
             conf = 0.0
         conf_pct = int(conf * 100) if conf <= 1 else int(conf)
-        render_metric_card("Confidence", f"{conf_pct}%", "#2563eb")
+        
+        if is_out_of_scope:
+            render_metric_card("Confidence", "N/A", "#64748b")
+        else:
+            render_metric_card("Confidence", f"{conf_pct}%", "#2563eb")
     
     with col3:
         risk = report.risk_level if hasattr(report, 'risk_level') else report.risk.level
@@ -563,6 +487,125 @@ def render_deception_alert(report):
             """, unsafe_allow_html=True)
         
         return None
+
+
+def render_out_of_scope(report):
+    """Render special panel for scenarios outside 2x2 ordinal framework"""
+    
+    # Get the summary/description for context
+    if hasattr(report, 'game_description'):
+        description = report.game_description
+    elif hasattr(report, 'summary'):
+        description = report.summary
+    else:
+        description = "This scenario falls outside the GTI classification framework."
+    
+    # Detect what kind of out-of-scope it is based on keywords in description
+    desc_lower = description.lower()
+    
+    if any(kw in desc_lower for kw in ['zero-sum', 'zero sum', 'matching pennies', 'one wins one loses']):
+        scope_type = "Zero-Sum Game"
+        reason = "One player's gain equals the other's loss exactly. No mutual cooperation or defection outcomes exist."
+        recommendation = "Minimax / Mixed Strategy Nash Equilibrium"
+        example = "Equilibrium: Each player randomizes (e.g., 50/50 for Matching Pennies)"
+        icon = "⚖️"
+    elif any(kw in desc_lower for kw in ['sequential', 'first move', 'then respond', 'ultimatum', 'trust game']):
+        scope_type = "Sequential Game"
+        reason = "Move order matters. Players act in sequence, not simultaneously."
+        recommendation = "Backward Induction / Subgame Perfect Equilibrium"
+        example = "Solve from the last move backwards to find optimal strategy"
+        icon = "🔄"
+    elif any(kw in desc_lower for kw in ['three player', 'multiple player', 'n-player', 'public good', 'commons']):
+        scope_type = "N-Player Game"
+        reason = "More than 2 players involved. Cannot reduce to 2x2 matrix."
+        recommendation = "Mechanism Design / Public Goods Analysis"
+        example = "Consider free-rider problems and collective action mechanisms"
+        icon = "👥"
+    elif any(kw in desc_lower for kw in ['auction', 'bid', 'bargain', 'price']):
+        scope_type = "Cardinal Payoff Game"
+        reason = "Exact payoff values matter, not just their ordering."
+        recommendation = "Expected Utility / Auction Theory"
+        example = "Calculate expected values and optimal bid strategies"
+        icon = "💰"
+    elif any(kw in desc_lower for kw in ['repeated', 'iterated', 'multiple round', 'long-term']):
+        scope_type = "Repeated Game"
+        reason = "Multiple rounds change the strategy space dramatically."
+        recommendation = "Folk Theorems / Tit-for-Tat Analysis"
+        example = "Cooperation can emerge through reputation and punishment"
+        icon = "🔁"
+    else:
+        scope_type = "Non-Standard Game"
+        reason = "Does not fit the 2x2 simultaneous ordinal game structure."
+        recommendation = "Consult specialized game theory literature"
+        example = "Identify the specific game structure for appropriate analysis"
+        icon = "❓"
+    
+    # Render the Out of Scope panel
+    st.markdown(f"""
+    <div style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); 
+                color: white; padding: 1.5rem; border-radius: 12px; margin: 1rem 0;">
+        <h3 style="margin: 0; color: white;">{icon} OUT OF SCOPE: {scope_type}</h3>
+        <p style="opacity: 0.9; margin: 0.5rem 0;">This scenario falls outside the GTI 2x2 ordinal classification framework.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1, 1])
+    
+    with col1:
+        st.markdown(f"""
+        <div class="dossier-card" style="border-left-color: #7c3aed;">
+            <h4>🔍 Why Out of Scope?</h4>
+            <p>{reason}</p>
+            <hr>
+            <h5>GTI Framework Requirements:</h5>
+            <ul>
+                <li>✓ Exactly 2 players</li>
+                <li>✓ Simultaneous moves</li>
+                <li>✓ 2 choices each (Cooperate/Defect)</li>
+                <li>✓ Ordinal payoffs (ranking matters, not values)</li>
+                <li>✓ T/R/P/S structure exists</li>
+            </ul>
+            <p style="color: #dc2626;"><b>This scenario violates one or more requirements.</b></p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f"""
+        <div class="dossier-card" style="border-left-color: #059669;">
+            <h4>✅ Recommended Approach</h4>
+            <p><b>{recommendation}</b></p>
+            <hr>
+            <h5>How to Analyze:</h5>
+            <p>{example}</p>
+            <hr>
+            <h5>📚 Resources:</h5>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Game_theory" target="_blank">Game Theory (Wikipedia)</a></li>
+                <li><a href="https://www.coursera.org/learn/game-theory-1" target="_blank">Game Theory Course (Coursera)</a></li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Still show any analysis the engine provided
+    if hasattr(report, 'game_description') and report.game_description:
+        st.markdown("---")
+        st.markdown("#### 📋 Engine Notes")
+        st.info(report.game_description)
+    
+    # Show the T/R/P/S issue
+    st.markdown("""
+    <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b; margin-top: 1rem;">
+        <b>💡 T/R/P/S Framework Doesn't Apply</b><br>
+        <small>
+        The GTI engine uses ordinal preference ordering (T > R > P > S) to classify games.<br>
+        <b>T</b> = Temptation (defect while other cooperates)<br>
+        <b>R</b> = Reward (mutual cooperation)<br>
+        <b>P</b> = Punishment (mutual defection)<br>
+        <b>S</b> = Sucker (cooperate while other defects)<br><br>
+        This scenario lacks this structure, so classification is not possible within GTI.
+        </small>
+    </div>
+    """, unsafe_allow_html=True)
 
 def render_dossier(report, view_mode=None):
     """Render the main dossier content"""
@@ -776,49 +819,35 @@ def render_dossier(report, view_mode=None):
         
         game_type = report.game_type if isinstance(report.game_type, str) else report.game_type.value
         
-        # Try to use the engine's beautiful matplotlib renderer
-        matrix_rendered = False
-        if hasattr(report, 'matrix') and hasattr(report.matrix, 'payoff_CC'):
-            try:
-                matrix_buf = render_strategic_matrix(report, show_shadow=show_revealed)
-                if matrix_buf:
-                    st.image(matrix_buf, use_container_width=True, 
-                            caption=f"Payoff Matrix ({'Revealed' if show_revealed else 'Public View'})")
-                    matrix_rendered = True
-            except Exception:
-                pass  # Fall back to HTML
-        
-        # Fallback to HTML tables (for demo mode or if matplotlib fails)
-        if not matrix_rendered:
-            if is_deceptive and not show_revealed:
-                # Show "fake" cooperation matrix
+        if is_deceptive and not show_revealed:
+            # Show "fake" cooperation matrix
+            st.markdown("""
+            <div style="text-align: center; padding: 1rem;">
+                <p style="color: #3b82f6; font-weight: bold;">STATED GAME: Coordination</p>
+                <table style="margin: auto; border-collapse: collapse;">
+                    <tr><td></td><td style="padding: 10px; font-weight: bold;">Cooperate</td><td style="padding: 10px; font-weight: bold;">Defect</td></tr>
+                    <tr><td style="font-weight: bold;">Cooperate</td><td style="padding: 15px; background: #d1fae5; border: 1px solid #ccc;">✓ Win-Win</td><td style="padding: 15px; background: #fee2e2; border: 1px solid #ccc;">Lose</td></tr>
+                    <tr><td style="font-weight: bold;">Defect</td><td style="padding: 15px; background: #fee2e2; border: 1px solid #ccc;">Lose</td><td style="padding: 15px; background: #fee2e2; border: 1px solid #ccc;">Lose-Lose</td></tr>
+                </table>
+                <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">What they want you to believe</p>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            # Show true matrix
+            if "Chicken" in game_type:
+                st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Chicken_Game.svg/400px-Chicken_Game.svg.png")
+            else:
                 st.markdown("""
                 <div style="text-align: center; padding: 1rem;">
-                    <p style="color: #3b82f6; font-weight: bold;">STATED GAME: Coordination</p>
-                    <table style="margin: auto; border-collapse: collapse; font-size: 0.9rem;">
-                        <tr><td></td><td style="padding: 10px; font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 10px; font-weight: bold; color: #475569;">Defect</td></tr>
-                        <tr><td style="font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 15px; background: #f0fdf4; border: 1px solid #e2e8f0;">✓ Win-Win</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose</td></tr>
-                        <tr><td style="font-weight: bold; color: #475569;">Defect</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose-Lose</td></tr>
+                    <p style="color: #dc2626; font-weight: bold;">TRUE GAME: Prisoner's Dilemma</p>
+                    <table style="margin: auto; border-collapse: collapse;">
+                        <tr><td></td><td style="padding: 10px; font-weight: bold;">Cooperate</td><td style="padding: 10px; font-weight: bold;">Defect</td></tr>
+                        <tr><td style="font-weight: bold;">Cooperate</td><td style="padding: 15px; background: #fef3c7; border: 1px solid #ccc;">(3, 3)</td><td style="padding: 15px; background: #fee2e2; border: 1px solid #ccc;">(0, 5) 🎯</td></tr>
+                        <tr><td style="font-weight: bold;">Defect</td><td style="padding: 15px; background: #d1fae5; border: 1px solid #ccc;">(5, 0)</td><td style="padding: 15px; background: #fecaca; border: 1px solid #ccc; font-weight: bold;">★ (1, 1)</td></tr>
                     </table>
-                    <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">What they want you to believe</p>
+                    <p style="color: #dc2626; font-size: 0.8rem; margin-top: 1rem;">★ Nash Equilibrium: Defect/Defect<br>🎯 Company A's target: Defect while B Cooperates</p>
                 </div>
                 """, unsafe_allow_html=True)
-            else:
-                # Show true matrix
-                if "Chicken" in game_type:
-                    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Chicken_Game.svg/400px-Chicken_Game.svg.png")
-                else:
-                    st.markdown("""
-                    <div style="text-align: center; padding: 1rem;">
-                        <p style="color: #dc2626; font-weight: bold;">TRUE GAME: Prisoner's Dilemma</p>
-                        <table style="margin: auto; border-collapse: collapse; font-size: 0.9rem;">
-                            <tr><td></td><td style="padding: 10px; font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 10px; font-weight: bold; color: #475569;">Defect</td></tr>
-                            <tr><td style="font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 15px; background: #f8fafc; border: 1px solid #e2e8f0;">(3, 3)</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">(0, 5) 🎯</td></tr>
-                            <tr><td style="font-weight: bold; color: #475569;">Defect</td><td style="padding: 15px; background: #f0fdf4; border: 1px solid #e2e8f0;">(5, 0)</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0; font-weight: bold;">★ (1, 1)</td></tr>
-                        </table>
-                        <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">★ Nash Equilibrium: Defect/Defect<br>🎯 Company A's target: Defect while B Cooperates</p>
-                    </div>
-                    """, unsafe_allow_html=True)
         
         if show_revealed:
             st.caption("⚠️ Displaying TRUE incentive structure")
@@ -881,6 +910,12 @@ def render_download(report):
     )
 
 # --- MAIN APP ---
+def is_out_of_scope(report):
+    """Check if report is classified as Out_of_Scope"""
+    game_type = report.game_type if isinstance(report.game_type, str) else report.game_type.value
+    return game_type == "Out_of_Scope"
+
+
 def main():
     render_header()
     mode = render_sidebar()
@@ -889,6 +924,7 @@ def main():
     if mode == "live" and HAS_ENGINE:
         try:
             engine = GTIEngine()
+            st.sidebar.success("✓ GTI Engine connected")
         except Exception as e:
             st.sidebar.error(f"Engine error: {e}")
             engine = MockEngine()
@@ -912,9 +948,6 @@ def main():
                 st.session_state.last_report = report
                 st.session_state.last_input = input_text
                 
-                # Track successful analysis (GoatCounter pixel)
-                track_pageview("/analysis-submitted")
-                
             except Exception as e:
                 st.error(f"Analysis failed: {e}")
                 return
@@ -923,11 +956,18 @@ def main():
         st.markdown("### 📊 Analysis Results")
         render_metrics(report)
         st.markdown("")
-        view_mode = render_deception_alert(report)
-        st.markdown("")
-        render_dossier(report, view_mode)
-        st.markdown("")
-        render_prescription(report)
+        
+        # Check if Out of Scope - render special panel
+        if is_out_of_scope(report):
+            render_out_of_scope(report)
+        else:
+            # Normal flow
+            view_mode = render_deception_alert(report)
+            st.markdown("")
+            render_dossier(report, view_mode)
+            st.markdown("")
+            render_prescription(report)
+        
         st.markdown("")
         render_download(report)
         
@@ -939,11 +979,18 @@ def main():
         report = st.session_state.last_report
         render_metrics(report)
         st.markdown("")
-        view_mode = render_deception_alert(report)
-        st.markdown("")
-        render_dossier(report, view_mode)
-        st.markdown("")
-        render_prescription(report)
+        
+        # Check if Out of Scope - render special panel
+        if is_out_of_scope(report):
+            render_out_of_scope(report)
+        else:
+            # Normal flow
+            view_mode = render_deception_alert(report)
+            st.markdown("")
+            render_dossier(report, view_mode)
+            st.markdown("")
+            render_prescription(report)
+        
         st.markdown("")
         render_download(report)
     else:

@@ -55,6 +55,7 @@ except ImportError:
 # =============================================================================
 
 class GameType(str, Enum):
+    """12 canonical Robinson-Goforth game types (orthogonal classification)"""
     PRISONERS_DILEMMA = "Prisoners_Dilemma"
     CHICKEN = "Chicken"
     STAG_HUNT = "Stag_Hunt"
@@ -65,6 +66,10 @@ class GameType(str, Enum):
     COMPROMISE = "Compromise"
     ASSURANCE = "Assurance_Game"
     HARMONY = "Harmony"
+    ASYMMETRIC_DILEMMA = "Asymmetric_Dilemma"
+    CYCLIC = "Cyclic_Game"
+    # Out of scope markers
+    OUT_OF_SCOPE = "Out_of_Scope"  # Zero-sum, sequential, n-player, etc.
     UNKNOWN = "Unknown"
 
 
@@ -158,6 +163,33 @@ SYSTEM_PROMPT = """You are the Game Theory Engine v3.0. You decode strategic int
 ### CORE DIRECTIVE
 You extract INCENTIVES, not summaries. Words lie. Actions reveal truth.
 
+### CLASSIFICATION FRAMEWORK: ROBINSON-GOFORTH ORTHOGONAL TYPES
+You MUST classify into ONE of these 12 canonical 2x2 ordinal game types (based on T/R/P/S preference ordering):
+
+| Type | Player A Order | Key Feature |
+|------|---------------|-------------|
+| Prisoners_Dilemma | T>R>P>S | Defection dominant, mutual coop preferred to mutual defect |
+| Chicken | T>R>S>P | Mutual defection is WORST (catastrophe) |
+| Stag_Hunt | R>T>P>S | Cooperation best but risky |
+| Deadlock | T>P>R>S | Both prefer mutual defection |
+| Harmony | R>T>S>P | Cooperation dominant |
+| Battle_of_the_Sexes | Asymmetric | Coordinate but different preferences |
+| Hero | Asymmetric | One must sacrifice |
+| Compromise | Mixed | Middle-ground stable |
+| Assurance_Game | R>T>P>S | Same as Stag Hunt (trust-based) |
+| Coordination_Game | Match | Pure coordination, no conflict |
+| Asymmetric_Dilemma | Unequal | Different orderings per player |
+| Cyclic_Game | Circular | No pure Nash equilibrium |
+
+### OUT OF SCOPE DETECTION
+If the scenario is NOT a 2x2 simultaneous ordinal game, classify as "Out_of_Scope":
+- Zero-sum games (Matching Pennies, Rock-Paper-Scissors) → Out_of_Scope
+- Sequential games (Trust Game, Ultimatum) → Out_of_Scope  
+- N-player games (>2 players without reduction) → Out_of_Scope
+- Cardinal payoff games (exact numbers matter, not ordering) → Out_of_Scope
+
+For Out_of_Scope, still provide analysis but note WHY it doesn't fit the framework.
+
 ### ANALYSIS PROTOCOL
 
 **Phase 1: Player Extraction**
@@ -171,13 +203,7 @@ You extract INCENTIVES, not summaries. Words lie. Actions reveal truth.
 - P (Punishment): Cost of mutual defection
 - S (Sucker): Cost of being exploited
 
-Game signatures:
-- Prisoner's Dilemma: T > R > P > S
-- Chicken: T > R > S > P (mutual defection WORST)
-- Stag Hunt: R > T > P > S (cooperation BEST but risky)
-- Battle of Sexes: Coordinate but different preferences
-- Hero: Someone must sacrifice
-- Deadlock: Both prefer mutual defection
+Determine the ORDINAL preference order for each player, then match to canonical type.
 
 **Phase 3: Deception Check**
 Compare STATED vs REVEALED preferences:
@@ -196,7 +222,7 @@ Return STRICTLY VALID JSON:
   "scan_id": "GTI-XXXXXXXX",
   "timestamp": "ISO-8601",
   "version": "3.0.0",
-  "game_type": "Prisoners_Dilemma|Chicken|Stag_Hunt|Battle_of_the_Sexes|Coordination_Game|Hero|Deadlock|Compromise|Unknown",
+  "game_type": "Prisoners_Dilemma|Chicken|Stag_Hunt|Battle_of_the_Sexes|Coordination_Game|Hero|Deadlock|Compromise|Assurance_Game|Harmony|Asymmetric_Dilemma|Cyclic_Game|Out_of_Scope|Unknown",
   "game_description": "One sentence based on ACTIONS",
   "confidence_score": 0.0-1.0,
   
@@ -270,12 +296,10 @@ RETURN ONLY VALID JSON."""
 # VISUALIZATION ENGINE
 # =============================================================================
 
-def render_strategic_matrix(dossier, filename=None, show_shadow=False):
-    """Render publication-quality Game Theory Matrix. Returns BytesIO buffer for Streamlit."""
+def render_strategic_matrix(dossier, filename="strategic_matrix.png", show_shadow=False):
+    """Render publication-quality Game Theory Matrix."""
     if not HAS_MATPLOTLIB:
         return None
-    
-    from io import BytesIO
     
     fig, ax = plt.subplots(figsize=(10, 8))
     ax.set_xlim(-0.5, 2.5)
@@ -362,23 +386,9 @@ def render_strategic_matrix(dossier, filename=None, show_shadow=False):
     ax.text(1.0, -0.6, f"ID: {dossier.scan_id}", ha='center', fontsize=8, color=COLORS['light'])
     
     plt.tight_layout()
-    
-    # Return BytesIO buffer instead of saving to file (fixes Streamlit Cloud crash)
-    buf = BytesIO()
-    plt.savefig(buf, format='png', dpi=300, bbox_inches='tight', facecolor=COLORS['bg'])
-    buf.seek(0)
+    plt.savefig(filename, dpi=300, bbox_inches='tight', facecolor=COLORS['bg'])
     plt.close()
-    
-    # Optionally also save to file if filename provided (for local/CLI use)
-    if filename:
-        try:
-            with open(filename, 'wb') as f:
-                f.write(buf.getvalue())
-            buf.seek(0)
-        except Exception:
-            pass  # Ignore file save errors in cloud environment
-    
-    return buf
+    return filename
 
 
 # =============================================================================
@@ -434,28 +444,80 @@ class GTIEngine:
                 if k in data['matrix'] and isinstance(data['matrix'][k], list):
                     data['matrix'][k] = tuple(data['matrix'][k])
         
+        # Normalize game_type to valid enum value
+        if 'game_type' in data:
+            raw_game = data['game_type']
+            valid_types = [e.value for e in GameType]
+            
+            if raw_game not in valid_types:
+                # Map to canonical types or Out_of_Scope
+                canonical_mappings = {
+                    # Variations of canonical types
+                    'Prisoners_Dilemma_Game': 'Prisoners_Dilemma',
+                    'Game_of_Chicken': 'Chicken',
+                    'Hawk_Dove': 'Chicken',
+                    'Bach_or_Stravinsky': 'Battle_of_the_Sexes',
+                    'Coordination': 'Coordination_Game',
+                    'Pure_Coordination': 'Coordination_Game',
+                    'Assurance': 'Assurance_Game',
+                    'Trust_Game': 'Stag_Hunt',  # Trust games map to Stag Hunt structure
+                }
+                
+                # Out of scope types (zero-sum, sequential, etc.)
+                out_of_scope_keywords = [
+                    'zero', 'sum', 'matching', 'pennies', 'rock', 'paper', 'scissors',
+                    'ultimatum', 'dictator', 'sequential', 'centipede', 'signaling',
+                    'auction', 'bargaining', 'repeated', 'evolutionary'
+                ]
+                
+                raw_lower = raw_game.lower()
+                
+                # Check if it's an out-of-scope type
+                if any(kw in raw_lower for kw in out_of_scope_keywords):
+                    data['game_type'] = 'Out_of_Scope'
+                    print(f"INFO: '{raw_game}' is outside 2x2 ordinal framework → Out_of_Scope")
+                # Check direct mapping
+                elif raw_game in canonical_mappings:
+                    data['game_type'] = canonical_mappings[raw_game]
+                # Fuzzy match to canonical types
+                elif 'chicken' in raw_lower or 'hawk' in raw_lower:
+                    data['game_type'] = 'Chicken'
+                elif 'prisoner' in raw_lower or 'dilemma' in raw_lower:
+                    data['game_type'] = 'Prisoners_Dilemma'
+                elif 'stag' in raw_lower or 'hunt' in raw_lower:
+                    data['game_type'] = 'Stag_Hunt'
+                elif 'battle' in raw_lower or 'sexes' in raw_lower:
+                    data['game_type'] = 'Battle_of_the_Sexes'
+                elif 'deadlock' in raw_lower:
+                    data['game_type'] = 'Deadlock'
+                elif 'harmony' in raw_lower:
+                    data['game_type'] = 'Harmony'
+                elif 'hero' in raw_lower:
+                    data['game_type'] = 'Hero'
+                elif 'coord' in raw_lower:
+                    data['game_type'] = 'Coordination_Game'
+                else:
+                    # Default to Unknown for truly unknown types
+                    print(f"WARNING: Cannot map '{raw_game}' to canonical type → Unknown")
+                    data['game_type'] = 'Unknown'
+        
         if HAS_PYDANTIC:
             return StrategicDossier(**data)
         return type('Dossier', (), data)()
     
-    def analyze_with_viz(self, text: str, output_dir: str = None, scan_id: str = None):
-        """Analyze and generate visualizations. Returns (dossier, list of BytesIO image buffers)."""
+    def analyze_with_viz(self, text: str, output_dir: str = ".", scan_id: str = None):
+        """Analyze and generate visualizations."""
         dossier = self.analyze(text, scan_id)
         
+        Path(output_dir).mkdir(parents=True, exist_ok=True)
         images = []
         
-        # Generate matrix visualization (returns BytesIO buffer)
-        filename = f"{output_dir}/{dossier.scan_id}_matrix.png" if output_dir else None
-        if output_dir:
-            Path(output_dir).mkdir(parents=True, exist_ok=True)
-        
-        img = render_strategic_matrix(dossier, filename)
+        img = render_strategic_matrix(dossier, f"{output_dir}/{dossier.scan_id}_matrix.png")
         if img:
             images.append(img)
         
         if dossier.deception.is_deceptive:
-            filename2 = f"{output_dir}/{dossier.scan_id}_revealed.png" if output_dir else None
-            img2 = render_strategic_matrix(dossier, filename2, True)
+            img2 = render_strategic_matrix(dossier, f"{output_dir}/{dossier.scan_id}_revealed.png", True)
             if img2:
                 images.append(img2)
         
