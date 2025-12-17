@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 """
-Strategic Radar Dashboard
-=========================
-Production-ready Streamlit interface for the GTI Engine v3.0.
+GTI: Game Theory Intelligence
+=============================
+AI-powered strategic analysis engine that decodes conflicts,
+negotiations, and hidden games.
 
 Features:
-- Real-time strategic analysis
-- Deception detection with visual toggle
-- Interactive payoff matrix
-- Downloadable JSON dossiers
-- Scientific visualization
+- Identifies game-theoretic structures in any text
+- Detects deception (words vs. actions mismatch)
+- Works in any language
+- Interactive payoff matrix visualization
+- Downloadable analysis reports
 
 Usage:
   pip install streamlit anthropic pydantic matplotlib
   streamlit run app.py
 
-Author: GTI Project
+Author: GTI Project | github.com/capraCoder/GTI
 """
 
 import streamlit as st
@@ -30,8 +31,8 @@ import base64
 
 # --- PAGE CONFIG ---
 st.set_page_config(
-    page_title="Strategic Radar | GTI Engine v3.0",
-    page_icon="♟️",
+    page_title="GTI | Game Theory Intelligence",
+    page_icon="🎯",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -244,6 +245,78 @@ st.markdown("""
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
     }
+    
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        color: white;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(26, 26, 46, 0.3);
+    }
+    
+    .hero-section h1 {
+        color: white !important;
+        font-size: 2.5rem;
+        margin: 0 0 0.5rem 0;
+        font-weight: 700;
+    }
+    
+    .hero-tagline {
+        font-size: 1.3rem;
+        color: #60a5fa;
+        margin: 0 0 1rem 0;
+        font-weight: 500;
+    }
+    
+    .hero-description {
+        font-size: 1.05rem;
+        color: #cbd5e1;
+        margin: 0 0 1.5rem 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+    
+    .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+    
+    .trust-badge {
+        background: rgba(255,255,255,0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: #e2e8f0;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .use-cases {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .use-case {
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+    
+    .use-case-icon {
+        font-size: 1.5rem;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -347,64 +420,102 @@ def render_metric_card(label: str, value: str, color: str = "#1a1a2e"):
 # --- UI COMPONENTS ---
 def render_header():
     st.markdown("""
-    <div class="main-header">
-        <h1>♟️ Strategic Radar</h1>
-        <p style="margin:0; opacity:0.8;">Game Theory Intelligence Engine v3.0 | Deception Detection | Scientific Visualization</p>
+    <div class="hero-section">
+        <h1>🎯 GTI: Game Theory Intelligence</h1>
+        <p class="hero-tagline">See the Hidden Game Being Played</p>
+        <p class="hero-description">
+            Paste any conflict, contract, or negotiation. Our AI decodes the strategic dynamics, 
+            detects deception, and reveals what each player <em>really</em> wants.
+        </p>
+        <div class="trust-badges">
+            <span class="trust-badge">🏆 Based on Nobel Prize-winning Game Theory</span>
+            <span class="trust-badge">🌍 Works in Any Language</span>
+            <span class="trust-badge">🔒 Private & Secure</span>
+        </div>
+        <div class="use-cases">
+            <div class="use-case">
+                <span class="use-case-icon">📜</span>
+                Contracts
+            </div>
+            <div class="use-case">
+                <span class="use-case-icon">🤝</span>
+                Negotiations
+            </div>
+            <div class="use-case">
+                <span class="use-case-icon">📰</span>
+                News Articles
+            </div>
+            <div class="use-case">
+                <span class="use-case-icon">⚔️</span>
+                Conflicts
+            </div>
+            <div class="use-case">
+                <span class="use-case-icon">💼</span>
+                Business Deals
+            </div>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
 def render_sidebar():
     with st.sidebar:
-        st.markdown("### ⚙️ Configuration")
+        st.markdown("### 🎯 GTI Engine")
         
         # Mode selection
         mode = st.radio(
-            "Engine Mode",
-            ["🔴 Demo Mode (No API)", "🟢 Live Mode (API Required)"],
-            index=0 if not HAS_ENGINE else 1
+            "Mode",
+            ["🔴 Demo Mode", "🟢 Live Mode (API)"],
+            index=0 if not HAS_ENGINE else 1,
+            help="Demo mode shows sample analysis. Live mode uses AI."
         )
         
         st.markdown("---")
         
-        # Example scenarios
-        st.markdown("### 📋 Example Scenarios")
+        # Example scenarios - cleaner labels
+        st.markdown("### 🧪 Try an Example")
+        st.caption("Click to load a scenario:")
         
-        if st.button("🎭 Deception Test (BLIND-007)", use_container_width=True):
+        if st.button("🎭 Corporate Deception", use_container_width=True):
             st.session_state.input_text = """The CEO of Company A issued a press release today praising the new eco-friendly partnership with Company B: 'We are fully committed to this joint venture to reduce emissions. It is the right thing to do for the planet, regardless of the cost.' However, leaked internal memos reveal that Company A has secretly slashed the budget for this project to zero. They are waiting for Company B to invest the initial capital so they can use Company B's technology for free."""
         
-        if st.button("🐔 Chicken Game (Bridge)", use_container_width=True):
+        if st.button("🐔 Game of Chicken", use_container_width=True):
             st.session_state.input_text = """Two cars are speeding toward a one-lane bridge from opposite directions. Neither driver is slowing down. If one swerves, they look like a coward. If neither swerves, they collide head-on. Both are flashing their high beams."""
         
-        if st.button("🔒 Prisoner's Dilemma (Price War)", use_container_width=True):
+        if st.button("🔒 Price War Trap", use_container_width=True):
             st.session_state.input_text = """We're bleeding cash on this price war with Competitor X. Every time we drop our price, they match it. Ideally, we'd both raise prices. But if we raise ours and they keep theirs low, we lose 90% of customers overnight."""
         
-        if st.button("💑 Battle of Sexes (Date Night)", use_container_width=True):
+        if st.button("💑 Coordination Problem", use_container_width=True):
             st.session_state.input_text = """We both want to hang out tonight. I want the sci-fi movie, she wants the opera. The worst outcome is staying home alone. I'd rather suffer through opera with her than be alone."""
         
         st.markdown("---")
-        st.markdown("### 📊 About")
-        st.markdown("""
-        **GTI Engine** analyzes strategic interactions by:
-        - Extracting player incentives
-        - Mapping to game theory models
-        - Detecting deception (words vs actions)
-        - Predicting equilibrium outcomes
-        - Prescribing solutions
+        
+        # Compact footer
+        st.markdown("### ℹ️ How It Works")
+        st.caption("""
+        1. Paste any situation
+        2. AI identifies the "game"
+        3. Get strategic insights
+        
+        Based on Nobel Prize-winning game theory frameworks.
         """)
+        
+        st.markdown("---")
+        st.markdown(
+            "<div style='text-align:center; opacity:0.6; font-size:0.8rem;'>"
+            "v3.0 • <a href='https://github.com/capraCoder/GTI' target='_blank'>GitHub</a>"
+            "</div>",
+            unsafe_allow_html=True
+        )
         
         return "demo" if "Demo" in mode else "live"
 
 def render_input_section():
-    st.markdown("### 📥 Intelligence Input")
-    
-    # Instruction box
+    # Instruction box - shorter since hero explains
     st.markdown("""
     <div class="input-instructions">
-        <h4>📋 Copy & Paste Your Situation Here</h4>
+        <h4>👇 Drop Your Text Below</h4>
         <p style="margin: 0;">
-            Drop any <b>contract</b>, <b>news article</b>, <b>negotiation</b>, or <b>problematic situation</b> 
-            in the yellow box below — <b>any language</b> works! 
-            Then click <b>RUN STRATEGIC ANALYSIS</b> and watch the magic. ✨
+            Contract, negotiation, news, conflict — <b>any language</b>. Then hit <b>Analyze</b>.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -414,15 +525,16 @@ def render_input_section():
         st.session_state.input_text = ""
     
     text = st.text_area(
-        "👇 Your text goes here:",
+        "Your situation:",
         value=st.session_state.input_text,
         height=150,
-        placeholder="Paste your contract, email, news article, or describe a conflict situation here..."
+        placeholder="Example: 'My business partner says he's committed to our venture, but I noticed he's been meeting with our competitor...'"
+        ,label_visibility="collapsed"
     )
     
     col1, col2 = st.columns([3, 1])
     with col1:
-        analyze_btn = st.button("🔍 RUN STRATEGIC ANALYSIS", type="primary", use_container_width=True)
+        analyze_btn = st.button("🔍 ANALYZE SITUATION", type="primary", use_container_width=True)
     with col2:
         clear_btn = st.button("🗑️ Clear", use_container_width=True)
     
