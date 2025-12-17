@@ -184,8 +184,16 @@ def load_topology_map() -> Dict[str, Dict]:
 def classify_game(payoffs: np.ndarray) -> RGClass:
     """
     Classify a 2x2 game into Robinson-Goforth topology class.
-    O(1) lookup after canonical form computation.
+
+    Uses T/R/P/S ordering (Game DNA) for direct classification.
+    Falls back to topology map lookup for edge cases.
     """
+    # Primary: Direct T/R/P/S classification
+    rg_class = classify_by_trps(payoffs)
+    if rg_class != RGClass.CLASS_10_INTERMEDIATE:
+        return rg_class
+
+    # Secondary: Topology map lookup
     fingerprint = canonical_fingerprint(payoffs)
     topology_map = load_topology_map()
 
@@ -194,11 +202,9 @@ def classify_game(payoffs: np.ndarray) -> RGClass:
         try:
             return RGClass[class_name]
         except KeyError:
-            return RGClass.UNKNOWN
+            pass
 
-    # Fallback: classify by structure
-    nash = analyze_nash_equilibria(payoffs)
-    return classify_by_nash_structure(nash)
+    return rg_class
 
 
 def analyze_nash_equilibria(payoffs: np.ndarray) -> Dict:
@@ -260,51 +266,83 @@ def analyze_nash_equilibria(payoffs: np.ndarray) -> Dict:
     }
 
 
-def classify_by_nash_structure(nash_info: Dict) -> RGClass:
+def classify_by_trps(payoffs: np.ndarray) -> RGClass:
     """
-    Classify game based on Nash equilibrium structure.
-    Fallback when topology map doesn't have the fingerprint.
-    """
-    ne_count = nash_info['pure_ne_count']
-    p1_dom = nash_info['p1_dominant_strategy']
-    p2_dom = nash_info['p2_dominant_strategy']
-    is_sym = nash_info['is_symmetric']
-    ne_cells = nash_info['pure_ne_cells']
+    Classify game by T/R/P/S ordering - the 'Game DNA'.
 
-    # No pure NE - cyclic/zero-sum
+    For symmetric 2x2 games:
+    - R (Reward): Mutual cooperation (AA)
+    - S (Sucker): Cooperate while other defects (AB)
+    - T (Temptation): Defect while other cooperates (BA)
+    - P (Punishment): Mutual defection (BB)
+
+    The ordering determines the game type:
+    - Prisoner's Dilemma: T > R > P > S
+    - Chicken (Hawk-Dove): T > R > S > P
+    - Stag Hunt: R > T > P > S
+    - Harmony: R > T > S > P
+    - Deadlock: T > P > R > S
+    """
+    p1 = payoffs[:, :, 0]
+    p2 = payoffs[:, :, 1]
+
+    # Extract T, R, P, S for player 1
+    R = p1[0, 0]  # Mutual cooperation
+    S = p1[0, 1]  # Sucker payoff
+    T = p1[1, 0]  # Temptation payoff
+    P = p1[1, 1]  # Mutual defection
+
+    is_sym = np.allclose(p1, p2.T)
+    nash = analyze_nash_equilibria(payoffs)
+    ne_count = nash['pure_ne_count']
+    ne_cells = nash['pure_ne_cells']
+
+    # No pure NE - zero-sum / cyclic
     if ne_count == 0:
+        # Check for zero-sum structure
+        p1_ord = tuple(p1.flatten().argsort().argsort())
+        p2_ord = tuple(p2.flatten().argsort().argsort())
+        p1_arr = np.array(p1_ord).reshape(2, 2)
+        p2_arr = np.array(p2_ord).reshape(2, 2)
+        if np.sum((p1_arr >= 2) == ~(p2_arr >= 2)) >= 3:
+            return RGClass.CLASS_8_ZERO_SUM
         return RGClass.CLASS_9_CYCLIC
 
-    # Both have dominant strategies
-    if p1_dom is not None and p2_dom is not None:
-        if ne_count == 1:
-            if is_sym:
-                # Dominant-strategy equilibrium on anti-diagonal suggests PD
-                if ne_cells[0] == (1, 1) or ne_cells[0] == (0, 0):
-                    # Check if it's suboptimal (PD) or optimal (Harmony)
-                    return RGClass.CLASS_2_DILEMMA
-                return RGClass.CLASS_7_HARMONY
-            return RGClass.CLASS_12_DOMINANCE
+    # Classification by T/R/P/S ordering
+    if is_sym:
+        if T > R > P > S:
+            return RGClass.CLASS_2_DILEMMA
+        if T > R > S > P:
+            return RGClass.CLASS_3_CHICKEN
+        if R > T > P > S:
+            return RGClass.CLASS_4_STAG_HUNT
+        if R > T > S > P:
+            return RGClass.CLASS_7_HARMONY
+        if T > P > R > S:
+            return RGClass.CLASS_6_DEADLOCK
+        if R == P and T == S and R > T:
+            return RGClass.CLASS_1_WIN_WIN
 
-    # Two pure NE
-    if ne_count == 2:
+    # Two NEs on diagonal
+    if ne_count == 2 and set(ne_cells) == {(0, 0), (1, 1)}:
+        # Battle of Sexes: Players prefer different equilibria
+        if (p1[0, 0] > p1[1, 1]) != (p2[0, 0] > p2[1, 1]):
+            return RGClass.CLASS_5_BATTLE
         if is_sym:
-            # Check coordination vs anti-coordination
-            if (0, 0) in ne_cells and (1, 1) in ne_cells:
-                return RGClass.CLASS_4_STAG_HUNT
-            elif (0, 1) in ne_cells and (1, 0) in ne_cells:
-                return RGClass.CLASS_5_BATTLE
-            else:
-                return RGClass.CLASS_3_CHICKEN
+            return RGClass.CLASS_4_STAG_HUNT
         return RGClass.CLASS_11_BIASED
 
-    # One pure NE
-    if ne_count == 1:
-        if p1_dom is not None or p2_dom is not None:
-            return RGClass.CLASS_12_DOMINANCE
-        return RGClass.CLASS_10_INTERMEDIATE
+    # Anti-diagonal NEs
+    if ne_count == 2 and set(ne_cells) == {(0, 1), (1, 0)}:
+        return RGClass.CLASS_11_BIASED
 
-    return RGClass.UNKNOWN
+    # Fallback
+    if nash['p1_dominant_strategy'] is not None and nash['p2_dominant_strategy'] is not None:
+        return RGClass.CLASS_12_DOMINANCE
+    if ne_count == 2:
+        return RGClass.CLASS_11_BIASED
+
+    return RGClass.CLASS_10_INTERMEDIATE
 
 
 def get_game_type_name(rg_class: RGClass) -> str:

@@ -318,38 +318,134 @@ def build_map():
     return topology_map
 
 
+def classify_by_trps_ordering(matrix: np.ndarray) -> RGClass:
+    """
+    Classify game directly by T/R/P/S ordering - the 'Game DNA'.
+
+    For symmetric 2x2 games:
+    - R (Reward): Mutual cooperation (AA)
+    - S (Sucker): Cooperate while other defects (AB for row player)
+    - T (Temptation): Defect while other cooperates (BA for row player)
+    - P (Punishment): Mutual defection (BB)
+
+    The ordering T/R/P/S determines the game type:
+    - Prisoner's Dilemma: T > R > P > S
+    - Chicken (Hawk-Dove): T > R > S > P
+    - Stag Hunt: R > T > P > S
+    - Harmony: R > T > S > P
+    - Deadlock: T > P > R > S
+    """
+    p1 = matrix[:, :, 0]  # Player 1 payoffs
+    p2 = matrix[:, :, 1]  # Player 2 payoffs
+
+    # Extract T, R, P, S for player 1
+    R = p1[0, 0]  # Mutual cooperation
+    S = p1[0, 1]  # Sucker payoff
+    T = p1[1, 0]  # Temptation payoff
+    P = p1[1, 1]  # Mutual defection
+
+    # Check symmetry
+    is_sym = np.allclose(p1, p2.T)
+
+    # Compute Nash equilibria
+    nash = analyze_nash_equilibria(matrix)
+    ne_count = nash['pure_ne_count']
+    ne_cells = nash['pure_ne_cells']
+
+    # No pure NE - zero-sum / cyclic
+    if ne_count == 0:
+        # Check for matching pennies structure
+        if is_matching_pennies_structure(
+            tuple(p1.flatten().argsort().argsort()),
+            tuple(p2.flatten().argsort().argsort())
+        ):
+            return RGClass.CLASS_8_ZERO_SUM
+        return RGClass.CLASS_9_CYCLIC
+
+    # Classification by T/R/P/S ordering (Game DNA)
+    if is_sym:
+        # Prisoner's Dilemma: T > R > P > S
+        if T > R > P > S:
+            return RGClass.CLASS_2_DILEMMA
+
+        # Chicken / Hawk-Dove: T > R > S > P (crash is worst)
+        if T > R > S > P:
+            return RGClass.CLASS_3_CHICKEN
+
+        # Stag Hunt: R > T > P > S (cooperation best but risky)
+        if R > T > P > S:
+            return RGClass.CLASS_4_STAG_HUNT
+
+        # Harmony: R > T > S > P (cooperation dominant and best)
+        if R > T > S > P:
+            return RGClass.CLASS_7_HARMONY
+
+        # Deadlock: T > P > R > S (defection dominant and efficient)
+        if T > P > R > S:
+            return RGClass.CLASS_6_DEADLOCK
+
+        # Pure Coordination: R = P > T = S (only care about matching)
+        if R == P and T == S and R > T:
+            return RGClass.CLASS_1_WIN_WIN
+
+    # Two NEs on diagonal - coordination games
+    if ne_count == 2 and set(ne_cells) == {(0, 0), (1, 1)}:
+        # Battle of Sexes: Players prefer DIFFERENT equilibria
+        # P1 prefers (0,0), P2 prefers (1,1) or vice versa
+        p1_pref_00 = p1[0, 0] > p1[1, 1]  # P1 prefers AA over BB
+        p2_pref_00 = p2[0, 0] > p2[1, 1]  # P2 prefers AA over BB
+
+        if p1_pref_00 != p2_pref_00:
+            # Different preferences = Battle of Sexes
+            return RGClass.CLASS_5_BATTLE
+
+        # Same preferences = Stag Hunt or coordination
+        if is_sym:
+            return RGClass.CLASS_4_STAG_HUNT
+        return RGClass.CLASS_11_BIASED
+
+    # Anti-diagonal NEs (0,1) and (1,0) - anti-coordination
+    if ne_count == 2 and set(ne_cells) == {(0, 1), (1, 0)}:
+        return RGClass.CLASS_11_BIASED
+
+    # Fallback classifications
+    if nash['p1_dominant_strategy'] is not None and nash['p2_dominant_strategy'] is not None:
+        return RGClass.CLASS_12_DOMINANCE
+
+    if ne_count == 2:
+        return RGClass.CLASS_11_BIASED
+
+    return RGClass.CLASS_10_INTERMEDIATE
+
+
 def verify_classic_games():
-    """Verify that classic games are correctly classified."""
+    """Verify that classic games are correctly classified using direct T/R/P/S analysis."""
     print("\n" + "=" * 60)
-    print("CLASSIC GAME VERIFICATION")
+    print("CLASSIC GAME VERIFICATION (Direct T/R/P/S Classification)")
     print("=" * 60)
 
-    # Load topology map
-    map_path = Path(__file__).parent.parent / 'topology_map.json'
-    if not map_path.exists():
-        print("ERROR: topology_map.json not found. Run build_map() first.")
-        return
-
-    with open(map_path, 'r') as f:
-        data = json.load(f)
-        topology_map = data['topology_map']
-
     # Classic games with known classifications
+    # Matrix format: [[[R,R], [S,T]], [[T,S], [P,P]]] for symmetric games
     classic_tests = [
         {
             'name': "Prisoner's Dilemma (T>R>P>S)",
-            'matrix': np.array([[[2, 2], [0, 3]], [[3, 0], [1, 1]]]),
+            'matrix': np.array([[[3, 3], [0, 5]], [[5, 0], [1, 1]]]),  # T=5,R=3,P=1,S=0
             'expected': 'CLASS_2_DILEMMA'
         },
         {
             'name': "Chicken (T>R>S>P)",
-            'matrix': np.array([[[2, 2], [1, 3]], [[3, 1], [0, 0]]]),
+            'matrix': np.array([[[3, 3], [1, 4]], [[4, 1], [0, 0]]]),  # T=4,R=3,S=1,P=0
             'expected': 'CLASS_3_CHICKEN'
         },
         {
             'name': "Stag Hunt (R>T>P>S)",
-            'matrix': np.array([[[3, 3], [0, 2]], [[2, 0], [1, 1]]]),
+            'matrix': np.array([[[4, 4], [0, 3]], [[3, 0], [1, 1]]]),  # R=4,T=3,P=1,S=0
             'expected': 'CLASS_4_STAG_HUNT'
+        },
+        {
+            'name': "Harmony (R>T>S>P)",
+            'matrix': np.array([[[4, 4], [2, 3]], [[3, 2], [1, 1]]]),  # R=4,T=3,S=2,P=1
+            'expected': 'CLASS_7_HARMONY'
         },
         {
             'name': "Battle of Sexes",
@@ -357,9 +453,14 @@ def verify_classic_games():
             'expected': 'CLASS_5_BATTLE'
         },
         {
-            'name': "Matching Pennies",
-            'matrix': np.array([[[1, 0], [0, 1]], [[0, 1], [1, 0]]]),
+            'name': "Matching Pennies (Zero-Sum)",
+            'matrix': np.array([[[1, -1], [-1, 1]], [[-1, 1], [1, -1]]]),
             'expected': 'CLASS_8_ZERO_SUM'
+        },
+        {
+            'name': "Deadlock (T>P>R>S)",
+            'matrix': np.array([[[2, 2], [0, 4]], [[4, 0], [3, 3]]]),  # T=4,P=3,R=2,S=0
+            'expected': 'CLASS_6_DEADLOCK'
         }
     ]
 
@@ -368,25 +469,27 @@ def verify_classic_games():
 
     passed = 0
     for test in classic_tests:
-        p1, p2 = get_canonical_form(test['matrix'])
-        fingerprint = f"{p1}|{p2}"
-
-        if fingerprint in topology_map:
-            actual = topology_map[fingerprint]['class']
-        else:
-            actual = "NOT FOUND"
+        actual_class = classify_by_trps_ordering(test['matrix'])
+        actual = actual_class.name
 
         status = "PASS" if actual == test['expected'] else "FAIL"
         if status == "PASS":
             passed += 1
 
+        # Extract T/R/P/S for display
+        p1 = test['matrix'][:, :, 0]
+        R, S, T, P = p1[0,0], p1[0,1], p1[1,0], p1[1,1]
+
         print(f"  {status}: {test['name']}")
+        print(f"         T={T}, R={R}, P={P}, S={S}")
         print(f"         Expected: {test['expected']}")
         print(f"         Actual:   {actual}")
         print()
 
     print("-" * 60)
     print(f"Results: {passed}/{len(classic_tests)} tests passed")
+
+    return passed == len(classic_tests)
 
 
 if __name__ == "__main__":

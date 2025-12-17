@@ -281,10 +281,10 @@ class Games2p2kHarvester:
                 rg_class=rg_class.name,
                 game_type=get_game_type_name(rg_class),
                 payoff_matrix={
-                    'AA': list(matrix[0, 0]),
-                    'AB': list(matrix[0, 1]),
-                    'BA': list(matrix[1, 0]),
-                    'BB': list(matrix[1, 1])
+                    'AA': [float(x) for x in matrix[0, 0]],
+                    'AB': [float(x) for x in matrix[0, 1]],
+                    'BA': [float(x) for x in matrix[1, 0]],
+                    'BB': [float(x) for x in matrix[1, 1]]
                 },
                 nash_analysis=nash_serializable,
                 verified=True

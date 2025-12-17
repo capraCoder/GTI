@@ -1,0 +1,2003 @@
+games:
+- canonical_fingerprint: (np.int64(0), np.int64(2), np.int64(1), np.int64(3))|(np.int64(3),
+    np.int64(2), np.int64(1), np.int64(0))
+  game_type: Prisoners_Dilemma
+  id: PD_CLASSIC
+  name: Prisoner's Dilemma (Classic)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 3.0
+    - 3.0
+    AB:
+    - 0.0
+    - 5.0
+    BA:
+    - 5.0
+    - 0.0
+    BB:
+    - 1.0
+    - 1.0
+  rg_class: CLASS_2_DILEMMA
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(1), np.int64(2))|(np.int64(0),
+    np.int64(1), np.int64(3), np.int64(2))
+  game_type: Chicken
+  id: CHICKEN_CLASSIC
+  name: Chicken (Classic)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 0
+      - 1
+    - - 1
+      - 0
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 3.0
+    - 3.0
+    AB:
+    - 2.0
+    - 4.0
+    BA:
+    - 4.0
+    - 2.0
+    BB:
+    - 1.0
+    - 1.0
+  rg_class: CLASS_3_CHICKEN
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(1), np.int64(2))|(np.int64(2),
+    np.int64(3), np.int64(1), np.int64(0))
+  game_type: Stag_Hunt
+  id: STAG_HUNT_CLASSIC
+  name: Stag Hunt (Classic)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 0
+      - 0
+    - - 1
+      - 1
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 4.0
+    - 4.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 3.0
+    - 1.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_4_STAG_HUNT
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(2), np.int64(1))|(np.int64(0),
+    np.int64(2), np.int64(3), np.int64(1))
+  game_type: Battle_of_Sexes
+  id: BOS_CLASSIC
+  name: Battle of Sexes (Classic)
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 0
+      - 0
+    - - 1
+      - 1
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 3.0
+    - 2.0
+    AB:
+    - 0.0
+    - 0.0
+    BA:
+    - 0.0
+    - 0.0
+    BB:
+    - 2.0
+    - 3.0
+  rg_class: CLASS_5_BATTLE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(2), np.int64(3), np.int64(1))|(np.int64(2),
+    np.int64(0), np.int64(1), np.int64(3))
+  game_type: Matching_Pennies
+  id: MATCHING_PENNIES
+  name: Matching Pennies
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 4
+    pure_ne_cells: []
+    pure_ne_count: 0
+  payoff_matrix:
+    AA:
+    - 1.0
+    - -1.0
+    AB:
+    - -1.0
+    - 1.0
+    BA:
+    - -1.0
+    - 1.0
+    BB:
+    - 1.0
+    - -1.0
+  rg_class: CLASS_8_ZERO_SUM
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(2), np.int64(3), np.int64(1))|(np.int64(0),
+    np.int64(2), np.int64(3), np.int64(1))
+  game_type: Coordination
+  id: COORDINATION_PURE
+  name: Pure Coordination
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 0
+      - 0
+    - - 1
+      - 1
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 2.0
+    - 2.0
+    AB:
+    - 0.0
+    - 0.0
+    BA:
+    - 0.0
+    - 0.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_1_WIN_WIN
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(0),
+    np.int64(2), np.int64(1), np.int64(3))
+  game_type: Dominance_Solvable
+  id: HARMONY
+  name: Harmony Game
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: 0
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 0
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 4.0
+    - 4.0
+    AB:
+    - 3.0
+    - 2.0
+    BA:
+    - 2.0
+    - 3.0
+    BB:
+    - 1.0
+    - 1.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(3),
+    np.int64(1), np.int64(2), np.int64(0))
+  game_type: Deadlock
+  id: DEADLOCK
+  name: Deadlock
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 1.0
+    - 1.0
+    AB:
+    - 0.0
+    - 3.0
+    BA:
+    - 3.0
+    - 0.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_6_DEADLOCK
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(2), np.int64(1), np.int64(3))|(np.int64(3),
+    np.int64(2), np.int64(1), np.int64(0))
+  game_type: Prisoners_Dilemma
+  id: PD_CLASSIC_SCALE2
+  name: Prisoner's Dilemma (Classic) (Scale 2x)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 6.0
+    - 6.0
+    AB:
+    - 0.0
+    - 10.0
+    BA:
+    - 10.0
+    - 0.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_2_DILEMMA
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(2), np.int64(1), np.int64(3))|(np.int64(3),
+    np.int64(2), np.int64(1), np.int64(0))
+  game_type: Prisoners_Dilemma
+  id: PD_CLASSIC_SCALE10
+  name: Prisoner's Dilemma (Classic) (Scale 10x)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 30.0
+    - 30.0
+    AB:
+    - 0.0
+    - 50.0
+    BA:
+    - 50.0
+    - 0.0
+    BB:
+    - 10.0
+    - 10.0
+  rg_class: CLASS_2_DILEMMA
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(1), np.int64(2))|(np.int64(0),
+    np.int64(1), np.int64(3), np.int64(2))
+  game_type: Chicken
+  id: CHICKEN_CLASSIC_SCALE2
+  name: Chicken (Classic) (Scale 2x)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 0
+      - 1
+    - - 1
+      - 0
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 6.0
+    - 6.0
+    AB:
+    - 4.0
+    - 8.0
+    BA:
+    - 8.0
+    - 4.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_3_CHICKEN
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(1), np.int64(2))|(np.int64(0),
+    np.int64(1), np.int64(3), np.int64(2))
+  game_type: Chicken
+  id: CHICKEN_CLASSIC_SCALE10
+  name: Chicken (Classic) (Scale 10x)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 0
+      - 1
+    - - 1
+      - 0
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 30.0
+    - 30.0
+    AB:
+    - 20.0
+    - 40.0
+    BA:
+    - 40.0
+    - 20.0
+    BB:
+    - 10.0
+    - 10.0
+  rg_class: CLASS_3_CHICKEN
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(1), np.int64(2))|(np.int64(2),
+    np.int64(3), np.int64(1), np.int64(0))
+  game_type: Stag_Hunt
+  id: STAG_HUNT_CLASSIC_SCALE2
+  name: Stag Hunt (Classic) (Scale 2x)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 0
+      - 0
+    - - 1
+      - 1
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 8.0
+    - 8.0
+    AB:
+    - 2.0
+    - 6.0
+    BA:
+    - 6.0
+    - 2.0
+    BB:
+    - 4.0
+    - 4.0
+  rg_class: CLASS_4_STAG_HUNT
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(1), np.int64(2))|(np.int64(2),
+    np.int64(3), np.int64(1), np.int64(0))
+  game_type: Stag_Hunt
+  id: STAG_HUNT_CLASSIC_SCALE10
+  name: Stag Hunt (Classic) (Scale 10x)
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 0
+      - 0
+    - - 1
+      - 1
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 40.0
+    - 40.0
+    AB:
+    - 10.0
+    - 30.0
+    BA:
+    - 30.0
+    - 10.0
+    BB:
+    - 20.0
+    - 20.0
+  rg_class: CLASS_4_STAG_HUNT
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(2), np.int64(1))|(np.int64(0),
+    np.int64(2), np.int64(3), np.int64(1))
+  game_type: Battle_of_Sexes
+  id: BOS_CLASSIC_SCALE2
+  name: Battle of Sexes (Classic) (Scale 2x)
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 0
+      - 0
+    - - 1
+      - 1
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 6.0
+    - 4.0
+    AB:
+    - 0.0
+    - 0.0
+    BA:
+    - 0.0
+    - 0.0
+    BB:
+    - 4.0
+    - 6.0
+  rg_class: CLASS_5_BATTLE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(3), np.int64(2), np.int64(1))|(np.int64(0),
+    np.int64(2), np.int64(3), np.int64(1))
+  game_type: Battle_of_Sexes
+  id: BOS_CLASSIC_SCALE10
+  name: Battle of Sexes (Classic) (Scale 10x)
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: null
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 0
+      - 0
+    - - 1
+      - 1
+    pure_ne_count: 2
+  payoff_matrix:
+    AA:
+    - 30.0
+    - 20.0
+    AB:
+    - 0.0
+    - 0.0
+    BA:
+    - 0.0
+    - 0.0
+    BB:
+    - 20.0
+    - 30.0
+  rg_class: CLASS_5_BATTLE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(0),
+    np.int64(1), np.int64(2), np.int64(3))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0000
+  name: Ordinal Game 0
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 2.0
+    - 2.0
+    BB:
+    - 3.0
+    - 3.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(0),
+    np.int64(1), np.int64(3), np.int64(2))
+  game_type: Intermediate
+  id: ORDINAL_0001
+  name: Ordinal Game 1
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 2.0
+    - 3.0
+    BB:
+    - 3.0
+    - 2.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(0),
+    np.int64(2), np.int64(1), np.int64(3))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0002
+  name: Ordinal Game 2
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 2.0
+    - 1.0
+    BB:
+    - 3.0
+    - 3.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(0),
+    np.int64(2), np.int64(3), np.int64(1))
+  game_type: Intermediate
+  id: ORDINAL_0003
+  name: Ordinal Game 3
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 2.0
+    - 3.0
+    BB:
+    - 3.0
+    - 1.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(0),
+    np.int64(3), np.int64(1), np.int64(2))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0004
+  name: Ordinal Game 4
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 2.0
+    - 1.0
+    BB:
+    - 3.0
+    - 2.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(0),
+    np.int64(3), np.int64(2), np.int64(1))
+  game_type: Intermediate
+  id: ORDINAL_0005
+  name: Ordinal Game 5
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 2.0
+    - 2.0
+    BB:
+    - 3.0
+    - 1.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(1),
+    np.int64(0), np.int64(2), np.int64(3))
+  game_type: Intermediate
+  id: ORDINAL_0006
+  name: Ordinal Game 6
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 2.0
+    - 2.0
+    BB:
+    - 3.0
+    - 3.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(1),
+    np.int64(0), np.int64(3), np.int64(2))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0007
+  name: Ordinal Game 7
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 2.0
+    - 3.0
+    BB:
+    - 3.0
+    - 2.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(1),
+    np.int64(2), np.int64(0), np.int64(3))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0008
+  name: Ordinal Game 8
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 2.0
+    - 0.0
+    BB:
+    - 3.0
+    - 3.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(1),
+    np.int64(2), np.int64(3), np.int64(0))
+  game_type: Intermediate
+  id: ORDINAL_0009
+  name: Ordinal Game 9
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 2.0
+    - 3.0
+    BB:
+    - 3.0
+    - 0.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(1),
+    np.int64(3), np.int64(0), np.int64(2))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0010
+  name: Ordinal Game 10
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 2.0
+    - 0.0
+    BB:
+    - 3.0
+    - 2.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(1),
+    np.int64(3), np.int64(2), np.int64(0))
+  game_type: Intermediate
+  id: ORDINAL_0011
+  name: Ordinal Game 11
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 2.0
+    - 2.0
+    BB:
+    - 3.0
+    - 0.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(2),
+    np.int64(0), np.int64(1), np.int64(3))
+  game_type: Intermediate
+  id: ORDINAL_0012
+  name: Ordinal Game 12
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 2.0
+    - 1.0
+    BB:
+    - 3.0
+    - 3.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(1),
+    np.int64(3), np.int64(0), np.int64(2))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0013
+  name: Ordinal Game 13
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 2.0
+    - 3.0
+    BB:
+    - 3.0
+    - 1.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(2),
+    np.int64(1), np.int64(0), np.int64(3))
+  game_type: Intermediate
+  id: ORDINAL_0014
+  name: Ordinal Game 14
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 2.0
+    - 0.0
+    BB:
+    - 3.0
+    - 3.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(2),
+    np.int64(1), np.int64(3), np.int64(0))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0015
+  name: Ordinal Game 15
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 2.0
+    - 3.0
+    BB:
+    - 3.0
+    - 0.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(2),
+    np.int64(3), np.int64(0), np.int64(1))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0016
+  name: Ordinal Game 16
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 2.0
+    - 0.0
+    BB:
+    - 3.0
+    - 1.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(2),
+    np.int64(3), np.int64(1), np.int64(0))
+  game_type: Intermediate
+  id: ORDINAL_0017
+  name: Ordinal Game 17
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 2.0
+    - 1.0
+    BB:
+    - 3.0
+    - 0.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(3),
+    np.int64(0), np.int64(1), np.int64(2))
+  game_type: Intermediate
+  id: ORDINAL_0018
+  name: Ordinal Game 18
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 2.0
+    - 1.0
+    BB:
+    - 3.0
+    - 2.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(3),
+    np.int64(0), np.int64(2), np.int64(1))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0019
+  name: Ordinal Game 19
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 2.0
+    - 2.0
+    BB:
+    - 3.0
+    - 1.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(3),
+    np.int64(1), np.int64(0), np.int64(2))
+  game_type: Intermediate
+  id: ORDINAL_0020
+  name: Ordinal Game 20
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 2.0
+    - 0.0
+    BB:
+    - 3.0
+    - 2.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(3),
+    np.int64(1), np.int64(2), np.int64(0))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0021
+  name: Ordinal Game 21
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 2.0
+    - 2.0
+    BB:
+    - 3.0
+    - 0.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(3),
+    np.int64(2), np.int64(0), np.int64(1))
+  game_type: Intermediate
+  id: ORDINAL_0022
+  name: Ordinal Game 22
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 2.0
+    - 0.0
+    BB:
+    - 3.0
+    - 1.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(3),
+    np.int64(2), np.int64(1), np.int64(0))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0023
+  name: Ordinal Game 23
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 4
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 2.0
+    - 1.0
+    BB:
+    - 3.0
+    - 0.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(0),
+    np.int64(1), np.int64(2), np.int64(3))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0024
+  name: Ordinal Game 24
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 3.0
+    - 2.0
+    BB:
+    - 2.0
+    - 3.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(0),
+    np.int64(1), np.int64(3), np.int64(2))
+  game_type: Intermediate
+  id: ORDINAL_0025
+  name: Ordinal Game 25
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 3.0
+    - 3.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(0),
+    np.int64(3), np.int64(1), np.int64(2))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0026
+  name: Ordinal Game 26
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 3.0
+    - 1.0
+    BB:
+    - 2.0
+    - 3.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(0),
+    np.int64(2), np.int64(3), np.int64(1))
+  game_type: Intermediate
+  id: ORDINAL_0027
+  name: Ordinal Game 27
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 3.0
+    - 3.0
+    BB:
+    - 2.0
+    - 1.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(0),
+    np.int64(3), np.int64(1), np.int64(2))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0028
+  name: Ordinal Game 28
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 3.0
+    - 1.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(0),
+    np.int64(3), np.int64(2), np.int64(1))
+  game_type: Intermediate
+  id: ORDINAL_0029
+  name: Ordinal Game 29
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 3.0
+    - 2.0
+    BB:
+    - 2.0
+    - 1.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(1),
+    np.int64(0), np.int64(2), np.int64(3))
+  game_type: Intermediate
+  id: ORDINAL_0030
+  name: Ordinal Game 30
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 3.0
+    - 2.0
+    BB:
+    - 2.0
+    - 3.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(1),
+    np.int64(0), np.int64(3), np.int64(2))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0031
+  name: Ordinal Game 31
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 3.0
+    - 3.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(1),
+    np.int64(2), np.int64(0), np.int64(3))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0032
+  name: Ordinal Game 32
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 3.0
+    - 0.0
+    BB:
+    - 2.0
+    - 3.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(1),
+    np.int64(2), np.int64(3), np.int64(0))
+  game_type: Intermediate
+  id: ORDINAL_0033
+  name: Ordinal Game 33
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 3.0
+    - 3.0
+    BB:
+    - 2.0
+    - 0.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(3),
+    np.int64(0), np.int64(2), np.int64(1))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0034
+  name: Ordinal Game 34
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 3.0
+    - 0.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(1),
+    np.int64(3), np.int64(2), np.int64(0))
+  game_type: Intermediate
+  id: ORDINAL_0035
+  name: Ordinal Game 35
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 1.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 3.0
+    - 2.0
+    BB:
+    - 2.0
+    - 0.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(2),
+    np.int64(0), np.int64(1), np.int64(3))
+  game_type: Intermediate
+  id: ORDINAL_0036
+  name: Ordinal Game 36
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 3.0
+    - 1.0
+    BB:
+    - 2.0
+    - 3.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(1),
+    np.int64(2), np.int64(0), np.int64(3))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0037
+  name: Ordinal Game 37
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 3.0
+    - 3.0
+    BB:
+    - 2.0
+    - 1.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(2),
+    np.int64(1), np.int64(0), np.int64(3))
+  game_type: Intermediate
+  id: ORDINAL_0038
+  name: Ordinal Game 38
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 3.0
+    - 0.0
+    BB:
+    - 2.0
+    - 3.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(2),
+    np.int64(1), np.int64(3), np.int64(0))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0039
+  name: Ordinal Game 39
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 3.0
+    - 3.0
+    BB:
+    - 2.0
+    - 0.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(2),
+    np.int64(3), np.int64(0), np.int64(1))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0040
+  name: Ordinal Game 40
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 3.0
+    - 0.0
+    BB:
+    - 2.0
+    - 1.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(2),
+    np.int64(3), np.int64(1), np.int64(0))
+  game_type: Intermediate
+  id: ORDINAL_0041
+  name: Ordinal Game 41
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 2.0
+    AB:
+    - 1.0
+    - 3.0
+    BA:
+    - 3.0
+    - 1.0
+    BB:
+    - 2.0
+    - 0.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(3),
+    np.int64(0), np.int64(1), np.int64(2))
+  game_type: Intermediate
+  id: ORDINAL_0042
+  name: Ordinal Game 42
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 3.0
+    - 1.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(1),
+    np.int64(2), np.int64(0), np.int64(3))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0043
+  name: Ordinal Game 43
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 0.0
+    BA:
+    - 3.0
+    - 2.0
+    BB:
+    - 2.0
+    - 1.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(3),
+    np.int64(1), np.int64(0), np.int64(2))
+  game_type: Intermediate
+  id: ORDINAL_0044
+  name: Ordinal Game 44
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 3.0
+    - 0.0
+    BB:
+    - 2.0
+    - 2.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(2), np.int64(3))|(np.int64(2),
+    np.int64(1), np.int64(3), np.int64(0))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0045
+  name: Ordinal Game 45
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 1.0
+    BA:
+    - 3.0
+    - 2.0
+    BB:
+    - 2.0
+    - 0.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(3),
+    np.int64(2), np.int64(0), np.int64(1))
+  game_type: Intermediate
+  id: ORDINAL_0046
+  name: Ordinal Game 46
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 4
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 3.0
+    - 0.0
+    BB:
+    - 2.0
+    - 1.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(1), np.int64(3), np.int64(2))|(np.int64(3),
+    np.int64(2), np.int64(1), np.int64(0))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0047
+  name: Ordinal Game 47
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 0
+    pareto_optimal_count: 3
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 3.0
+    AB:
+    - 1.0
+    - 2.0
+    BA:
+    - 3.0
+    - 1.0
+    BB:
+    - 2.0
+    - 0.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(2), np.int64(1), np.int64(3))|(np.int64(0),
+    np.int64(1), np.int64(2), np.int64(3))
+  game_type: Dominance_Solvable
+  id: ORDINAL_0048
+  name: Ordinal Game 48
+  nash_analysis:
+    is_symmetric: true
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: 1
+    pareto_optimal_count: 1
+    pure_ne_cells:
+    - - 1
+      - 1
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 2.0
+    - 1.0
+    BA:
+    - 1.0
+    - 2.0
+    BB:
+    - 3.0
+    - 3.0
+  rg_class: CLASS_12_DOMINANCE
+  source: games2p2k
+  verified: true
+- canonical_fingerprint: (np.int64(0), np.int64(2), np.int64(1), np.int64(3))|(np.int64(0),
+    np.int64(1), np.int64(3), np.int64(2))
+  game_type: Intermediate
+  id: ORDINAL_0049
+  name: Ordinal Game 49
+  nash_analysis:
+    is_symmetric: false
+    p1_dominant_strategy: 1
+    p2_dominant_strategy: null
+    pareto_optimal_count: 2
+    pure_ne_cells:
+    - - 1
+      - 0
+    pure_ne_count: 1
+  payoff_matrix:
+    AA:
+    - 0.0
+    - 0.0
+    AB:
+    - 2.0
+    - 1.0
+    BA:
+    - 1.0
+    - 3.0
+    BB:
+    - 3.0
+    - 2.0
+  rg_class: CLASS_10_INTERMEDIATE
+  source: games2p2k
+  verified: true
+metadata:
+  count: 66
+  source: games2p2k
+  unique_fingerprints: 50

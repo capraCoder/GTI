@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Output files
+*.png
+*.json
+results/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# API keys - NEVER commit these!
+**/api_key*
+**/secret*
