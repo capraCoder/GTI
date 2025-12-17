@@ -553,9 +553,15 @@ def render_sidebar():
         
         st.markdown("---")
         st.markdown(
-            "<div style='text-align:center; opacity:0.6; font-size:0.8rem;'>"
-            "v3.1 • <a href='https://github.com/capraCoder/GTI' target='_blank'>GitHub</a>"
-            "</div>",
+            """
+            <div style='text-align:center; opacity:0.7; font-size:0.8rem;'>
+                <b>v3.2</b> • <a href='https://github.com/capraCoder/GTI' target='_blank' style='text-decoration:none; color:inherit;'>GitHub</a>
+                <br><br>
+                <a href='https://doi.org/10.5281/zenodo.17967973' target='_blank'>
+                    <img src='https://zenodo.org/badge/DOI/10.5281/zenodo.17967973.svg' alt='DOI' style='height:20px;'>
+                </a>
+            </div>
+            """,
             unsafe_allow_html=True
         )
         
@@ -905,35 +911,49 @@ def render_dossier(report, view_mode=None):
         
         game_type = report.game_type if isinstance(report.game_type, str) else report.game_type.value
         
-        if is_deceptive and not show_revealed:
-            # Show "fake" cooperation matrix
-            st.markdown("""
-            <div style="text-align: center; padding: 1rem;">
-                <p style="color: #3b82f6; font-weight: bold;">STATED GAME: Coordination</p>
-                <table style="margin: auto; border-collapse: collapse; font-size: 0.9rem;">
-                    <tr><td></td><td style="padding: 10px; font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 10px; font-weight: bold; color: #475569;">Defect</td></tr>
-                    <tr><td style="font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 15px; background: #f0fdf4; border: 1px solid #e2e8f0;">✓ Win-Win</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose</td></tr>
-                    <tr><td style="font-weight: bold; color: #475569;">Defect</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose-Lose</td></tr>
-                </table>
-                <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">What they want you to believe</p>
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            # Show true matrix
-            if "Chicken" in game_type:
-                st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Chicken_Game.svg/400px-Chicken_Game.svg.png")
-            else:
+        # Try to use the engine's beautiful matplotlib renderer
+        matrix_rendered = False
+        if hasattr(report, 'matrix') and hasattr(report.matrix, 'payoff_CC'):
+            try:
+                matrix_buf = render_strategic_matrix(report, show_shadow=show_revealed)
+                if matrix_buf:
+                    st.image(matrix_buf, use_container_width=True, 
+                            caption=f"Payoff Matrix ({'Revealed' if show_revealed else 'Public View'})")
+                    matrix_rendered = True
+            except Exception:
+                pass  # Fall back to HTML
+        
+        # Fallback to HTML tables (for demo mode or if matplotlib fails)
+        if not matrix_rendered:
+            if is_deceptive and not show_revealed:
+                # Show "fake" cooperation matrix
                 st.markdown("""
                 <div style="text-align: center; padding: 1rem;">
-                    <p style="color: #dc2626; font-weight: bold;">TRUE GAME: Prisoner's Dilemma</p>
+                    <p style="color: #3b82f6; font-weight: bold;">STATED GAME: Coordination</p>
                     <table style="margin: auto; border-collapse: collapse; font-size: 0.9rem;">
                         <tr><td></td><td style="padding: 10px; font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 10px; font-weight: bold; color: #475569;">Defect</td></tr>
-                        <tr><td style="font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 15px; background: #f8fafc; border: 1px solid #e2e8f0;">(3, 3)</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">(0, 5) 🎯</td></tr>
-                        <tr><td style="font-weight: bold; color: #475569;">Defect</td><td style="padding: 15px; background: #f0fdf4; border: 1px solid #e2e8f0;">(5, 0)</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0; font-weight: bold;">★ (1, 1)</td></tr>
+                        <tr><td style="font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 15px; background: #f0fdf4; border: 1px solid #e2e8f0;">✓ Win-Win</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose</td></tr>
+                        <tr><td style="font-weight: bold; color: #475569;">Defect</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">Lose-Lose</td></tr>
                     </table>
-                    <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">★ Nash Equilibrium: Defect/Defect<br>🎯 Company A's target: Defect while B Cooperates</p>
+                    <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">What they want you to believe</p>
                 </div>
                 """, unsafe_allow_html=True)
+            else:
+                # Show true matrix
+                if "Chicken" in game_type:
+                    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Chicken_Game.svg/400px-Chicken_Game.svg.png")
+                else:
+                    st.markdown("""
+                    <div style="text-align: center; padding: 1rem;">
+                        <p style="color: #dc2626; font-weight: bold;">TRUE GAME: Prisoner's Dilemma</p>
+                        <table style="margin: auto; border-collapse: collapse; font-size: 0.9rem;">
+                            <tr><td></td><td style="padding: 10px; font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 10px; font-weight: bold; color: #475569;">Defect</td></tr>
+                            <tr><td style="font-weight: bold; color: #475569;">Cooperate</td><td style="padding: 15px; background: #f8fafc; border: 1px solid #e2e8f0;">(3, 3)</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0;">(0, 5) 🎯</td></tr>
+                            <tr><td style="font-weight: bold; color: #475569;">Defect</td><td style="padding: 15px; background: #f0fdf4; border: 1px solid #e2e8f0;">(5, 0)</td><td style="padding: 15px; background: #fef2f2; border: 1px solid #e2e8f0; font-weight: bold;">★ (1, 1)</td></tr>
+                        </table>
+                        <p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">★ Nash Equilibrium: Defect/Defect<br>🎯 Company A's target: Defect while B Cooperates</p>
+                    </div>
+                    """, unsafe_allow_html=True)
         
         if show_revealed:
             st.caption("⚠️ Displaying TRUE incentive structure")
