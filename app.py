@@ -551,14 +551,6 @@ def render_sidebar():
         Based on Nobel Prize-winning game theory frameworks.
         """)
         
-        st.markdown("---")
-        st.markdown(
-            "<div style='text-align:center; opacity:0.6; font-size:0.8rem;'>"
-            "v3.2 • <a href='https://github.com/capraCoder/GTI' target='_blank'>GitHub</a>"
-            "</div>",
-            unsafe_allow_html=True
-        )
-        
         return "demo" if "Demo" in mode else "live"
 
 def render_input_section():
@@ -1018,7 +1010,6 @@ def main():
     if mode == "live" and HAS_ENGINE:
         try:
             engine = GTIEngine()
-            st.sidebar.success("✓ GTI Engine connected")
         except Exception as e:
             st.sidebar.error(f"Engine error: {e}")
             engine = MockEngine()
