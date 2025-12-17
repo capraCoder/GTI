@@ -19,6 +19,7 @@ Author: GTI Project
 """
 
 import streamlit as st
+import streamlit.components.v1 as components
 import json
 import time
 import os
@@ -34,6 +35,15 @@ st.set_page_config(
     page_icon="♟️",
     layout="wide",
     initial_sidebar_state="expanded"
+)
+
+# --- ANALYTICS (GoatCounter) ---
+components.html(
+    """
+    <script data-goatcounter="https://capracoder-gti.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    """,
+    height=0,
 )
 
 # --- CUSTOM CSS ---
@@ -798,6 +808,20 @@ def main():
                 # Store in session for persistence
                 st.session_state.last_report = report
                 st.session_state.last_input = input_text
+                
+                # Track successful analysis (GoatCounter event)
+                components.html(
+                    """
+                    <script data-goatcounter="https://capracoder-gti.goatcounter.com/count"
+                            async src="//gc.zgo.at/count.js"></script>
+                    <script>
+                        if (typeof goatcounter !== 'undefined') {
+                            goatcounter.count({path: '/analysis-submitted', event: true});
+                        }
+                    </script>
+                    """,
+                    height=0,
+                )
                 
             except Exception as e:
                 st.error(f"Analysis failed: {e}")
