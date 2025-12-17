@@ -52,138 +52,151 @@ def track_pageview(path="/"):
 # Track main page view
 track_pageview("/")
 
-# --- CUSTOM CSS ---
+# --- CUSTOM CSS (Enterprise Edition) ---
 st.markdown("""
 <style>
-    /* Main Background */
+    /* 1. GLOBAL RESET & TYPOGRAPHY */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    html, body, [class*="css"] {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: #F1F5F9;
+        color: #0F172A;
+    }
+    
     .stApp {
-        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
-        font-family: 'Inter', 'Helvetica Neue', sans-serif;
+        background-color: #F1F5F9;
+    }
+
+    /* 2. INPUT AREA (The "Command Center") */
+    .stTextArea textarea {
+        background-color: #FFFFFF !important;
+        border: 1px solid #CBD5E1 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+        font-size: 16px !important;
+        padding: 1.5rem !important;
+        color: #334155 !important;
+        transition: all 0.2s ease;
     }
     
-    /* Header styling */
-    .main-header {
-        background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
-        padding: 1.5rem 2rem;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-        color: white;
+    .stTextArea textarea:focus {
+        border-color: #2563EB !important;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
     }
-    
-    .main-header h1 {
+
+    /* 3. BUTTONS (Flat & Modern) */
+    .stButton > button {
+        background-color: #0F172A !important;
         color: white !important;
-        margin: 0;
+        border: none !important;
+        border-radius: 6px !important;
+        padding: 0.6rem 1.2rem !important;
+        font-weight: 500 !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+        transition: all 0.1s;
     }
     
-    /* Dossier Card */
+    .stButton > button:hover {
+        background-color: #334155 !important;
+        transform: translateY(-1px);
+    }
+
+    /* 4. CARDS (The "Dossier" Look) */
     .dossier-card {
         background: white;
-        padding: 1.5rem;
+        padding: 2rem;
         border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        border-left: 5px solid #2c3e50;
-        margin-bottom: 1rem;
+        border: 1px solid #E2E8F0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5rem;
     }
     
-    .dossier-card h4 {
-        color: #1a1a2e;
-        margin-top: 0;
-    }
-    
-    /* Alert Banners */
-    .alert-deception {
+    /* 5. METRICS (KPI Style) */
+    div[data-testid="metric-container"] {
+        background-color: white;
         padding: 1rem 1.5rem;
-        background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
-        color: white;
         border-radius: 8px;
-        font-weight: 600;
-        margin: 1rem 0;
-        box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        border: 1px solid #E2E8F0;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
     
-    .alert-safe {
-        padding: 1rem 1.5rem;
-        background: linear-gradient(90deg, #059669 0%, #047857 100%);
-        color: white;
-        border-radius: 8px;
-        font-weight: 600;
-        margin: 1rem 0;
+    div[data-testid="stMetricValue"] {
+        font-size: 28px !important;
+        font-weight: 700 !important;
+        color: #0F172A !important;
     }
     
-    .alert-warning {
-        padding: 1rem 1.5rem;
-        background: linear-gradient(90deg, #d97706 0%, #b45309 100%);
-        color: white;
-        border-radius: 8px;
-        font-weight: 600;
-        margin: 1rem 0;
-    }
-    
-    /* Metrics Cards */
-    .metric-card {
-        background: white;
-        padding: 1.2rem;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    
-    .metric-card .value {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #1a1a2e;
-    }
-    
-    .metric-card .label {
-        font-size: 0.85rem;
-        color: #64748b;
+    div[data-testid="stMetricLabel"] {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: #64748B !important;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.05em;
     }
+
+    /* 6. HIDE STREAMLIT CHROME */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stDeployButton {display: none;}
+    [data-testid="stStatusWidget"] {display: none;}
+    [data-testid="stToolbar"] {display: none;}
+    .viewerBadge_container__r5tak {display: none;}
+    .styles_viewerBadge__CvC9N {display: none;}
+    [data-testid="stDecoration"] {display: none;}
     
-    /* Matrix section */
-    .matrix-container {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-    
-    /* Player cards */
-    .player-card {
-        background: #f8fafc;
+    /* 7. CUSTOM ALERTS */
+    .alert-box {
         padding: 1rem;
         border-radius: 8px;
-        border: 1px solid #e2e8f0;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 14px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .alert-danger { background: #FEF2F2; color: #991B1B; border: 1px solid #FEE2E2; }
+    .alert-success { background: #F0FDF4; color: #166534; border: 1px solid #DCFCE7; }
+    .alert-warning { background: #FFFBEB; color: #92400E; border: 1px solid #FEF3C7; }
+    
+    /* 8. PLAYER CARDS */
+    .player-card {
+        background: #F8FAFC;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid #E2E8F0;
         margin-bottom: 0.5rem;
     }
     
-    /* Evidence lists - Professional muted palette */
+    /* 9. EVIDENCE ITEMS */
     .evidence-item {
-        background: #fafafa;
+        background: #F8FAFC;
         padding: 0.5rem 1rem;
         border-radius: 4px;
         margin: 0.3rem 0;
-        border-left: 3px solid #64748b;
+        border-left: 3px solid #64748B;
         font-size: 0.9rem;
         color: #334155;
     }
     
     .evidence-item.deception {
-        background: #fef2f2;
-        border-left: 3px solid #dc2626;
-        color: #7f1d1d;
+        background: #FEF2F2;
+        border-left: 3px solid #DC2626;
+        color: #7F1D1D;
     }
     
     .evidence-item.credible {
-        background: #f0fdf4;
-        border-left: 3px solid #16a34a;
-        color: #14532d;
+        background: #F0FDF4;
+        border-left: 3px solid #16A34A;
+        color: #14532D;
     }
     
-    /* Prescription box */
+    /* 10. PRESCRIPTION BOX */
     .prescription-box {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        background: #0F172A;
         color: white;
         padding: 1.5rem;
         border-radius: 12px;
@@ -191,139 +204,37 @@ st.markdown("""
     }
     
     .prescription-box h4 {
-        color: #60a5fa;
+        color: #60A5FA;
         margin-top: 0;
     }
     
-    /* Hide Streamlit branding */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    .stDeployButton {display: none;}
-    [data-testid="stStatusWidget"] {display: none;}
-    [data-testid="stToolbar"] {display: none;}
-    .viewerBadge_container__r5tak {display: none;}
-    .styles_viewerBadge__CvC9N {display: none;}
-    
-    /* Input text area styling */
-    .stTextArea textarea {
-        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
-        border: 2px dashed #f59e0b !important;
-        border-radius: 12px !important;
-        font-size: 1rem !important;
-        padding: 1rem !important;
+    /* 11. MATRIX CONTAINER */
+    .matrix-container {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid #E2E8F0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
     
-    .stTextArea textarea:focus {
-        border: 2px solid #f59e0b !important;
-        box-shadow: 0 0 15px rgba(245, 158, 11, 0.3) !important;
-    }
-    
-    .stTextArea textarea::placeholder {
-        color: #92400e !important;
-        opacity: 0.7 !important;
-    }
-    
-    .input-instructions {
-        background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
-        padding: 1rem 1.5rem;
-        border-radius: 10px;
-        border-left: 4px solid #f59e0b;
-        margin-bottom: 1rem;
-        color: #78350f;
-    }
-    
-    .input-instructions h4 {
-        margin: 0 0 0.5rem 0;
-        color: #92400e;
-    }
-    
-    /* Improve button styling */
-    .stButton > button {
-        background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
-        color: white;
-        font-weight: 600;
-        padding: 0.75rem 2rem;
-        border-radius: 8px;
-        border: none;
-        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-        transition: all 0.3s ease;
-    }
-    
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-    }
-    
-    /* Hero Section */
-    .hero-section {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-        padding: 2.5rem 2rem;
-        border-radius: 16px;
+    /* 12. MINIMAL HEADER */
+    .app-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
         margin-bottom: 1.5rem;
-        color: white;
-        text-align: center;
-        box-shadow: 0 10px 40px rgba(26, 26, 46, 0.3);
+        border-bottom: 1px solid #E2E8F0;
     }
     
-    .hero-section h1 {
-        color: white !important;
-        font-size: 2.5rem;
-        margin: 0 0 0.5rem 0;
-        font-weight: 700;
-    }
-    
-    .hero-tagline {
-        font-size: 1.3rem;
-        color: #60a5fa;
-        margin: 0 0 1rem 0;
-        font-weight: 500;
-    }
-    
-    .hero-description {
-        font-size: 1.05rem;
-        color: #cbd5e1;
-        margin: 0 0 1.5rem 0;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-    }
-    
-    .trust-badges {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-    }
-    
-    .trust-badge {
-        background: rgba(255,255,255,0.1);
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        color: #e2e8f0;
-        border: 1px solid rgba(255,255,255,0.2);
-    }
-    
-    .use-cases {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 1.5rem;
-        flex-wrap: wrap;
-    }
-    
-    .use-case {
-        text-align: center;
-        color: #94a3b8;
-        font-size: 0.9rem;
-    }
-    
-    .use-case-icon {
-        font-size: 1.5rem;
-        display: block;
-        margin-bottom: 0.3rem;
+    .status-badge {
+        background: #DCFCE7;
+        color: #166534;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+        border: 1px solid #86EFAC;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -476,43 +387,17 @@ def render_metric_card(label: str, value: str, color: str = "#1a1a2e"):
 
 # --- UI COMPONENTS ---
 def render_header():
-    st.markdown("""
-    <div class="hero-section">
-        <h1>🎯 GTI: Game Theory Intelligence</h1>
-        <p class="hero-tagline">See the Hidden Game Being Played</p>
-        <p class="hero-description">
-            Paste any conflict, contract, or negotiation. Our AI decodes the strategic dynamics, 
-            detects deception, and reveals what each player <em>really</em> wants.
-        </p>
-        <div class="trust-badges">
-            <span class="trust-badge">🏆 Based on Nobel Prize-winning Game Theory</span>
-            <span class="trust-badge">🌍 Works in Any Language</span>
-            <span class="trust-badge">🔒 Private & Secure</span>
+    """Minimal enterprise header"""
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.markdown("## ♟️ Strategic Radar")
+        st.caption("Game Theory Intelligence Engine • Enterprise Edition")
+    with col2:
+        st.markdown("""
+        <div style="text-align: right; padding-top: 10px;">
+            <span class="status-badge">● SYSTEM ONLINE</span>
         </div>
-        <div class="use-cases">
-            <div class="use-case">
-                <span class="use-case-icon">📜</span>
-                Contracts
-            </div>
-            <div class="use-case">
-                <span class="use-case-icon">🤝</span>
-                Negotiations
-            </div>
-            <div class="use-case">
-                <span class="use-case-icon">📰</span>
-                News Articles
-            </div>
-            <div class="use-case">
-                <span class="use-case-icon">⚔️</span>
-                Conflicts
-            </div>
-            <div class="use-case">
-                <span class="use-case-icon">💼</span>
-                Business Deals
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
 def render_sidebar():
     with st.sidebar:
@@ -559,42 +444,31 @@ def render_sidebar():
         return "demo" if "Demo" in mode else "live"
 
 def render_input_section():
-    # Instruction box - shorter since hero explains
-    st.markdown("""
-    <div class="input-instructions">
-        <h4>👇 Drop Your Text Below</h4>
-        <p style="margin: 0;">
-            Contract, negotiation, news, conflict — <b>any language</b>. Then hit <b>Analyze</b>.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-    
+    """Clean enterprise input section"""
     # Initialize session state
     if 'input_text' not in st.session_state:
         st.session_state.input_text = ""
     
+    st.markdown("##### Intelligence Source")
     text = st.text_area(
-        "Your situation:",
+        "Input",
         value=st.session_state.input_text,
-        height=150,
-        placeholder="Example: 'My business partner says he's committed to our venture, but I noticed he's been meeting with our competitor...'"
-        ,label_visibility="collapsed"
+        height=180,
+        placeholder="Paste negotiation emails, contract terms, or conflict scenarios here...",
+        label_visibility="collapsed"
     )
     
-    col1, col2 = st.columns([3, 1])
+    col1, col2 = st.columns([1, 4])
     with col1:
-        analyze_btn = st.button("🔍 ANALYZE SITUATION", type="primary", use_container_width=True)
+        analyze_btn = st.button("RUN ANALYSIS", type="primary", use_container_width=True)
     with col2:
-        clear_btn = st.button("🗑️ Clear", use_container_width=True)
-    
-    if clear_btn:
-        st.session_state.input_text = ""
-        # Also clear previous analysis results
-        if 'last_report' in st.session_state:
-            del st.session_state.last_report
-        if 'last_input' in st.session_state:
-            del st.session_state.last_input
-        st.rerun()
+        if st.button("Clear", type="secondary"):
+            st.session_state.input_text = ""
+            if 'last_report' in st.session_state:
+                del st.session_state.last_report
+            if 'last_input' in st.session_state:
+                del st.session_state.last_input
+            st.rerun()
     
     return text, analyze_btn
 
