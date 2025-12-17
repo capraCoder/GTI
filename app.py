@@ -19,7 +19,6 @@ Author: GTI Project
 """
 
 import streamlit as st
-import streamlit.components.v1 as components
 import json
 import time
 import os
@@ -37,14 +36,20 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# --- ANALYTICS (GoatCounter) ---
-components.html(
-    """
-    <script data-goatcounter="https://capracoder-gti.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
-    """,
-    height=0,
-)
+# --- ANALYTICS (GoatCounter - Pixel Tracker) ---
+# Using pixel tracker instead of JS for reliability in Streamlit iframes
+import urllib.parse
+def track_pageview(path="/"):
+    """Track a pageview using GoatCounter pixel"""
+    encoded_path = urllib.parse.quote(path, safe='')
+    pixel_url = f"https://capracoder-gti.goatcounter.com/count?p={encoded_path}"
+    st.markdown(
+        f'<img src="{pixel_url}" alt="" style="position:absolute;left:-9999px;">',
+        unsafe_allow_html=True
+    )
+
+# Track main page view
+track_pageview("/")
 
 # --- CUSTOM CSS ---
 st.markdown("""
@@ -859,19 +864,8 @@ def main():
                 st.session_state.last_report = report
                 st.session_state.last_input = input_text
                 
-                # Track successful analysis (GoatCounter event)
-                components.html(
-                    """
-                    <script data-goatcounter="https://capracoder-gti.goatcounter.com/count"
-                            async src="//gc.zgo.at/count.js"></script>
-                    <script>
-                        if (typeof goatcounter !== 'undefined') {
-                            goatcounter.count({path: '/analysis-submitted', event: true});
-                        }
-                    </script>
-                    """,
-                    height=0,
-                )
+                # Track successful analysis (GoatCounter pixel)
+                track_pageview("/analysis-submitted")
                 
             except Exception as e:
                 st.error(f"Analysis failed: {e}")
