@@ -553,15 +553,9 @@ def render_sidebar():
         
         st.markdown("---")
         st.markdown(
-            """
-            <div style='text-align:center; opacity:0.7; font-size:0.8rem;'>
-                <b>v3.2</b> • <a href='https://github.com/capraCoder/GTI' target='_blank' style='text-decoration:none; color:inherit;'>GitHub</a>
-                <br><br>
-                <a href='https://doi.org/10.5281/zenodo.17967973' target='_blank'>
-                    <img src='https://zenodo.org/badge/DOI/10.5281/zenodo.17967973.svg' alt='DOI' style='height:20px;'>
-                </a>
-            </div>
-            """,
+            "<div style='text-align:center; opacity:0.6; font-size:0.8rem;'>"
+            "v3.2 • <a href='https://github.com/capraCoder/GTI' target='_blank'>GitHub</a>"
+            "</div>",
             unsafe_allow_html=True
         )
         
