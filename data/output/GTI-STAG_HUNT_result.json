@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-STAG_HUNT",
+  "title": "Stag Hunt Coordination Game",
+  "source_file": "D:\\CaprazliIndex\\GTI\\data\\raw\\stag_hunt.txt",
+  "game_type": "Stag_Hunt",
+  "confidence": 95,
+  "reasoning": "R(4) > T(3) > P(2) > S(1): Cooperate best, defect safe"
+}

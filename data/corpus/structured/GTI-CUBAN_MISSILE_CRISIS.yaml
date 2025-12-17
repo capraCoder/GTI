@@ -1,0 +1,43 @@
+case_id: GTI-CUBAN_MISSILE_CRISIS
+title: Cuban Missile Crisis
+payoffs:
+  players:
+  - USA
+  - USSR
+  options:
+    USA:
+    - Blockade
+    - Air_Strike
+    USSR:
+    - Withdraw
+    - Hold_Firm
+  matrix:
+    Blockade_Withdraw:
+    - 3
+    - 2
+    Blockade_Hold_Firm:
+    - 2
+    - 3
+    Air_Strike_Withdraw:
+    - 4
+    - 1
+    Air_Strike_Hold_Firm:
+    - 1
+    - 1
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Back-channel communication available
+  - Both prefer avoiding nuclear war
+  - Face-saving outcomes preferred
+  flags:
+  - chicken-game

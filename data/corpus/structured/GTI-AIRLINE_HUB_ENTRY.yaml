@@ -1,0 +1,45 @@
+case_id: GTI-AIRLINE_HUB_ENTRY
+title: Airport Hub Entry and Predatory Pricing
+payoffs:
+  players:
+  - Southwest
+  - Delta
+  options:
+    Southwest:
+    - Enter
+    - Stay_Out
+    Delta:
+    - Accommodate
+    - Fight
+  matrix:
+    Enter_Accommodate:
+    - 3
+    - 2
+    Enter_Fight:
+    - 1
+    - 1
+    Stay_Out_Accommodate:
+    - 2
+    - 4
+    Stay_Out_Fight:
+    - 2
+    - 4
+information:
+  timing: sequential
+  move_order:
+  - Southwest
+  - Delta
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Delta has deep pockets
+  - Fighting deters future entrants
+  - Delta has history of fighting entrants
+  flags:
+  - credibility-issue

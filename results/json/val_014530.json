@@ -1,0 +1,218 @@
+{
+  "n": 50,
+  "correct": 5,
+  "accuracy": 0.1,
+  "by_type": {
+    "Peace": {
+      "correct": 0,
+      "total": 5
+    },
+    "Chicken": {
+      "correct": 2,
+      "total": 7
+    },
+    "Coordination_Game": {
+      "correct": 0,
+      "total": 7
+    },
+    "Stag_Hunt": {
+      "correct": 0,
+      "total": 7
+    },
+    "Battle_of_the_Sexes": {
+      "correct": 3,
+      "total": 9
+    },
+    "Concord": {
+      "correct": 0,
+      "total": 4
+    },
+    "Hero": {
+      "correct": 0,
+      "total": 4
+    },
+    "Assurance_Game": {
+      "correct": 0,
+      "total": 1
+    },
+    "Harmony": {
+      "correct": 0,
+      "total": 2
+    },
+    "Deadlock": {
+      "correct": 0,
+      "total": 2
+    },
+    "Prisoners_Dilemma": {
+      "correct": 0,
+      "total": 1
+    },
+    "Compromise": {
+      "correct": 0,
+      "total": 1
+    }
+  },
+  "confusion": {
+    "Peace": {
+      "Chicken": 2,
+      "Deadlock": 1,
+      "Coordination_Game": 2
+    },
+    "Chicken": {
+      "Hero": 2,
+      "Deadlock": 3,
+      "Chicken": 2
+    },
+    "Coordination_Game": {
+      "Chicken": 3,
+      "Battle_of_the_Sexes": 1,
+      "Hero": 2,
+      "Harmony": 1
+    },
+    "Stag_Hunt": {
+      "Compromise": 1,
+      "Prisoners_Dilemma": 1,
+      "Deadlock": 4,
+      "Hero": 1
+    },
+    "Battle_of_the_Sexes": {
+      "Hero": 3,
+      "Battle_of_the_Sexes": 3,
+      "Deadlock": 2,
+      "Chicken": 1
+    },
+    "Concord": {
+      "Deadlock": 2,
+      "Harmony": 1,
+      "Stag_Hunt": 1
+    },
+    "Hero": {
+      "Compromise": 1,
+      "Battle_of_the_Sexes": 1,
+      "Prisoners_Dilemma": 1,
+      "Chicken": 1
+    },
+    "Assurance_Game": {
+      "Hero": 1
+    },
+    "Harmony": {
+      "Chicken": 1,
+      "Compromise": 1
+    },
+    "Deadlock": {
+      "Compromise": 1,
+      "Chicken": 1
+    },
+    "Prisoners_Dilemma": {
+      "Hero": 1
+    },
+    "Compromise": {
+      "Hero": 1
+    }
+  },
+  "samples": [
+    {
+      "id": "939",
+      "raw": "**Chicken**\n\nIn this game:\n- The row player has two strategies: A an",
+      "norm": "Chicken"
+    },
+    {
+      "id": "1895",
+      "raw": "**Hero**",
+      "norm": "Hero"
+    },
+    {
+      "id": "1166",
+      "raw": "Chicken",
+      "norm": "Chicken"
+    },
+    {
+      "id": "785",
+      "raw": "**Compromise**\n\nIn a Compromise game, both players have conflicting preferred outcomes, but",
+      "norm": "Compromise"
+    },
+    {
+      "id": "1547",
+      "raw": "Deadlock",
+      "norm": "Deadlock"
+    },
+    {
+      "id": "373",
+      "raw": "Hero",
+      "norm": "Hero"
+    },
+    {
+      "id": "2414",
+      "raw": "**Battle_of_the_Sexes**",
+      "norm": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "1706",
+      "raw": "**Chicken**\n\nIn this game, from the column player's perspective:\n- Against A",
+      "norm": "Chicken"
+    },
+    {
+      "id": "74",
+      "raw": "**Deadlock**\n\nLooking at this from the column player's perspective:\n- Column player",
+      "norm": "Deadlock"
+    },
+    {
+      "id": "1288",
+      "raw": "**Prisoners_Dilemma**\n\nLooking at this from the column player's perspective:",
+      "norm": "Prisoners_Dilemma"
+    },
+    {
+      "id": "1187",
+      "raw": "Battle_of_the_Sexes",
+      "norm": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2233",
+      "raw": "**Deadlock**",
+      "norm": "Deadlock"
+    },
+    {
+      "id": "1107",
+      "raw": "**Deadlock**\n\nLooking at the payoff matrix from the row player's perspective:",
+      "norm": "Deadlock"
+    },
+    {
+      "id": "2323",
+      "raw": "**Compromise**.\n\nI need to analyze this from the row player's perspective:\n- Row",
+      "norm": "Compromise"
+    },
+    {
+      "id": "1047",
+      "raw": "**Deadlock**",
+      "norm": "Deadlock"
+    },
+    {
+      "id": "1986",
+      "raw": "**Hero**",
+      "norm": "Hero"
+    },
+    {
+      "id": "2322",
+      "raw": "Battle_of_the_Sexes",
+      "norm": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2275",
+      "raw": "Hero",
+      "norm": "Hero"
+    },
+    {
+      "id": "1571",
+      "raw": "**Hero**\n\nLet me verify this classification by analyzing the payoff structure from the row player's",
+      "norm": "Hero"
+    },
+    {
+      "id": "1774",
+      "raw": "Battle_of_the_Sexes",
+      "norm": "Battle_of_the_Sexes"
+    }
+  ],
+  "calls": 50,
+  "tokens": 8707,
+  "time": 130.4408905506134
+}

@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-WWI_LIVE_LET_LIVE",
+  "title": "WWI Trench Warfare Cooperation",
+  "source_file": "data\\raw\\corpus\\wwi_live_let_live.txt",
+  "game_type": "Prisoners_Dilemma",
+  "confidence": 95,
+  "reasoning": "T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma"
+}

@@ -1,0 +1,101 @@
+{
+  "id": "BLIND-003",
+  "timestamp": "2025-12-17T05:32:26.523687",
+  "input_text": "So here's the issue. We both want to hang out tonight. I really want to \ngo see that new sci-fi movie, but she hates sci-fi and really wants to \ngo to the opera. I find the opera incredibly boring. However, the worst \npossible outcome is that we get into a fight and stay home alone in \nseparate apartments. I'd rather suffer through the opera with her than \nbe alone, and I know she'd rather sit through the sci-fi movie with me \nthan be alone. We just have to pick one.",
+  "game_type": "Battle_of_the_Sexes",
+  "game_description": "Classic coordination game with conflicting preferences. Both players want to coordinate (be together) but prefer different activities. The payoff structure shows R1\u2260R2 (different coordination preferences) and mutual defection (staying apart) is worst for both.",
+  "interaction_type": "Non-Zero-Sum",
+  "symmetry": "Symmetric in structure, Asymmetric in preferences",
+  "timing": "Simultaneous",
+  "payoff_matrix": {
+    "T": "Getting your preferred activity with partner (highest individual payoff)",
+    "R": "Compromise - going to partner's preferred activity together",
+    "P": "Both staying home alone (mutual defection)",
+    "S": "Same as R in this game - compromising is still better than being alone"
+  },
+  "player_a": {
+    "player_id": "Person who wants to see sci-fi movie",
+    "stated_preferences": [
+      "Go to sci-fi movie together",
+      "Go to opera together",
+      "Stay home alone"
+    ],
+    "revealed_preferences": [
+      "Go to sci-fi movie together",
+      "Go to opera together",
+      "Stay home alone"
+    ],
+    "interpretation": "Stated and revealed preferences align perfectly. Genuine expression of preferences with clear ranking."
+  },
+  "player_b": {
+    "player_id": "Person who wants to go to opera",
+    "stated_preferences": [
+      "Go to opera together",
+      "Go to sci-fi movie together",
+      "Stay home alone"
+    ],
+    "revealed_preferences": [
+      "Go to opera together",
+      "Go to sci-fi movie together",
+      "Stay home alone"
+    ],
+    "interpretation": "Consistent preference revelation. Also values being together over being alone."
+  },
+  "deception": {
+    "deception_detected": false,
+    "deception_score": 5,
+    "stated_game": "Battle of the Sexes coordination problem",
+    "revealed_game": "Battle of the Sexes coordination problem",
+    "contradiction_signals": [],
+    "cheap_talk_indicators": [],
+    "credible_signals": [
+      "Both explicitly state preference for compromise over separation",
+      "Clear admission of dislike for partner's preference shows honesty"
+    ],
+    "analysis": "No deception detected. This is a straightforward coordination problem with honest preference revelation. Both players are transparent about their rankings."
+  },
+  "evidence": {
+    "verbal_cooperation": [
+      "'We both want to hang out tonight'",
+      "'I'd rather suffer through the opera with her than be alone'",
+      "'she'd rather sit through the sci-fi movie with me than be alone'"
+    ],
+    "verbal_defection": [
+      "'I find the opera incredibly boring'",
+      "'she hates sci-fi'"
+    ],
+    "action_cooperation": [
+      "Willingness to compromise on activity choice",
+      "Mutual desire to spend time together"
+    ],
+    "action_defection": [],
+    "payoff_signals": [
+      "'worst possible outcome is that we get into a fight and stay home alone'"
+    ]
+  },
+  "confidence": {
+    "score": 95,
+    "naive_classification": "Battle of the Sexes",
+    "structural_classification": "Battle of the Sexes",
+    "classification_divergence": false,
+    "reasoning": "Clear alignment between stated preferences and game structure. No contradictions between words and implied actions. Classic coordination game with preference asymmetry."
+  },
+  "equilibrium": {
+    "outcome": "Either (Sci-fi, Sci-fi) or (Opera, Opera) - two pure strategy Nash equilibria",
+    "stability": "Stable once chosen, but selection problem exists",
+    "reasoning": "Both coordination equilibria are stable, but players need a mechanism to select which one. Mixed strategy equilibrium exists but yields lower expected payoffs."
+  },
+  "risk": {
+    "level": "Moderate",
+    "sensitivity": "Risk of coordination failure leading to mutual defection (staying apart)",
+    "reasoning": "Main risk is failure to coordinate on either equilibrium, resulting in worst outcome for both. However, both players are motivated to avoid this."
+  },
+  "prescription": {
+    "mechanism": "Implement coordination mechanism: alternating choice, side payments, or focal point selection",
+    "lever_variable": "R - increase rewards for coordination through pre-commitment or turn-taking",
+    "player_a_advice": "Propose alternating system: 'You pick tonight, I pick next time' or offer side payment",
+    "player_b_advice": "Same - suggest fair rotation system or bundle deal across multiple interactions",
+    "mediator_advice": "Suggest coin flip, alternating system, or help identify natural focal points",
+    "victim_warning": "No victim detected - this is mutual coordination problem, not exploitation"
+  }
+}

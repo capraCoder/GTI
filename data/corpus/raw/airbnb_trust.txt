@@ -1,0 +1,16 @@
+Airbnb: Strangers stay in strangers' homes.
+
+Host risks: Guest damages property, refuses to leave, throws parties.
+Guest risks: Listing is fake, unsafe, or misrepresented.
+
+Both must trust simultaneously - neither moves "first" in a clean sequential sense.
+
+Airbnb solutions:
+- Verified identity for both sides
+- Reviews from both parties after stay
+- Insurance/guarantee programs
+- Secure payment (guest pays Airbnb, host paid after check-in)
+
+Holding payment in escrow converts simultaneous trust problem into sequential game with intermediary.
+
+Platform acts as trusted third party, enabling transactions that wouldn't happen in a bilateral setting.

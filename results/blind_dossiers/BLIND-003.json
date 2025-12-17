@@ -1,0 +1,103 @@
+{
+  "scan_id": "BLIND-003",
+  "timestamp": "2024-12-18T00:00:00Z",
+  "version": "3.0.0",
+  "game_type": "Battle_of_the_Sexes",
+  "game_description": "Two players prefer different activities but both prefer being together over being alone.",
+  "confidence_score": 0.95,
+  "players": [
+    {
+      "name": "Player A (Speaker)",
+      "motive": "Companionship with entertainment preference",
+      "stated_preference": [
+        "wants sci-fi movie",
+        "prefers together over alone"
+      ],
+      "revealed_preference": [
+        "willing to compromise for companionship",
+        "values relationship over individual preference"
+      ],
+      "irrationality_index": 0.1
+    },
+    {
+      "name": "Player B (She)",
+      "motive": "Companionship with entertainment preference",
+      "stated_preference": [
+        "wants opera",
+        "prefers together over alone"
+      ],
+      "revealed_preference": [
+        "willing to compromise for companionship",
+        "values relationship over individual preference"
+      ],
+      "irrationality_index": 0.1
+    }
+  ],
+  "matrix": {
+    "T_temptation": "Getting preferred activity with partner",
+    "R_reward": "Being together (either activity)",
+    "P_punishment": "Being alone at home",
+    "S_sucker": "Partner gets preference while you compromise",
+    "player_a_order": [
+      "T",
+      "S",
+      "P"
+    ],
+    "player_b_order": [
+      "T",
+      "S",
+      "P"
+    ],
+    "payoff_CC": [
+      4.0,
+      1.0
+    ],
+    "payoff_CD": [
+      1.0,
+      4.0
+    ],
+    "payoff_DC": [
+      0.0,
+      0.0
+    ],
+    "payoff_DD": [
+      0.0,
+      0.0
+    ]
+  },
+  "deception": {
+    "is_deceptive": false,
+    "deception_score": 0.0,
+    "cheap_talk_detected": false,
+    "stated_game": "Battle_of_the_Sexes",
+    "revealed_game": "Battle_of_the_Sexes",
+    "credibility_score": 1.0,
+    "contradiction_evidence": [],
+    "cheap_talk_evidence": [],
+    "credible_signals": [
+      "explicit statement of willingness to compromise"
+    ]
+  },
+  "equilibrium": {
+    "primary_outcome": "Coordinate on one activity",
+    "secondary_outcome": "Alternate who chooses",
+    "stability": "Trust_Dependent",
+    "stability_score": 0.7,
+    "reasoning": "Two pure strategy Nash equilibria exist but coordination problem remains"
+  },
+  "risk": {
+    "level": "Low",
+    "sensitivity": "Coordination failure leads to mutual punishment",
+    "mad_potential": false,
+    "reasoning": "Both players strongly prefer any coordination to conflict"
+  },
+  "prescription": {
+    "pivot_variable": "R",
+    "mechanism_design": "Establish alternating choice system or mixed randomization",
+    "player_a_advice": "Propose alternating weeks or coin flip to solve coordination",
+    "player_b_advice": "Agree to fair randomization mechanism",
+    "mediator_advice": "Implement turn-taking system or random selection device",
+    "victim_warning": null
+  },
+  "input_summary": "So here's the issue. We both want to hang out tonight. I really want to \ngo see that new sci-fi movie, but she hates sci-fi and really wants to \ngo to the opera. I find the opera incredibly boring. Ho..."
+}

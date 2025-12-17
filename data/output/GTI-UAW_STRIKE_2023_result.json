@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-UAW_STRIKE_2023",
+  "title": "UAW Stand Up Strike vs Auto Companies",
+  "source_file": "data\\raw\\corpus\\uaw_strike_2023.txt",
+  "game_type": "Unknown",
+  "confidence": 40,
+  "reasoning": "Sequential game - insufficient pattern match"
+}

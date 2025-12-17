@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "analysis_timestamp": "2025-12-17 04:04:13.583123",
+    "input_file": "gti_results_20251217_040324.json",
+    "n_samples": 100,
+    "r_version": "R version 4.5.1 (2025-06-13 ucrt)"
+  },
+  "metrics_9type": {
+    "accuracy": 0.84,
+    "macro_precision": 0.951,
+    "macro_recall": 0.9175,
+    "macro_f1": 0.9124,
+    "cohens_kappa": 0.8124,
+    "cohens_h": 1.6389,
+    "p_value": 0,
+    "ci_95_lower": 0.7681,
+    "ci_95_upper": 0.9119
+  },
+  "metrics_8type": {
+    "accuracy": 0.99,
+    "macro_precision": 1,
+    "macro_recall": 0.9821,
+    "macro_f1": 0.9904
+  },
+  "per_type": {
+    "Assurance_Game": {
+      "precision": 1,
+      "recall": 0.4,
+      "f1": 0.5714,
+      "support": 25
+    },
+    "Battle_of_the_Sexes": {
+      "precision": 1,
+      "recall": 0.8571,
+      "f1": 0.9231,
+      "support": 7
+    },
+    "Chicken": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "support": 9
+    },
+    "Compromise": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "support": 2
+    },
+    "Coordination_Game": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "support": 17
+    },
+    "Deadlock": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "support": 5
+    },
+    "Hero": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "support": 10
+    },
+    "Prisoners_Dilemma": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "support": 6
+    },
+    "Stag_Hunt": {
+      "precision": 0.5588,
+      "recall": 1,
+      "f1": 0.717,
+      "support": 19
+    }
+  }
+}

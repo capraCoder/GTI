@@ -1,0 +1,113 @@
+{
+  "id": "BLIND-006",
+  "timestamp": "2025-12-17T05:33:45.272329",
+  "input_text": "The Imperial Government of Austria-Hungary asserts that the murder of \nthe Archduke was plotted in Belgrade. We can no longer tolerate the \nmachinations of the Serbian government. We demand that Serbian officers \nallow Austrian officials into Serbia to suppress this movement. We give \nSerbia 48 hours to agree to all terms. If they refuse, we will break \ndiplomatic relations and take necessary measures. We know that Russia \nmay intervene to protect Serbia, which would force our ally Germany to \nm...",
+  "game_type": "Chicken",
+  "game_description": "This is a Chicken game disguised as righteous diplomacy. Austria-Hungary is engaging in brinkmanship - threatening catastrophic war (mutual defection) while hoping the other side will back down. The key signal is 'we cannot back down and look weak' - classic Chicken psychology where prestige/credibility creates commitment to escalation despite catastrophic mutual defection outcomes.",
+  "interaction_type": "Non-Zero-Sum",
+  "symmetry": "Asymmetric",
+  "timing": "Sequential",
+  "payoff_matrix": {
+    "T": "Austria gets prestige, territorial gains, eliminates Serbian threat while others back down",
+    "R": "Negotiated settlement preserving everyone's core interests",
+    "P": "World War - catastrophic for all parties involved",
+    "S": "Backing down means loss of Great Power status and credibility"
+  },
+  "player_a": {
+    "player_id": "Austria-Hungary",
+    "stated_preferences": [
+      "Justice for Archduke's murder",
+      "Suppress Serbian nationalism",
+      "Maintain Great Power status"
+    ],
+    "revealed_preferences": [
+      "Maintain Great Power credibility above all",
+      "Willing to risk catastrophic war rather than appear weak",
+      "Eliminate Serbian threat permanently"
+    ],
+    "interpretation": "Stated preferences focus on justice and security, but revealed preference is pure prestige/credibility - classic Chicken mentality where 'looking weak' is worse than mutual destruction"
+  },
+  "player_b": {
+    "player_id": "Serbia (with Russian backing)",
+    "stated_preferences": [
+      "National sovereignty",
+      "Resist foreign intervention",
+      "Maintain independence"
+    ],
+    "revealed_preferences": [
+      "Preserve sovereignty even at risk of war",
+      "Rely on Russian protection",
+      "Cannot accept terms that eliminate independence"
+    ],
+    "interpretation": "Also caught in Chicken logic - backing down means effective end of independence"
+  },
+  "deception": {
+    "deception_detected": true,
+    "deception_score": 75,
+    "stated_game": "Righteous punishment for terrorism/assassination",
+    "revealed_game": "Prestige-driven brinkmanship where both sides prefer risking catastrophe to backing down",
+    "contradiction_signals": [
+      "'We know that Russia may intervene...which would force our ally Germany to mobilize' - acknowledges this leads to world war but proceeds anyway"
+    ],
+    "cheap_talk_indicators": [
+      "Claims about 'justice' and 'suppressing terrorism'",
+      "Framing as defensive necessity"
+    ],
+    "credible_signals": [
+      "48-hour ultimatum with specific consequences",
+      "'We cannot back down' - credible commitment to escalation",
+      "Acknowledgment of alliance obligations"
+    ],
+    "analysis": "Austria frames this as law enforcement against terrorism, but the structure reveals pure Chicken game - they acknowledge this leads to world war but proceed because 'looking weak' is unacceptable. The ultimatum is designed to be unacceptable to force the prestige confrontation."
+  },
+  "evidence": {
+    "verbal_cooperation": [
+      "Claims about justice",
+      "Suppressing terrorism",
+      "Following diplomatic procedures with ultimatum"
+    ],
+    "verbal_defection": [
+      "'Break diplomatic relations'",
+      "'Take necessary measures'",
+      "'Cannot back down'"
+    ],
+    "action_cooperation": [
+      "Giving 48 hours rather than immediate action",
+      "Using diplomatic ultimatum format"
+    ],
+    "action_defection": [
+      "Ultimatum designed to be unacceptable",
+      "Mobilizing alliances",
+      "Creating commitment to escalation"
+    ],
+    "payoff_signals": [
+      "'Our existence as a Great Power is at stake'",
+      "'Cannot...look weak in the eyes of our subjects'"
+    ]
+  },
+  "confidence": {
+    "score": 90,
+    "naive_classification": "Justice-seeking punishment game or coordination problem",
+    "structural_classification": "Chicken game with mutual prestige commitments",
+    "classification_divergence": true,
+    "reasoning": "The phrase 'cannot back down and look weak' plus acknowledgment that this leads to world war definitively reveals Chicken structure. Both sides would rather risk catastrophe than lose face."
+  },
+  "equilibrium": {
+    "outcome": "High probability of mutual defection (World War I)",
+    "stability": "Unstable/Volatile",
+    "reasoning": "Both players have made credible commitments to not backing down. Alliance system ensures local conflict becomes global catastrophe. Classic Chicken game failure."
+  },
+  "risk": {
+    "level": "Critical",
+    "sensitivity": "Failure leads to World War with millions of casualties",
+    "reasoning": "This is the archetypal example of how Chicken games with credible commitments lead to catastrophic outcomes when both sides refuse to 'swerve'"
+  },
+  "prescription": {
+    "mechanism": "Face-saving compromise that allows both sides to claim victory while avoiding war",
+    "lever_variable": "S - reduce the cost of 'backing down' by providing alternative ways to maintain prestige",
+    "player_a_advice": "Find way to achieve core security goals without demanding terms that destroy Serbian sovereignty",
+    "player_b_advice": "Offer meaningful concessions that address Austrian security concerns while preserving independence",
+    "mediator_advice": "Create face-saving formula where both sides can claim their core interests were protected",
+    "victim_warning": "WARNING: All European powers are about to become victims of this prestige-driven brinkmanship. The alliance system will transform a regional dispute into global catastrophe."
+  }
+}

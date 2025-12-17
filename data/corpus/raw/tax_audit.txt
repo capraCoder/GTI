@@ -1,0 +1,11 @@
+A tax authority must decide whether to audit a business. The business simultaneously decides whether to report income honestly or underreport.
+
+If the business is honest and gets audited, the business pays normal taxes plus wastes time on the audit, while the authority wastes audit resources on a compliant taxpayer.
+
+If the business is honest and not audited, both are satisfied - taxes paid, no waste.
+
+If the business cheats and gets audited, the business pays heavy penalties and the authority collects extra revenue.
+
+If the business cheats and isn't audited, the business keeps the evaded taxes and the authority loses revenue without knowing.
+
+Both decide simultaneously.

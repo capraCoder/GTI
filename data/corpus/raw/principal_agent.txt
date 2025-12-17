@@ -1,0 +1,13 @@
+A factory owner hires a manager to run operations. The owner can either monitor the manager closely (expensive) or trust them to work unsupervised.
+
+The manager can either work hard (costly effort) or slack off (easy but lower output).
+
+If monitored and working hard: good output, owner pays monitoring cost, manager gets paid but effort is tiring.
+
+If monitored and slacking: manager gets caught and fired, owner wasted monitoring cost.
+
+If unmonitored and working hard: good output, no monitoring cost, but manager bears effort cost voluntarily.
+
+If unmonitored and slacking: low output, manager has easy life, owner loses money.
+
+The owner sets the monitoring policy, then the manager decides effort level without the owner observing directly.

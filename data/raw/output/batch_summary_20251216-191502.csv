@@ -1,0 +1,19 @@
+file,case_id,title,game_type,confidence,reasoning,status
+airbnb_trust.txt,GTI-AIRBNB_TRUST,Airbnb Host-Guest Trust Game,Unknown,50,"T=2, R=3, P=2, S=2: No standard symmetric pattern",success
+airline_hub_entry.txt,GTI-AIRLINE_HUB_ENTRY,Airline Market Entry with Credible Threats,Entry_Deterrence,85,Market entry with deterrence option,success
+amazon_publishers.txt,GTI-AMAZON_PUBLISHERS,Amazon vs Publishers Ebook Pricing Standoff,Ultimatum,85,Proposer-Responder structure with accept/reject decision,success
+apple_epic_games.txt,GTI-APPLE_EPIC_GAMES,Epic Games vs Apple App Store Commission Dispute,Principal_Agent,85,Principal-agent structure with monitoring/effort decision,success
+brexit_negotiation.txt,GTI-BREXIT_NEGOTIATION,UK-EU Brexit Negotiation,Stag_Hunt,85,"Sequential variant of Stag_Hunt: R(3) > T(2) > P(2) > S(1): Cooperate best, defect safe",success
+cuban_missile_crisis.txt,GTI-CUBAN_MISSILE_CRISIS,Cuban Missile Crisis,Chicken,80,Asymmetric variant of Chicken,success
+ebay_reputation.txt,GTI-EBAY_REPUTATION,eBay Trust and Reputation System,Chicken,80,Asymmetric variant of Chicken,success
+irs_auditing.txt,GTI-IRS_AUDITING,Tax Compliance and Audit Game,Inspection_Game,85,Inspection/monitoring structure,success
+nk_nuclear_talks.txt,GTI-NK_NUCLEAR_TALKS,US-North Korea Denuclearization Commitment Problem,Unknown,40,Sequential game - insufficient pattern match,success
+opec_production.txt,GTI-OPEC_PRODUCTION,OPEC Production Quota Enforcement,Incomplete_Info,30,Incomplete information game - requires Bayesian analysis,success
+open_source_contrib.txt,GTI-OPEN_SOURCE_CONTRIB,Open Source Software Contribution,N_Player,30,N-player game - beyond 2-player scope,success
+pepsi_coke_ads.txt,GTI-PEPSI_COKE_ADS,Pepsi vs Coca-Cola Advertising War,Prisoners_Dilemma,95,"T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma",success
+poker_bluffing.txt,GTI-POKER_BLUFFING,Texas Hold'em Bluffing Equilibrium,Incomplete_Info,30,Incomplete information game - requires Bayesian analysis,success
+sports_free_agency.txt,GTI-SPORTS_FREE_AGENCY,Free Agency Bidding War,Incomplete_Info,30,Incomplete information game - requires Bayesian analysis,success
+uaw_strike_2023.txt,GTI-UAW_STRIKE_2023,United Auto Workers Stand Up Strike 2023,N_Player,30,N-player game - beyond 2-player scope,success
+uber_lyft_pricing.txt,GTI-UBER_LYFT_PRICING,Uber vs Lyft Pricing Competition,Prisoners_Dilemma,95,"T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma",success
+vhs_betamax.txt,GTI-VHS_BETAMAX,VHS vs Betamax Format War,Unknown,0,Could not normalize payoff matrix,success
+wwi_live_let_live.txt,GTI-WWI_LIVE_LET_LIVE,WWI Trench Warfare Live-and-Let-Live System,Prisoners_Dilemma,95,"T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma",success

@@ -1,0 +1,13 @@
+IRS has limited audit resources. Taxpayers choose whether to report honestly.
+
+If taxpayer honest + audited: Taxpayer compliant, IRS wasted audit cost.
+If taxpayer honest + not audited: Optimal outcome for both.
+If taxpayer cheats + audited: Taxpayer caught, pays penalties. IRS recovers revenue.
+If taxpayer cheats + not audited: Taxpayer gains from evasion, IRS loses.
+
+IRS can't audit everyone. Taxpayers know this.
+
+Equilibrium: IRS audits randomly at rate that makes taxpayers indifferent between cheating and honesty.
+Taxpayers cheat at rate that makes IRS indifferent between auditing and not.
+
+Real IRS uses risk scoring to audit "suspicious" returns more often - changes the game by making cheating harder to hide.

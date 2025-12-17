@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-AIRBNB_TRUST",
+  "title": "Airbnb Trust Game with Platform Intermediation",
+  "source_file": "data\\raw\\corpus\\airbnb_trust.txt",
+  "game_type": "Unknown",
+  "confidence": 0,
+  "reasoning": "Could not normalize payoff matrix"
+}

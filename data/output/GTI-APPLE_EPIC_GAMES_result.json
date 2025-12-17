@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-APPLE_EPIC_GAMES",
+  "title": "Epic vs Apple App Store Commission Dispute",
+  "source_file": "data\\raw\\corpus\\apple_epic_games.txt",
+  "game_type": "Principal_Agent",
+  "confidence": 85,
+  "reasoning": "Principal-agent structure with monitoring/effort decision"
+}

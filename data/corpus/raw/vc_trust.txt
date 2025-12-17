@@ -1,0 +1,7 @@
+A venture capitalist is considering investing $100,000 in a startup. If she invests, the money triples to $300,000 due to the startup's growth potential.
+
+The startup founder then decides how much to return to the investor. He could return half ($150,000 each), return nothing and keep it all, or anything in between.
+
+If the VC doesn't invest, both parties keep their original positions - the VC keeps her money, and the founder has to seek funding elsewhere.
+
+The VC must decide first whether to send the money, knowing the founder will decide afterward how much to return.

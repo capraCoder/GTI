@@ -1,0 +1,275 @@
+# GTI Game Types v2.2 - With Robinson-Goforth Topology Mapping
+# Reference: Robinson, D. & Goforth, D. (2005). The Topology of 2×2 Games: A New Periodic Table
+# 
+# R-G Index Format: LRC where L=Layer(1-4), R=Row(1-6), C=Column(1-6)
+# Layer 1: Discord (best payoffs diagonally opposite)
+# Layer 2: Mixed motives (Chicken family)  
+# Layer 3: No-conflict (Stag Hunt family)
+# Layer 4: Harmony (aligned interests)
+
+symmetric_games:
+  # ===== LAYER 1: DISCORD GAMES =====
+  Prisoners_Dilemma:
+    rg_index: "111"
+    rg_layer: 1
+    rg_family: "PD Family"
+    rg_symmetric: true
+    canonical_payoffs: [[3,3], [0,5], [5,0], [1,1]]  # (C,C), (C,D), (D,C), (D,D)
+    equilibria: 1
+    dominant_strategies: 2  # Both players have dominant strategy
+    pareto_optimal_equilibrium: false
+    social_dilemma: true
+    aliases: ["Too Many Cooks", "Arms Race"]
+    description: "Individual rationality leads to collective suboptimality"
+    
+  Deadlock:
+    rg_index: "211"  # Adjacent to PD in Layer 1
+    rg_layer: 1
+    rg_family: "PD Family"
+    rg_symmetric: true
+    canonical_payoffs: [[2,2], [1,4], [4,1], [3,3]]
+    equilibria: 1
+    dominant_strategies: 2
+    pareto_optimal_equilibrium: true  # Unlike PD, mutual defection IS optimal
+    social_dilemma: false
+    aliases: ["Hopeless", "No-cooperation"]
+    description: "Defection dominant and Pareto optimal - no dilemma exists"
+
+  # ===== LAYER 2: ANTI-COORDINATION =====
+  Chicken:
+    rg_index: "211"  # Layer 2 symmetric
+    rg_layer: 2
+    rg_family: "Chicken Family"
+    rg_symmetric: true
+    canonical_payoffs: [[3,3], [2,4], [4,2], [1,1]]
+    equilibria: 2  # Two asymmetric pure + one mixed
+    dominant_strategies: 0
+    pareto_optimal_equilibrium: true
+    social_dilemma: true  # Brinkmanship dilemma
+    aliases: ["Hawk-Dove", "Snowdrift", "Game of Chicken"]
+    description: "Anti-coordination - someone must yield"
+
+  Battle_of_Sexes:
+    rg_index: "312"  # Hotspot game
+    rg_layer: 2
+    rg_family: "Coordination with conflict"
+    rg_symmetric: false  # Payoffs symmetric in structure but asymmetric in preference
+    canonical_payoffs: [[4,3], [1,1], [2,2], [3,4]]
+    equilibria: 2
+    dominant_strategies: 0
+    pareto_optimal_equilibrium: true
+    social_dilemma: false
+    aliases: ["Bach or Stravinsky", "BoS", "Coordination Conflict"]
+    description: "Coordination needed but preference conflict on which equilibrium"
+
+  # ===== LAYER 3: COORDINATION GAMES =====
+  Stag_Hunt:
+    rg_index: "311"  # Layer 3 symmetric  
+    rg_layer: 3
+    rg_family: "Stag Hunt Family"
+    rg_symmetric: true
+    canonical_payoffs: [[4,4], [1,3], [3,1], [2,2]]
+    equilibria: 2  # Risk-dominant vs payoff-dominant
+    dominant_strategies: 0
+    pareto_optimal_equilibrium: true  # Pareto-dominant equilibrium exists
+    social_dilemma: true  # Trust/assurance dilemma
+    aliases: ["Assurance Game", "Trust Dilemma", "Coordination Game"]
+    description: "Payoff-dominant vs risk-dominant equilibrium choice"
+
+  Assurance:
+    rg_index: "322"  # Layer 3 variant
+    rg_layer: 3
+    rg_family: "Stag Hunt Family"
+    rg_symmetric: true
+    canonical_payoffs: [[4,4], [0,3], [3,0], [2,2]]
+    equilibria: 2
+    dominant_strategies: 0
+    pareto_optimal_equilibrium: true
+    social_dilemma: true
+    aliases: ["Security Dilemma", "Trust Game variant"]
+    description: "Like Stag Hunt but with higher cost of miscoordination"
+
+  # ===== LAYER 4: HARMONY =====
+  Coordination:
+    rg_index: "411"  # Layer 4 - pure harmony
+    rg_layer: 4
+    rg_family: "Pure Coordination"
+    rg_symmetric: true
+    canonical_payoffs: [[4,4], [1,1], [1,1], [3,3]]
+    equilibria: 2
+    dominant_strategies: 0
+    pareto_optimal_equilibrium: true
+    social_dilemma: false  # No conflict of interest
+    aliases: ["Pure Coordination", "Meeting Game"]
+    description: "Aligned interests - only problem is focal point selection"
+
+  Harmony:
+    rg_index: "444"  # Corner of Layer 4 - trivial
+    rg_layer: 4
+    rg_family: "No-conflict"
+    rg_symmetric: true
+    canonical_payoffs: [[4,4], [3,2], [2,3], [1,1]]
+    equilibria: 1
+    dominant_strategies: 2
+    pareto_optimal_equilibrium: true
+    social_dilemma: false
+    aliases: ["Win-Win", "Cake Eating"]
+    description: "Dominant strategy leads to Pareto optimum - trivial case"
+
+# ===== SEQUENTIAL GAMES (Not in R-G 2x2 topology) =====
+sequential_games:
+  rg_note: "Sequential games extend beyond 2x2 simultaneous framework"
+  
+  Ultimatum:
+    rg_index: null
+    extensive_form: true
+    players: 2
+    stages: 2
+    information: complete
+    subgame_perfect: "Accept any positive offer"
+    behavioral_deviation: "Reject unfair offers (50/50 norm)"
+    description: "Proposer-Responder with fairness norms"
+
+  Dictator:
+    rg_index: null
+    extensive_form: true
+    players: 2
+    stages: 1
+    information: complete
+    subgame_perfect: "Keep everything"
+    behavioral_deviation: "Give ~20-30% on average"
+    description: "Pure allocation - no strategic response"
+
+  Trust_Game:
+    rg_index: null  
+    extensive_form: true
+    players: 2
+    stages: 2
+    information: complete
+    subgame_perfect: "Don't trust / Don't reciprocate"
+    behavioral_deviation: "Trust and reciprocity common"
+    closest_2x2: "Stag_Hunt"  # Strategic similarity
+    description: "Investment multiplied, trustee decides split"
+
+  Centipede:
+    rg_index: null
+    extensive_form: true
+    players: 2
+    stages: "n (typically 4-10)"
+    information: complete
+    subgame_perfect: "Defect immediately"
+    behavioral_deviation: "Cooperation until late stages"
+    description: "Growing pie with take-it-or-leave-it"
+
+  Stackelberg:
+    rg_index: null
+    extensive_form: true
+    players: 2
+    stages: 2
+    information: complete
+    first_mover_advantage: true
+    applications: ["Market entry", "Quantity competition"]
+    description: "Leader-follower with commitment"
+
+  Entry_Deterrence:
+    rg_index: null
+    extensive_form: true
+    players: 2
+    stages: 2
+    information: complete
+    credibility_issue: true
+    closest_2x2: "Chicken"  # Brinkmanship element
+    description: "Incumbent threat vs entrant"
+
+# ===== ASYMMETRIC 2x2 (R-G covers as pairs) =====
+asymmetric_games:
+  rg_note: "R-G has 66 asymmetric pairs (132 games) plus 12 symmetric = 144 total"
+
+  Principal_Agent:
+    rg_index: "varies"  # Multiple R-G games map here
+    rg_family: "Alibi Games (asymmetric PD)"
+    players: 2
+    roles: ["Principal", "Agent"]
+    information_asymmetry: true
+    moral_hazard: true
+    description: "Hidden action after contract"
+
+  Matching_Pennies:
+    rg_index: "cyclic"  # Zero-sum cycle game
+    rg_layer: "cross-layer"
+    rg_family: "Cyclic/Zero-sum"
+    equilibria: 0  # No pure strategy equilibrium
+    mixed_equilibrium: [0.5, 0.5]
+    zero_sum: true
+    description: "Pure conflict, no pure equilibrium"
+
+  Inspection:
+    rg_index: "varies"
+    players: 2
+    roles: ["Inspector", "Inspectee"]
+    information_asymmetry: true
+    mixed_strategy_required: true
+    applications: ["Tax audit", "Quality control", "Arms inspection"]
+    description: "Hide vs Seek with costly inspection"
+
+  Signaling:
+    rg_index: null  # Beyond 2x2 framework
+    extensive_form: true
+    information: incomplete
+    players: 2
+    roles: ["Sender", "Receiver"]
+    equilibrium_types: ["Separating", "Pooling", "Semi-separating"]
+    description: "Type revelation through costly signals"
+
+# ===== N-PLAYER EXTENSIONS =====
+n_player:
+  rg_note: "R-G topology strictly 2-player; these are generalizations"
+
+  Public_Goods:
+    base_game: "Prisoners_Dilemma"
+    n_player_extension: true
+    free_rider_problem: true
+    marginal_per_capita_return: "<1 individual, >1 social"
+    description: "N-player social dilemma"
+
+  Tragedy_of_Commons:
+    base_game: "Prisoners_Dilemma"
+    n_player_extension: true
+    resource_type: "Common pool"
+    overexploitation: true
+    description: "Shared resource depletion"
+
+  Volunteer_Dilemma:
+    base_game: "Chicken"
+    n_player_extension: true
+    diffusion_of_responsibility: true
+    description: "N-player anti-coordination"
+
+  Minority_Game:
+    base_game: "Matching_Pennies"
+    n_player_extension: true
+    contrarian_advantage: true
+    applications: ["Market timing", "Bar problem"]
+    description: "Benefit from being in minority"
+
+# ===== METADATA =====
+metadata:
+  version: "2.2"
+  last_updated: "2024-12-16"
+  robinson_goforth_reference: |
+    Robinson, D. & Goforth, D. (2005). The Topology of 2×2 Games: 
+    A New Periodic Table. Routledge.
+  additional_references:
+    - "Rapoport, A. & Guyer, M. (1966). A taxonomy of 2×2 games"
+    - "Bruns, B. (2015). Names for Games: Locating 2×2 Games. Games, 6(4), 495-520"
+  coverage:
+    rg_symmetric_covered: 8  # of 12
+    rg_asymmetric_covered: 4  # of 66 pairs
+    sequential_added: 6
+    n_player_added: 4
+  
+  layer_summary:
+    layer_1: "Discord - PD, Deadlock (dominant strategies, diagonal best)"
+    layer_2: "Mixed - Chicken, BoS (anti-coordination, cycling)"
+    layer_3: "Stag Hunt - Assurance (coordination, trust)"
+    layer_4: "Harmony - Pure coordination, trivial games"

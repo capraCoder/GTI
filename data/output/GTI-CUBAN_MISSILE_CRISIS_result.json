@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-CUBAN_MISSILE_CRISIS",
+  "title": "Cuban Missile Crisis",
+  "source_file": "data\\raw\\corpus\\cuban_missile_crisis.txt",
+  "game_type": "Mixed_Motive",
+  "confidence": 60,
+  "reasoning": "Asymmetric game (unknown) - no specific pattern matched"
+}

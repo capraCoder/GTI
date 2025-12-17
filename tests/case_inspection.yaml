@@ -1,0 +1,31 @@
+case_id: "TEST-INSPECTION"
+title: "Tax Inspection Game"
+
+payoffs:
+  players: ["Taxpayer", "Auditor"]
+  options:
+    Taxpayer: ["Comply", "Evade"]
+    Auditor: ["Audit", "No_Audit"]
+  matrix:
+    A_A: [2, 1]
+    A_B: [3, 2]
+    B_A: [0, 3]
+    B_B: [4, 0]
+
+information:
+  timing: "simultaneous"
+  move_order: null
+
+time:
+  repetition: "one-shot"
+  iterations: null
+
+commitment:
+  mechanism: "none"
+
+symmetry:
+  symmetric: false
+
+notes:
+  assumptions: ["Audit has cost", "Evasion caught = penalty"]
+  flags: ["inspection", "audit", "compliance"]

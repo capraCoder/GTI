@@ -1,0 +1,466 @@
+# GTI (Game Type Identification) Taxonomy v3.0
+# 
+# Integrates Robinson-Goforth 2x2 topology with extended game types
+# Sources:
+#   - Robinson & Goforth (2005) "The Topology of 2x2 Games"
+#   - Zhu, Peterson, Enke & Griffiths (2024) games2p2k dataset
+#   - Classical game theory literature
+#
+# Total: 26 canonical game types
+
+metadata:
+  version: "3.0"
+  date: "2024-12-17"
+  sources:
+    - "Robinson & Goforth (2005)"
+    - "games2p2k dataset"
+    - "Classical game theory"
+  n_types: 26
+
+# =============================================================================
+# ROBINSON-GOFORTH 2x2 TYPES (12 ordinal types)
+# =============================================================================
+# These are the 12 distinct ordinal structures for 2x2 symmetric games
+# based on the ranking of payoffs: a=(A,C), b=(A,D), c=(B,C), d=(B,D)
+
+robinson_goforth_types:
+
+  Prisoners_Dilemma:
+    aliases: ["PD", "Dilemma"]
+    rg_ordering: "c > a > d > b"
+    description: |
+      Classic social dilemma where individual rationality leads to collective 
+      suboptimality. Both players have dominant strategies to defect, but 
+      mutual cooperation would yield higher payoffs.
+    properties:
+      dominant_strategy: true
+      nash_equilibrium: ["Defect-Defect"]
+      pareto_optimal: false  # Nash is not Pareto optimal
+      cooperation_tension: high
+    canonical_payoffs: [3, 0, 5, 1]  # R, S, T, P format: [CC, CD, DC, DD]
+    examples:
+      - "Arms race"
+      - "Environmental pollution"
+      - "Price wars"
+      - "Common pool resource extraction"
+
+  Chicken:
+    aliases: ["Hawk-Dove", "Snowdrift", "Game of Chicken"]
+    rg_ordering: "c > a > b > d"
+    description: |
+      Anti-coordination game where mutual aggression is worst outcome.
+      Each player prefers the other to yield, but yielding alone beats
+      mutual destruction.
+    properties:
+      dominant_strategy: false
+      nash_equilibrium: ["Hawk-Dove", "Dove-Hawk"]  # Two asymmetric NE
+      mixed_equilibrium: true
+      brinkmanship: high
+    canonical_payoffs: [0, -1, 1, -10]
+    examples:
+      - "Nuclear standoff"
+      - "Lane merging"
+      - "Territorial disputes"
+
+  Stag_Hunt:
+    aliases: ["Trust", "Assurance", "Coordination"]
+    rg_ordering: "a > c > d > b"
+    description: |
+      Coordination game with payoff-dominant and risk-dominant equilibria.
+      Mutual cooperation yields highest payoffs but is risky; safe defection
+      gives moderate but certain outcome.
+    properties:
+      dominant_strategy: false
+      nash_equilibrium: ["Cooperate-Cooperate", "Defect-Defect"]
+      payoff_dominant: "Cooperate-Cooperate"
+      risk_dominant: "Defect-Defect"
+    canonical_payoffs: [4, 0, 3, 2]
+    examples:
+      - "Team projects"
+      - "Currency adoption"
+      - "Social conventions"
+
+  Battle_of_the_Sexes:
+    aliases: ["BoS", "Leader", "Coordination with conflict"]
+    rg_ordering: "c > b > a > d"
+    description: |
+      Coordination game where players prefer different equilibria.
+      Both prefer coordination over miscoordination, but disagree on
+      which equilibrium is better.
+    properties:
+      dominant_strategy: false
+      nash_equilibrium: ["A-A", "B-B"]
+      conflict_of_interest: true
+      coordination_needed: true
+    canonical_payoffs: [3, 0, 0, 2]
+    examples:
+      - "Couple choosing activity"
+      - "Technology standards"
+      - "Meeting location"
+
+  Deadlock:
+    aliases: ["Altruist's Dilemma", "No-conflict"]
+    rg_ordering: "c > d > a > b"
+    description: |
+      Game where defection dominates but mutual defection is not as bad
+      as in Prisoner's Dilemma. Less tension between individual and
+      collective rationality.
+    properties:
+      dominant_strategy: true
+      nash_equilibrium: ["Defect-Defect"]
+      pareto_optimal: true  # Unlike PD, Nash IS Pareto optimal
+    canonical_payoffs: [1, 0, 3, 2]
+    examples:
+      - "Competing for scarce resource with low value of sharing"
+
+  Harmony:
+    aliases: ["No-conflict", "Mutual benefit"]
+    rg_ordering: "a > b > c > d"
+    description: |
+      Game with no conflict - cooperation is dominant for all.
+      The socially optimal outcome is also individually optimal.
+    properties:
+      dominant_strategy: true
+      nash_equilibrium: ["Cooperate-Cooperate"]
+      pareto_optimal: true
+      conflict: none
+    canonical_payoffs: [4, 3, 2, 1]
+    examples:
+      - "Mutually beneficial trade"
+      - "Complementary actions"
+
+  Assurance_Game:
+    aliases: ["Assurance", "Pure Coordination"]
+    rg_ordering: "a > d > c > b"
+    description: |
+      Pure coordination where both equilibria are equivalent to one player.
+      Success requires mutual trust in coordination.
+    properties:
+      dominant_strategy: false
+      nash_equilibrium: ["A-A", "B-B"]
+      pure_coordination: true
+    canonical_payoffs: [4, 1, 2, 3]
+    examples:
+      - "Driving side convention"
+      - "Meeting at same time"
+
+  Coordination_Game:
+    aliases: ["Safecoord", "Safe Coordination"]
+    rg_ordering: "a > d > b > c"
+    description: |
+      Coordination game with safe fallback option. Players can coordinate
+      on either option, with one being slightly better.
+    properties:
+      dominant_strategy: false
+      nash_equilibrium: ["A-A", "B-B"]
+      safe_option: true
+    canonical_payoffs: [3, 1, 0, 2]
+    examples:
+      - "Technology adoption with backwards compatibility"
+
+  Hero:
+    aliases: ["Hero Game"]
+    rg_ordering: "c > b > d > a"
+    description: |
+      Game where one player sacrifices for mutual benefit. Being the
+      hero (choosing B while other chooses A) is better than mutual A.
+    properties:
+      dominant_strategy: false
+      asymmetric_sacrifice: true
+    canonical_payoffs: [0, 2, 3, 1]
+    examples:
+      - "Volunteer's dilemma variant"
+      - "Taking one for the team"
+
+  Compromise:
+    aliases: ["Compromise Game"]
+    rg_ordering: "c > d > b > a"
+    description: |
+      Game where mutual compromise (B,B) is preferred by row player
+      over mutual first choice (A,A).
+    properties:
+      dominant_strategy: false
+      compromise_preferred: true
+    canonical_payoffs: [0, 1, 3, 2]
+    examples:
+      - "Negotiation with mutual concession"
+
+  Peace:
+    aliases: ["Club", "Peace Game"]
+    rg_ordering: "a > b > d > c"
+    description: |
+      Game where cooperation dominates but defection alone is not
+      catastrophic. Peaceful coexistence is naturally stable.
+    properties:
+      dominant_strategy: true
+      nash_equilibrium: ["A-A"]
+      stable_peace: true
+    canonical_payoffs: [4, 3, 1, 2]
+    examples:
+      - "Trade relationship"
+      - "Alliance maintenance"
+
+  Concord:
+    aliases: ["Concord Game"]
+    rg_ordering: "a > c > b > d"
+    description: |
+      Game with preference for mutual cooperation over all other
+      outcomes. Similar to Harmony but with different ordinal structure.
+    properties:
+      dominant_strategy: false
+      mutual_cooperation_preferred: true
+    canonical_payoffs: [4, 2, 3, 1]
+    examples:
+      - "Partnership with aligned incentives"
+
+
+# =============================================================================
+# EXTENDED GAME TYPES (Beyond 2x2)
+# =============================================================================
+
+extended_types:
+
+  Matching_Pennies:
+    aliases: ["Zero-sum matching", "Odds and Evens"]
+    description: |
+      Pure conflict zero-sum game. One player wants to match,
+      the other wants to mismatch.
+    properties:
+      zero_sum: true
+      pure_nash: false
+      mixed_equilibrium: true
+    examples:
+      - "Penalty kicks"
+      - "Hide and seek"
+
+  Public_Goods_Game:
+    aliases: ["N-person PD", "Free rider problem"]
+    description: |
+      Multi-player social dilemma. Contributing benefits all but
+      costs the contributor. Individual incentive to free-ride.
+    properties:
+      n_players: ">2"
+      dominant_strategy: "defect"
+      social_dilemma: true
+    examples:
+      - "Public broadcasting funding"
+      - "Climate action"
+      - "Team effort"
+
+  Common_Pool_Resource:
+    aliases: ["CPR", "Tragedy of the Commons"]
+    description: |
+      Resource extraction game where overuse depletes shared resource.
+      Related to but distinct from Prisoner's Dilemma.
+    properties:
+      n_players: ">=2"
+      resource_dynamics: true
+      sustainability_tension: true
+    examples:
+      - "Fishery management"
+      - "Groundwater extraction"
+      - "Grazing commons"
+
+  Ultimatum_Game:
+    aliases: ["Ultimatum", "Take-it-or-leave-it"]
+    description: |
+      Sequential bargaining where proposer makes offer, responder
+      accepts or rejects. Tests fairness vs rationality.
+    properties:
+      sequential: true
+      bargaining: true
+      fairness_relevant: true
+    examples:
+      - "Wage negotiation"
+      - "Inheritance division"
+
+  Dictator_Game:
+    aliases: ["Dictator"]
+    description: |
+      One player allocates resource, other has no choice.
+      Measures pure altruism without strategic considerations.
+    properties:
+      asymmetric: true
+      no_strategy_for_receiver: true
+      altruism_measure: true
+    examples:
+      - "Charitable giving"
+      - "Unilateral transfer"
+
+  Trust_Game:
+    aliases: ["Investment Game", "Berg Game"]
+    description: |
+      Sequential game testing trust and reciprocity. Sender can
+      invest, receiver can return portion of multiplied investment.
+    properties:
+      sequential: true
+      trust_reciprocity: true
+      multiplier: true
+    examples:
+      - "Investment relationship"
+      - "Delegation with monitoring"
+
+  Centipede_Game:
+    aliases: ["Centipede"]
+    description: |
+      Sequential game with growing pot. Rational analysis predicts
+      immediate taking, but cooperation can grow benefits.
+    properties:
+      sequential: true
+      backward_induction_paradox: true
+      growing_stakes: true
+    examples:
+      - "Investment timing"
+      - "Relationship building"
+
+  Bertrand_Competition:
+    aliases: ["Bertrand", "Price Competition"]
+    description: |
+      Firms compete on price with homogeneous goods.
+      Equilibrium: price = marginal cost.
+    properties:
+      economic: true
+      competition_type: "price"
+      n_players: ">=2"
+    examples:
+      - "Commodity markets"
+      - "Airline pricing"
+
+  Cournot_Competition:
+    aliases: ["Cournot", "Quantity Competition"]
+    description: |
+      Firms compete on quantity. Each chooses output taking
+      other's output as given.
+    properties:
+      economic: true
+      competition_type: "quantity"
+      n_players: ">=2"
+    examples:
+      - "Oil production"
+      - "Manufacturing"
+
+  Stackelberg_Competition:
+    aliases: ["Stackelberg", "Leader-Follower"]
+    description: |
+      Sequential quantity competition with first-mover advantage.
+      Leader commits to quantity, follower responds.
+    properties:
+      sequential: true
+      first_mover_advantage: true
+      economic: true
+    examples:
+      - "Market entry"
+      - "Capacity commitment"
+
+  War_of_Attrition:
+    aliases: ["Attrition", "Waiting Game"]
+    description: |
+      Players compete by waiting/spending. Last one standing wins,
+      but waiting is costly for all.
+    properties:
+      timing_game: true
+      costly_competition: true
+      all_pay: true
+    examples:
+      - "Patent races"
+      - "Labor disputes"
+      - "Political standoffs"
+
+  El_Farol_Bar:
+    aliases: ["El Farol", "Minority Game"]
+    description: |
+      Players choose whether to attend venue. Payoff depends on
+      total attendance - too crowded is bad.
+    properties:
+      congestion: true
+      threshold_dynamics: true
+      minority_wins: true
+    examples:
+      - "Traffic routing"
+      - "Market timing"
+
+  Traveler_Dilemma:
+    aliases: ["Traveler's Dilemma", "TD"]
+    description: |
+      Players independently name price for identical items.
+      Lower claim wins but higher claim also receives bonus/penalty.
+    properties:
+      claim_game: true
+      paradox_of_rationality: true
+    examples:
+      - "Insurance claims"
+      - "Auction design"
+
+  Colonel_Blotto:
+    aliases: ["Blotto", "Resource Allocation"]
+    description: |
+      Players allocate limited resources across multiple battlefields.
+      Win majority of battlefields to win game.
+    properties:
+      resource_allocation: true
+      multiple_fronts: true
+      zero_sum: true
+    examples:
+      - "Military strategy"
+      - "Political campaigns"
+      - "Marketing budget allocation"
+
+
+# =============================================================================
+# TYPE MAPPINGS AND ALIASES
+# =============================================================================
+
+canonical_aliases:
+  "PD": "Prisoners_Dilemma"
+  "Prisoner's Dilemma": "Prisoners_Dilemma"
+  "Hawk-Dove": "Chicken"
+  "Snowdrift": "Chicken"
+  "Trust": "Stag_Hunt"
+  "BoS": "Battle_of_the_Sexes"
+  "Leader": "Battle_of_the_Sexes"
+  "Pure Coordination": "Coordination_Game"
+  "Safecoord": "Coordination_Game"
+  "Altruist's Dilemma": "Deadlock"
+  "Club": "Peace"
+  "CPR": "Common_Pool_Resource"
+  "Tragedy of the Commons": "Common_Pool_Resource"
+  "Zero-sum": "Matching_Pennies"
+  "Dilemma": "Prisoners_Dilemma"
+  "Staghunt": "Stag_Hunt"
+
+# Bidirectional mapping for classifier normalization
+normalization_map:
+  # Input variations -> Canonical form
+  "prisoners dilemma": "Prisoners_Dilemma"
+  "prisoner's dilemma": "Prisoners_Dilemma"
+  "pd": "Prisoners_Dilemma"
+  "chicken game": "Chicken"
+  "hawk dove": "Chicken"
+  "hawk-dove": "Chicken"
+  "stag hunt": "Stag_Hunt"
+  "staghunt": "Stag_Hunt"
+  "battle of the sexes": "Battle_of_the_Sexes"
+  "bos": "Battle_of_the_Sexes"
+  "coordination": "Coordination_Game"
+  "coordination game": "Coordination_Game"
+  "matching pennies": "Matching_Pennies"
+  "zero sum": "Matching_Pennies"
+  "public goods": "Public_Goods_Game"
+  "commons": "Common_Pool_Resource"
+  "tragedy of commons": "Common_Pool_Resource"
+  "ultimatum": "Ultimatum_Game"
+  "dictator": "Dictator_Game"
+  "trust": "Trust_Game"
+  "centipede": "Centipede_Game"
+  "bertrand": "Bertrand_Competition"
+  "cournot": "Cournot_Competition"
+  "stackelberg": "Stackelberg_Competition"
+  "attrition": "War_of_Attrition"
+  "blotto": "Colonel_Blotto"
+  "assurance": "Assurance_Game"
+  "harmony": "Harmony"
+  "deadlock": "Deadlock"
+  "hero": "Hero"
+  "compromise": "Compromise"
+  "peace": "Peace"
+  "concord": "Concord"

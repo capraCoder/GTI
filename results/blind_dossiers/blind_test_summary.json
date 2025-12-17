@@ -1,0 +1,84 @@
+{
+  "timestamp": "2025-12-17T05:57:48.278775",
+  "version": "3.0.0",
+  "total_cases": 7,
+  "results": [
+    {
+      "id": "BLIND-001",
+      "title": "The Price War (Corporate Memo)",
+      "game_type": "Prisoners_Dilemma",
+      "confidence": 95,
+      "deception_detected": false,
+      "stated_game": null,
+      "revealed_game": "Prisoners_Dilemma",
+      "equilibrium": "Defect/Defect",
+      "risk": "High"
+    },
+    {
+      "id": "BLIND-002",
+      "title": "The Depleted Lake (Local News)",
+      "game_type": "Prisoners_Dilemma",
+      "confidence": 95,
+      "deception_detected": true,
+      "stated_game": "Coordination_Game",
+      "revealed_game": "Prisoners_Dilemma",
+      "equilibrium": "Defect/Defect/Defect",
+      "risk": "Critical_MAD"
+    },
+    {
+      "id": "BLIND-003",
+      "title": "The Friday Night Plan (Text Messages)",
+      "game_type": "Battle_of_the_Sexes",
+      "confidence": 95,
+      "deception_detected": false,
+      "stated_game": "Battle_of_the_Sexes",
+      "revealed_game": "Battle_of_the_Sexes",
+      "equilibrium": "Coordinate on one activity",
+      "risk": "Low"
+    },
+    {
+      "id": "BLIND-004",
+      "title": "The Interrogation Room (Crime Report)",
+      "game_type": "Prisoners_Dilemma",
+      "confidence": 100,
+      "deception_detected": true,
+      "stated_game": "Honor_Coordination",
+      "revealed_game": "Prisoners_Dilemma",
+      "equilibrium": "Testify/Testify",
+      "risk": "High"
+    },
+    {
+      "id": "BLIND-005",
+      "title": "The One-Lane Bridge (Traffic Incident)",
+      "game_type": "Chicken",
+      "confidence": 95,
+      "deception_detected": false,
+      "stated_game": "Chicken",
+      "revealed_game": "Chicken",
+      "equilibrium": "One swerves, one continues",
+      "risk": "Critical_MAD"
+    },
+    {
+      "id": "BLIND-006",
+      "title": "The July Crisis 1914 (Historical)",
+      "game_type": "Chicken",
+      "confidence": 92,
+      "deception_detected": true,
+      "stated_game": "Hero",
+      "revealed_game": "Chicken",
+      "equilibrium": "Escalate/Escalate",
+      "risk": "Critical_MAD"
+    },
+    {
+      "id": "BLIND-007",
+      "title": "The Eco-Partnership Deception (DECEPTION TEST)",
+      "game_type": "Prisoners_Dilemma",
+      "confidence": 95,
+      "deception_detected": true,
+      "stated_game": "Coordination_Game",
+      "revealed_game": "Prisoners_Dilemma",
+      "equilibrium": "Defect/Defect",
+      "risk": "High"
+    }
+  ]
+}

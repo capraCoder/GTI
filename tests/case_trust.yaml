@@ -1,0 +1,31 @@
+case_id: "TEST-TRUST"
+title: "Trust Game"
+
+payoffs:
+  players: ["Trustor", "Trustee"]
+  options:
+    Trustor: ["Send", "Keep"]
+    Trustee: ["Return", "Keep_All"]
+  matrix:
+    A_A: [6, 6]
+    A_B: [0, 12]
+    B_A: [4, 4]
+    B_B: [4, 4]
+
+information:
+  timing: "sequential"
+  move_order: ["Trustor", "Trustee"]
+
+time:
+  repetition: "one-shot"
+  iterations: null
+
+commitment:
+  mechanism: "none"
+
+symmetry:
+  symmetric: false
+
+notes:
+  assumptions: ["Money tripled when sent", "Trustee decides after receiving"]
+  flags: ["trust game", "trustor", "trustee"]

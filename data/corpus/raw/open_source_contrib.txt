@@ -1,0 +1,16 @@
+Open source projects like Linux rely on volunteers contributing code.
+
+Contributors spend time improving software they could use for free anyway.
+
+If everyone free-rides: No contributions, project dies.
+If some contribute: Contributors bear costs, everyone benefits.
+
+Why do people contribute?
+- Reputation (visible commits signal skill)
+- Reciprocity (use others' code, contribute back)
+- Intrinsic motivation (enjoy the work)
+- Corporate backing (companies pay developers to contribute)
+
+The "tragedy of the commons" is avoided through social norms, reputation systems, and corporate sponsorship.
+
+Linux succeeds despite classical game theory predicting free-riding collapse.

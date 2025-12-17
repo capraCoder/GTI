@@ -1,0 +1,115 @@
+{
+  "scan_id": "BLIND-007",
+  "timestamp": "2024-12-13T10:30:00Z",
+  "version": "3.0.0",
+  "game_type": "Prisoners_Dilemma",
+  "game_description": "Company A is attempting to free-ride on Company B's environmental investment while maintaining plausible deniability",
+  "confidence_score": 0.95,
+  "players": [
+    {
+      "name": "Company A",
+      "motive": "Profit",
+      "stated_preference": [
+        "Environmental commitment",
+        "Genuine partnership",
+        "Cost-irrelevant sustainability"
+      ],
+      "revealed_preference": [
+        "Zero budget allocation",
+        "Free technology acquisition",
+        "Exploit partner investment"
+      ],
+      "irrationality_index": 0.1
+    },
+    {
+      "name": "Company B",
+      "motive": "Profit",
+      "stated_preference": [
+        "Environmental partnership"
+      ],
+      "revealed_preference": [
+        "Considering investment",
+        "Risk assessment"
+      ],
+      "irrationality_index": 0.3
+    }
+  ],
+  "matrix": {
+    "T_temptation": "Free technology + record profits while partner invests",
+    "R_reward": "Mutual investment in genuine partnership",
+    "P_punishment": "Deal collapse, reputation damage, no technology",
+    "S_sucker": "Full investment while partner free-rides",
+    "player_a_order": [
+      "T",
+      "R",
+      "P",
+      "S"
+    ],
+    "player_b_order": [
+      "T",
+      "R",
+      "P",
+      "S"
+    ],
+    "payoff_CC": [
+      3.0,
+      3.0
+    ],
+    "payoff_CD": [
+      0.0,
+      5.0
+    ],
+    "payoff_DC": [
+      5.0,
+      0.0
+    ],
+    "payoff_DD": [
+      1.0,
+      1.0
+    ]
+  },
+  "deception": {
+    "is_deceptive": true,
+    "deception_score": 0.95,
+    "cheap_talk_detected": true,
+    "stated_game": "Coordination_Game",
+    "revealed_game": "Prisoners_Dilemma",
+    "credibility_score": 0.05,
+    "contradiction_evidence": [
+      "Public commitment vs zero budget",
+      "Leaked memos contradict press release",
+      "Cost-irrelevant claim while slashing budget"
+    ],
+    "cheap_talk_evidence": [
+      "Press release praising partnership",
+      "Regardless of cost commitment",
+      "Environmental virtue signaling"
+    ],
+    "credible_signals": [
+      "Zero budget allocation",
+      "Leaked internal strategy"
+    ]
+  },
+  "equilibrium": {
+    "primary_outcome": "Defect/Defect",
+    "secondary_outcome": "Cooperate/Sucker",
+    "stability": "Unstable",
+    "stability_score": 0.2,
+    "reasoning": "Information asymmetry creates temporary exploitation opportunity, but discovery leads to mutual defection"
+  },
+  "risk": {
+    "level": "High",
+    "sensitivity": "Company B's due diligence and information discovery timing",
+    "mad_potential": false,
+    "reasoning": "High reputational and financial risk for both parties, especially if deception is exposed publicly"
+  },
+  "prescription": {
+    "pivot_variable": "P",
+    "mechanism_design": "Escrow system with milestone-based releases, third-party auditing, reputation bonds",
+    "player_a_advice": "Credibly commit resources or face reputation destruction when discovered",
+    "player_b_advice": "Demand proof of budget allocation and milestone payments before investing",
+    "mediator_advice": "Implement transparent funding verification and joint oversight committee",
+    "victim_warning": "Company B: Verify actual budget commitments before investing - press releases are cheap talk"
+  },
+  "input_summary": "The CEO of Company A issued a press release today praising the new \neco-friendly partnership with Company B: 'We are fully committed to this \njoint venture to reduce emissions. It is the right thing t..."
+}

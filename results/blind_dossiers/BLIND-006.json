@@ -1,0 +1,115 @@
+{
+  "scan_id": "BLIND-006",
+  "timestamp": "2024-12-28T10:30:00Z",
+  "version": "3.0.0",
+  "game_type": "Chicken",
+  "game_description": "Two Great Powers racing toward mutual destruction while hoping the other will swerve first to avoid looking weak",
+  "confidence_score": 0.92,
+  "players": [
+    {
+      "name": "Austria-Hungary",
+      "motive": "Honor/Status preservation as Great Power",
+      "stated_preference": [
+        "Justice for Archduke",
+        "Suppress Serbian movement",
+        "Cannot tolerate machinations"
+      ],
+      "revealed_preference": [
+        "Maintain Great Power status",
+        "Cannot appear weak",
+        "Willing to risk war for honor"
+      ],
+      "irrationality_index": 0.8
+    },
+    {
+      "name": "Serbia/Russia Alliance",
+      "motive": "Survival/Sovereignty",
+      "stated_preference": [
+        "National sovereignty",
+        "Resist foreign interference"
+      ],
+      "revealed_preference": [
+        "Protect territorial integrity",
+        "Resist ultimatum"
+      ],
+      "irrationality_index": 0.6
+    }
+  ],
+  "matrix": {
+    "T_temptation": "Opponent backs down, you gain prestige",
+    "R_reward": "Face-saving compromise found",
+    "P_punishment": "World War - mutual destruction",
+    "S_sucker": "Back down and lose Great Power status",
+    "player_a_order": [
+      "T",
+      "R",
+      "S",
+      "P"
+    ],
+    "player_b_order": [
+      "T",
+      "R",
+      "S",
+      "P"
+    ],
+    "payoff_CC": [
+      2.0,
+      2.0
+    ],
+    "payoff_CD": [
+      -5.0,
+      4.0
+    ],
+    "payoff_DC": [
+      4.0,
+      -5.0
+    ],
+    "payoff_DD": [
+      -10.0,
+      -10.0
+    ]
+  },
+  "deception": {
+    "is_deceptive": true,
+    "deception_score": 0.7,
+    "cheap_talk_detected": true,
+    "stated_game": "Hero",
+    "revealed_game": "Chicken",
+    "credibility_score": 0.3,
+    "contradiction_evidence": [
+      "Claims justice motive but admits 'cannot look weak'",
+      "Frames as moral duty but reveals status anxiety"
+    ],
+    "cheap_talk_evidence": [
+      "Moral justification for Archduke murder",
+      "Claims about Serbian machinations"
+    ],
+    "credible_signals": [
+      "48-hour ultimatum",
+      "Military mobilization threat",
+      "Ally commitments"
+    ]
+  },
+  "equilibrium": {
+    "primary_outcome": "Escalate/Escalate",
+    "secondary_outcome": null,
+    "stability": "Volatile",
+    "stability_score": 0.1,
+    "reasoning": "Both players have high irrationality index and honor motives in Chicken game - classic recipe for mutual destruction"
+  },
+  "risk": {
+    "level": "Critical_MAD",
+    "sensitivity": "Any miscalculation triggers alliance system cascade",
+    "mad_potential": true,
+    "reasoning": "Chicken game with honor-driven players and alliance commitments creates world war scenario"
+  },
+  "prescription": {
+    "pivot_variable": "S",
+    "mechanism_design": "Face-saving exit ramps and third-party mediation to reduce honor costs of backing down",
+    "player_a_advice": "Find symbolic concession that preserves honor without triggering war",
+    "player_b_advice": "Offer face-saving compromise that allows Austria to claim victory",
+    "mediator_advice": "Emergency mediation to create honor-preserving alternatives before 48 hours expire",
+    "victim_warning": "Civilian populations of Europe face imminent catastrophe from Great Power honor competition"
+  },
+  "input_summary": "The Imperial Government of Austria-Hungary asserts that the murder of \nthe Archduke was plotted in Belgrade. We can no longer tolerate the \nmachinations of the Serbian government. We demand that Serbi..."
+}

@@ -1,0 +1,108 @@
+{
+  "id": "BLIND-002",
+  "timestamp": "2025-12-17T05:32:02.719742",
+  "input_text": "Tensions are rising in the coastal town of Oakhaven. The local lake has \nalways supported the community, but yields are dropping fast. Marine \nbiologists warn that the fish population is on the brink of collapse and \nneeds a season to recover. However, the three major fishing families are \nintensifying their efforts. 'If I stop fishing to let the stock recover,' \nsaid one captain, 'my neighbor will just go out and catch the fish I left \nbehind. I'd love to save the lake, but I have a mortgage to...",
+  "game_type": "Prisoners_Dilemma",
+  "game_description": "Classic tragedy of the commons with dominant defection incentives. Each fisher gains individually by overfishing while others show restraint, but mutual overfishing destroys the shared resource. The captain's quote reveals the core PD structure: 'I'd love to cooperate but I can't let them exploit me.'",
+  "interaction_type": "Non-Zero-Sum",
+  "symmetry": "Symmetric",
+  "timing": "Simultaneous",
+  "payoff_matrix": {
+    "T": "Fish intensively while others show restraint - capture larger market share and immediate profits",
+    "R": "All show restraint - lake recovers, sustainable long-term yields for everyone",
+    "P": "All fish intensively - lake collapses, everyone loses livelihood permanently",
+    "S": "Show restraint while others fish intensively - lose income AND still face lake collapse"
+  },
+  "player_a": {
+    "player_id": "Fisher/Captain quoted in scenario",
+    "stated_preferences": [
+      "Save the lake",
+      "Allow fish stock to recover",
+      "Sustainable fishing"
+    ],
+    "revealed_preferences": [
+      "Avoid being exploited",
+      "Maintain income flow",
+      "Fish intensively regardless of consequences"
+    ],
+    "interpretation": "MAJOR CONTRADICTION. Says 'I'd love to save the lake' but is 'fishing double shifts.' Actions completely contradict stated environmental concerns."
+  },
+  "player_b": {
+    "player_id": "Other fishing families in Oakhaven",
+    "stated_preferences": [
+      "Not explicitly stated"
+    ],
+    "revealed_preferences": [
+      "Intensify fishing efforts",
+      "Maximize immediate catch",
+      "Compete for remaining fish"
+    ],
+    "interpretation": "All players showing identical defection behavior - everyone fishing double shifts despite knowing it will destroy the commons."
+  },
+  "deception": {
+    "deception_detected": true,
+    "deception_score": 75,
+    "stated_game": "Environmental Coordination Game - everyone wants to save the lake",
+    "revealed_game": "Prisoners Dilemma - everyone defecting despite stated environmental concerns",
+    "contradiction_signals": [
+      "'I'd love to save the lake' while 'fishing double shifts'",
+      "'intensifying their efforts' despite knowing stocks are collapsing"
+    ],
+    "cheap_talk_indicators": [
+      "'I'd love to save the lake' - costless statement with no binding commitment",
+      "Expressing concern about fish population while taking opposite action"
+    ],
+    "credible_signals": [
+      "Actually fishing double shifts",
+      "All families intensifying efforts",
+      "Paying mortgages takes priority over environmental concerns"
+    ],
+    "analysis": "Self-deception or rationalization pattern. Players genuinely may want environmental protection but their dominant strategy incentives override stated preferences. The 'I'd love to cooperate but...' framing is classic PD justification."
+  },
+  "evidence": {
+    "verbal_cooperation": [
+      "'I'd love to save the lake'",
+      "Acknowledging need for fish stock recovery"
+    ],
+    "verbal_defection": [
+      "'I can't let them get rich at my expense'",
+      "'I have a mortgage to pay'"
+    ],
+    "action_cooperation": [],
+    "action_defection": [
+      "'fishing double shifts'",
+      "'intensifying their efforts'",
+      "All families increasing fishing despite warnings"
+    ],
+    "payoff_signals": [
+      "'my neighbor will just go out and catch the fish I left behind'",
+      "'mortgage to pay'",
+      "'can't let them exploit me'"
+    ]
+  },
+  "confidence": {
+    "score": 95,
+    "naive_classification": "Environmental Coordination Game - everyone wants to save the lake",
+    "structural_classification": "Prisoners Dilemma - dominant defection incentives override stated cooperation preferences",
+    "classification_divergence": true,
+    "reasoning": "The incentive structure is crystal clear: T > R > P > S. Individual fishing while others restrain (T) beats everyone restraining (R), which beats everyone overfishing (P), which beats restraining while others overfish (S). Actions prove this despite cooperative rhetoric."
+  },
+  "equilibrium": {
+    "outcome": "Mutual Defection - Lake collapse with all fishers losing their livelihoods",
+    "stability": "Stable but catastrophic",
+    "reasoning": "Defection is dominant strategy for each player regardless of others' choices. Without external enforcement, rational self-interest leads to collective disaster."
+  },
+  "risk": {
+    "level": "Critical",
+    "sensitivity": "Total loss of shared resource and all players' livelihoods if current trajectory continues",
+    "reasoning": "Classic commons collapse scenario. Unlike regular PD where mutual defection is just suboptimal, here it means permanent destruction of the resource base."
+  },
+  "prescription": {
+    "mechanism": "External enforcement (fishing quotas, monitoring, penalties) or binding collective agreement with enforcement",
+    "lever_variable": "P - Make mutual defection more costly than mutual cooperation through regulations/fines",
+    "player_a_advice": "Support binding fishing quotas with enforcement. Your individual restraint without others' commitment is economically irrational.",
+    "player_b_advice": "Coordinate on enforceable catch limits. Current path leads to total loss for everyone.",
+    "mediator_advice": "Implement immediate catch limits with monitoring. Create compensation fund for short-term income loss during recovery.",
+    "victim_warning": "The lake ecosystem is the victim - without intervention, total collapse is inevitable despite all players' stated desire to 'save' it."
+  }
+}

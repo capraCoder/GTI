@@ -1,0 +1,9 @@
+Two friends are trying to meet up in a city but their phones died so they cannot communicate.
+
+They previously discussed two possible meeting spots: the central plaza or the train station.
+
+If they both go to the same location, they meet up successfully and have a great time together.
+
+If they go to different locations, they miss each other entirely and both have a disappointing day alone.
+
+Neither location is inherently better - what matters is that they coordinate on the same choice.

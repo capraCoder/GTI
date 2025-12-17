@@ -1,0 +1,31 @@
+case_id: "TEST-ULTIMATUM"
+title: "Classic Ultimatum Game"
+
+payoffs:
+  players: ["Proposer", "Responder"]
+  options:
+    Proposer: ["Fair_Split", "Unfair_Split"]
+    Responder: ["Accept", "Reject"]
+  matrix:
+    A_A: [5, 5]
+    A_B: [0, 0]
+    B_A: [8, 2]
+    B_B: [0, 0]
+
+information:
+  timing: "sequential"
+  move_order: ["Proposer", "Responder"]
+
+time:
+  repetition: "one-shot"
+  iterations: null
+
+commitment:
+  mechanism: "none"
+
+symmetry:
+  symmetric: false
+
+notes:
+  assumptions: ["Proposer moves first", "Responder sees offer before deciding"]
+  flags: ["ultimatum"]

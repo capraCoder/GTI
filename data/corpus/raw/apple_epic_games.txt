@@ -1,0 +1,15 @@
+Epic Games makes Fortnite. Apple runs the App Store with 30% commission on all purchases.
+
+Epic added direct payment option bypassing Apple's cut. Apple removed Fortnite from App Store.
+
+Epic sued, claiming Apple's commission is monopolistic. Apple claimed Epic violated contract terms.
+
+Epic wanted to change the rules while continuing to benefit from Apple's platform and users.
+
+Apple wanted to maintain control and revenue share that funds App Store operations.
+
+Both had leverage: Apple controls access to iPhone users. Epic controls a game with millions of players.
+
+Court ruled mostly for Apple on contract, but forced some App Store changes.
+
+Principal (Apple) vs Agent (Epic) conflict over how much of the value each party captures.

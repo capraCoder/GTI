@@ -1,0 +1,112 @@
+{
+  "scan_id": "BLIND-004",
+  "timestamp": "2024-12-14T10:30:00Z",
+  "version": "3.0.0",
+  "game_type": "Prisoners_Dilemma",
+  "game_description": "Two gang members face interrogation with defection (testify) dominating cooperation (stay silent) despite mutual cooperation being collectively optimal.",
+  "confidence_score": 1.0,
+  "players": [
+    {
+      "name": "Gang Member A",
+      "motive": "Survival",
+      "stated_preference": [
+        "Gang loyalty",
+        "Honor code"
+      ],
+      "revealed_preference": [
+        "Minimize personal jail time",
+        "Self-preservation"
+      ],
+      "irrationality_index": 0.2
+    },
+    {
+      "name": "Gang Member B",
+      "motive": "Survival",
+      "stated_preference": [
+        "Gang loyalty",
+        "Honor code"
+      ],
+      "revealed_preference": [
+        "Minimize personal jail time",
+        "Self-preservation"
+      ],
+      "irrationality_index": 0.2
+    }
+  ],
+  "matrix": {
+    "T_temptation": "0 years (walk free by betraying partner)",
+    "R_reward": "1 year each (mutual silence)",
+    "P_punishment": "5 years each (mutual betrayal)",
+    "S_sucker": "10 years (stay silent while partner betrays)",
+    "player_a_order": [
+      "T",
+      "R",
+      "P",
+      "S"
+    ],
+    "player_b_order": [
+      "T",
+      "R",
+      "P",
+      "S"
+    ],
+    "payoff_CC": [
+      -1.0,
+      -1.0
+    ],
+    "payoff_CD": [
+      -10.0,
+      0.0
+    ],
+    "payoff_DC": [
+      0.0,
+      -10.0
+    ],
+    "payoff_DD": [
+      -5.0,
+      -5.0
+    ]
+  },
+  "deception": {
+    "is_deceptive": true,
+    "deception_score": 0.8,
+    "cheap_talk_detected": true,
+    "stated_game": "Honor_Coordination",
+    "revealed_game": "Prisoners_Dilemma",
+    "credibility_score": 0.2,
+    "contradiction_evidence": [
+      "Gang loyalty claims vs survival incentives",
+      "Honor code vs zero communication"
+    ],
+    "cheap_talk_evidence": [
+      "Gang loyalty rhetoric with no enforcement mechanism",
+      "Honor claims without credible punishment"
+    ],
+    "credible_signals": [
+      "Separation prevents coordination",
+      "Legal consequences are real and immediate"
+    ]
+  },
+  "equilibrium": {
+    "primary_outcome": "Testify/Testify",
+    "secondary_outcome": null,
+    "stability": "Stable",
+    "stability_score": 1.0,
+    "reasoning": "Defection (testify) strictly dominates cooperation (silence) for both players regardless of partner's choice"
+  },
+  "risk": {
+    "level": "High",
+    "sensitivity": "Misreading partner's honor commitment leads to 10-year sentence",
+    "mad_potential": false,
+    "reasoning": "Classic dominant strategy equilibrium with severe punishment for misplaced trust"
+  },
+  "prescription": {
+    "pivot_variable": "Communication",
+    "mechanism_design": "Pre-commitment devices, enforceable contracts, or repeated interaction to enable cooperation",
+    "player_a_advice": "Without credible commitment mechanism, testifying is rational despite collective irrationality",
+    "player_b_advice": "Without credible commitment mechanism, testifying is rational despite collective irrationality",
+    "mediator_advice": "System designed to break gang solidarity through isolation - working as intended",
+    "victim_warning": "Any gang member trusting in honor codes without enforcement faces 10-year exploitation risk"
+  },
+  "input_summary": "Police have arrested two members of the 'Red Hand' gang. They are currently \nbeing interrogated in separate wings of the precinct. There isn't enough \nhard evidence to convict either of them for the m..."
+}

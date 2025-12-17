@@ -1,0 +1,9 @@
+Two drivers are speeding toward each other on a narrow road. Each driver can either swerve to avoid collision or keep driving straight.
+
+If both swerve, they both survive but feel slightly embarrassed - a moderate outcome for both.
+
+If one swerves and the other doesn't, the one who swerved is called a "chicken" and loses face, while the one who stayed straight gains respect and status.
+
+If neither swerves, they crash head-on and both suffer catastrophic consequences - the worst possible outcome for everyone.
+
+They must decide simultaneously as they approach each other.

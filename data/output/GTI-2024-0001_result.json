@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-2024-0001",
+  "title": "Principal-Agent Monitoring Problem",
+  "source_file": "data\\raw\\principal_agent.txt",
+  "game_type": "Principal_Agent",
+  "confidence": 85,
+  "reasoning": "Principal-agent structure with monitoring/effort decision"
+}

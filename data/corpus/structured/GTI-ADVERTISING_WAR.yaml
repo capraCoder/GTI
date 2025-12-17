@@ -1,0 +1,41 @@
+case_id: GTI-ADVERTISING_WAR
+title: Holiday Season Advertising War
+payoffs:
+  players:
+  - TechCorp
+  - MobileInc
+  options:
+    TechCorp:
+    - Modest_Budget
+    - Aggressive_Campaign
+    MobileInc:
+    - Modest_Budget
+    - Aggressive_Campaign
+  matrix:
+    A_A:
+    - 3
+    - 3
+    A_B:
+    - 1
+    - 4
+    B_A:
+    - 4
+    - 1
+    B_B:
+    - 2
+    - 2
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - Market is evenly split when strategies match
+  - Aggressive advertising captures majority market share when unmatched
+  flags: []

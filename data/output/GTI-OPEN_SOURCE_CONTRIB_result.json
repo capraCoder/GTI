@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-OPEN_SOURCE_CONTRIB",
+  "title": "Open Source Software Contribution Game",
+  "source_file": "data\\raw\\corpus\\open_source_contrib.txt",
+  "game_type": "Incomplete_Info",
+  "confidence": 30,
+  "reasoning": "Incomplete information game - requires Bayesian analysis"
+}

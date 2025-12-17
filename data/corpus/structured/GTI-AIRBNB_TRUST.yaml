@@ -1,0 +1,43 @@
+case_id: GTI-AIRBNB_TRUST
+title: Airbnb Trust Game with Platform Intermediation
+payoffs:
+  players:
+  - Host
+  - Guest
+  options:
+    Host:
+    - Trust_Guest
+    - Reject_Guest
+    Guest:
+    - Trust_Host
+    - Avoid_Host
+  matrix:
+    Trust_Trust:
+    - 3
+    - 3
+    Trust_Avoid:
+    - 1
+    - 2
+    Reject_Trust:
+    - 2
+    - 1
+    Reject_Reject:
+    - 2
+    - 2
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: infinite
+  iterations: null
+commitment:
+  mechanism: external
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - Platform provides verification, reviews, insurance, and payment escrow
+  - Without platform, both parties face mutual trust dilemma
+  - Platform converts bilateral trust problem into sequential game with intermediary
+  flags:
+  - intermediary-enabled

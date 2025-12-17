@@ -1,0 +1,602 @@
+{
+  "total": 55,
+  "correct": 52,
+  "incorrect": 2,
+  "unknown": 1,
+  "by_difficulty": {
+    "easy": {
+      "correct": 15,
+      "total": 15
+    },
+    "medium": {
+      "correct": 22,
+      "total": 24
+    },
+    "hard": {
+      "correct": 15,
+      "total": 16
+    }
+  },
+  "by_type": {
+    "Prisoners_Dilemma": {
+      "correct": 7,
+      "total": 8
+    },
+    "Chicken": {
+      "correct": 5,
+      "total": 6
+    },
+    "Stag_Hunt": {
+      "correct": 5,
+      "total": 5
+    },
+    "Coordination": {
+      "correct": 4,
+      "total": 5
+    },
+    "Battle_of_Sexes": {
+      "correct": 4,
+      "total": 4
+    },
+    "Ultimatum": {
+      "correct": 4,
+      "total": 4
+    },
+    "Trust_Game": {
+      "correct": 4,
+      "total": 4
+    },
+    "Entry_Deterrence": {
+      "correct": 3,
+      "total": 3
+    },
+    "Matching_Pennies": {
+      "correct": 4,
+      "total": 4
+    },
+    "Inspection_Game": {
+      "correct": 3,
+      "total": 3
+    },
+    "Principal_Agent": {
+      "correct": 3,
+      "total": 3
+    },
+    "Sequential_Bargaining": {
+      "correct": 3,
+      "total": 3
+    },
+    "Public_Goods": {
+      "correct": 3,
+      "total": 3
+    }
+  },
+  "errors": [
+    {
+      "case_id": "PD-008",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Principal_Agent",
+      "confidence": 0.75
+    },
+    {
+      "case_id": "CH-004",
+      "expected": "Chicken",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.65
+    }
+  ],
+  "details": [
+    {
+      "case_id": "PD-001",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "PD-002",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "PD-003",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "PD-004",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "PD-005",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.85,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "PD-006",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.85,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "PD-007",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "PD-008",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Principal_Agent",
+      "confidence": 0.75,
+      "correct": false,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "CH-001",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "CH-002",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "CH-003",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "CH-004",
+      "expected": "Chicken",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.65,
+      "correct": false,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "CH-005",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "confidence": 0.65,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "CH-006",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "SH-001",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "SH-002",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "SH-003",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "SH-004",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "confidence": 0.85,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "SH-005",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "confidence": 0.65,
+      "correct": true,
+      "flags": [
+        "network_effects"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "CO-001",
+      "expected": "Coordination",
+      "predicted": "Coordination",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "CO-002",
+      "expected": "Coordination",
+      "predicted": "Coordination",
+      "confidence": 0.65,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "CO-003",
+      "expected": "Coordination",
+      "predicted": "Coordination",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [
+        "network_effects"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "CO-004",
+      "expected": "Coordination",
+      "predicted": "Unknown",
+      "confidence": 0.3,
+      "correct": false,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "CO-005",
+      "expected": "Coordination",
+      "predicted": "Coordination",
+      "confidence": 0.65,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "BoS-001",
+      "expected": "Battle_of_Sexes",
+      "predicted": "Battle_of_Sexes",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "BoS-002",
+      "expected": "Battle_of_Sexes",
+      "predicted": "Battle_of_Sexes",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "BoS-003",
+      "expected": "Battle_of_Sexes",
+      "predicted": "Battle_of_Sexes",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "BoS-004",
+      "expected": "Battle_of_Sexes",
+      "predicted": "Battle_of_Sexes",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "UL-001",
+      "expected": "Ultimatum",
+      "predicted": "Ultimatum",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "UL-002",
+      "expected": "Ultimatum",
+      "predicted": "Ultimatum",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "UL-003",
+      "expected": "Ultimatum",
+      "predicted": "Ultimatum",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "UL-004",
+      "expected": "Ultimatum",
+      "predicted": "Ultimatum",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [
+        "network_effects"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "TG-001",
+      "expected": "Trust_Game",
+      "predicted": "Trust_Game",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "TG-002",
+      "expected": "Trust_Game",
+      "predicted": "Trust_Game",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "TG-003",
+      "expected": "Trust_Game",
+      "predicted": "Trust_Game",
+      "confidence": 0.65,
+      "correct": true,
+      "flags": [
+        "repeated_game"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "TG-004",
+      "expected": "Trust_Game",
+      "predicted": "Trust_Game",
+      "confidence": 0.65,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "ED-001",
+      "expected": "Entry_Deterrence",
+      "predicted": "Entry_Deterrence",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "ED-002",
+      "expected": "Entry_Deterrence",
+      "predicted": "Entry_Deterrence",
+      "confidence": 0.85,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "ED-003",
+      "expected": "Entry_Deterrence",
+      "predicted": "Entry_Deterrence",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "MP-001",
+      "expected": "Matching_Pennies",
+      "predicted": "Matching_Pennies",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "MP-002",
+      "expected": "Matching_Pennies",
+      "predicted": "Matching_Pennies",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "MP-003",
+      "expected": "Matching_Pennies",
+      "predicted": "Matching_Pennies",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "MP-004",
+      "expected": "Matching_Pennies",
+      "predicted": "Matching_Pennies",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "IG-001",
+      "expected": "Inspection_Game",
+      "predicted": "Inspection_Game",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "easy"
+    },
+    {
+      "case_id": "IG-002",
+      "expected": "Inspection_Game",
+      "predicted": "Inspection_Game",
+      "confidence": 0.75,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "IG-003",
+      "expected": "Inspection_Game",
+      "predicted": "Inspection_Game",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "PA-001",
+      "expected": "Principal_Agent",
+      "predicted": "Principal_Agent",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [
+        "incomplete_information"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "PA-002",
+      "expected": "Principal_Agent",
+      "predicted": "Principal_Agent",
+      "confidence": 0.85,
+      "correct": true,
+      "flags": [
+        "incomplete_information"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "PA-003",
+      "expected": "Principal_Agent",
+      "predicted": "Principal_Agent",
+      "confidence": 0.85,
+      "correct": true,
+      "flags": [
+        "incomplete_information"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "SB-001",
+      "expected": "Sequential_Bargaining",
+      "predicted": "Sequential_Bargaining",
+      "confidence": 0.65,
+      "correct": true,
+      "flags": [
+        "commitment_problem"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "SB-002",
+      "expected": "Sequential_Bargaining",
+      "predicted": "Sequential_Bargaining",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "SB-003",
+      "expected": "Sequential_Bargaining",
+      "predicted": "Sequential_Bargaining",
+      "confidence": 0.65,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "PG-001",
+      "expected": "Public_Goods",
+      "predicted": "Public_Goods",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "PG-002",
+      "expected": "Public_Goods",
+      "predicted": "Public_Goods",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "medium"
+    },
+    {
+      "case_id": "PG-003",
+      "expected": "Public_Goods",
+      "predicted": "Public_Goods",
+      "confidence": 0.95,
+      "correct": true,
+      "flags": [],
+      "difficulty": "hard"
+    }
+  ],
+  "accuracy": 0.9454545454545454
+}

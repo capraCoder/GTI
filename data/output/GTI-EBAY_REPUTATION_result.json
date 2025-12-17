@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-EBAY_REPUTATION",
+  "title": "eBay Trust and Reputation System",
+  "source_file": "data\\raw\\corpus\\ebay_reputation.txt",
+  "game_type": "Unknown",
+  "confidence": 0,
+  "reasoning": "Could not normalize payoff matrix"
+}

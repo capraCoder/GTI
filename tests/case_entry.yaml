@@ -1,0 +1,31 @@
+case_id: "TEST-ENTRY"
+title: "Market Entry Deterrence"
+
+payoffs:
+  players: ["Entrant", "Incumbent"]
+  options:
+    Entrant: ["Enter", "Stay_Out"]
+    Incumbent: ["Accommodate", "Fight"]
+  matrix:
+    A_A: [2, 2]
+    A_B: [-1, -1]
+    B_A: [0, 4]
+    B_B: [0, 4]
+
+information:
+  timing: "sequential"
+  move_order: ["Entrant", "Incumbent"]
+
+time:
+  repetition: "one-shot"
+  iterations: null
+
+commitment:
+  mechanism: "none"
+
+symmetry:
+  symmetric: false
+
+notes:
+  assumptions: ["Entrant decides first", "Incumbent responds"]
+  flags: ["entry", "incumbent", "entrant"]

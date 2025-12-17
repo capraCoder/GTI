@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-IRS_AUDITING",
+  "title": "Tax Compliance and Audit Enforcement",
+  "source_file": "data\\raw\\corpus\\irs_auditing.txt",
+  "game_type": "Inspection_Game",
+  "confidence": 85,
+  "reasoning": "Inspection/monitoring structure"
+}

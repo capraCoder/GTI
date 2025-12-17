@@ -1,0 +1,31 @@
+case_id: "TEST-CHICKEN"
+title: "Classic Chicken"
+
+payoffs:
+  players: ["P1", "P2"]
+  options:
+    P1: ["Swerve", "Straight"]
+    P2: ["Swerve", "Straight"]
+  matrix:
+    A_A: [3, 3]
+    A_B: [2, 4]
+    B_A: [4, 2]
+    B_B: [1, 1]
+
+information:
+  timing: "simultaneous"
+  move_order: null
+
+time:
+  repetition: "one-shot"
+  iterations: null
+
+commitment:
+  mechanism: "none"
+
+symmetry:
+  symmetric: true
+
+notes:
+  assumptions: []
+  flags: []

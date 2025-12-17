@@ -1,0 +1,41 @@
+case_id: GTI-MEETING_COORDINATION
+title: Friends Meeting Coordination
+payoffs:
+  players:
+  - Friend1
+  - Friend2
+  options:
+    Friend1:
+    - Plaza
+    - Station
+    Friend2:
+    - Plaza
+    - Station
+  matrix:
+    A_A:
+    - 4
+    - 4
+    A_B:
+    - 1
+    - 1
+    B_A:
+    - 1
+    - 1
+    B_B:
+    - 4
+    - 4
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - No communication possible
+  - Pure coordination problem
+  flags: []

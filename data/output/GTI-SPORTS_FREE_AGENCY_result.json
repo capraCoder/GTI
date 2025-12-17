@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-SPORTS_FREE_AGENCY",
+  "title": "Free Agent Bidding War",
+  "source_file": "data\\raw\\corpus\\sports_free_agency.txt",
+  "game_type": "Incomplete_Info",
+  "confidence": 30,
+  "reasoning": "Incomplete information game - requires Bayesian analysis"
+}

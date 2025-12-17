@@ -1,0 +1,7 @@
+A goalie and a penalty kicker face off. The kicker can aim left or right. The goalie must dive left or right at the same moment the ball is kicked.
+
+If the goalie dives the same direction the kicker shoots, the goalie saves it and the kicker fails.
+
+If the goalie dives the opposite direction, the kicker scores and wins.
+
+Neither can see what the other chooses until it's too late to change. The kicker wants to score, the goalie wants to save - pure opposition.

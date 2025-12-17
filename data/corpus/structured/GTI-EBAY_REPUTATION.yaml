@@ -1,0 +1,42 @@
+case_id: GTI-EBAY_REPUTATION
+title: eBay Trust and Reputation System
+payoffs:
+  players:
+  - Seller
+  - Buyer
+  options:
+    Seller:
+    - Ship_Genuine
+    - Ship_Fake
+    Buyer:
+    - Pay_Fairly
+    - Claim_Fraud
+  matrix:
+    Ship_Genuine_Pay_Fairly:
+    - 4
+    - 4
+    Ship_Genuine_Claim_Fraud:
+    - 1
+    - 3
+    Ship_Fake_Pay_Fairly:
+    - 3
+    - 1
+    Ship_Fake_Claim_Fraud:
+    - 2
+    - 2
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: infinite
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - Reputation scores publicly visible
+  - Rating given after each transaction
+  - Future business depends on reputation
+  flags: []

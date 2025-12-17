@@ -1,0 +1,131 @@
+{
+  "timestamp": "2025-12-17T01:18:05.029567",
+  "n_games": 50,
+  "accuracy": 0.0,
+  "by_type": {
+    "Stag_Hunt": {
+      "correct": 0,
+      "total": 3
+    },
+    "Hero": {
+      "correct": 0,
+      "total": 3
+    },
+    "Coordination_Game": {
+      "correct": 0,
+      "total": 8
+    },
+    "Battle_of_the_Sexes": {
+      "correct": 0,
+      "total": 8
+    },
+    "Chicken": {
+      "correct": 0,
+      "total": 5
+    },
+    "Assurance_Game": {
+      "correct": 0,
+      "total": 5
+    },
+    "Deadlock": {
+      "correct": 0,
+      "total": 5
+    },
+    "Compromise": {
+      "correct": 0,
+      "total": 4
+    },
+    "Prisoners_Dilemma": {
+      "correct": 0,
+      "total": 1
+    },
+    "Harmony": {
+      "correct": 0,
+      "total": 4
+    },
+    "Peace": {
+      "correct": 0,
+      "total": 2
+    },
+    "Concord": {
+      "correct": 0,
+      "total": 2
+    }
+  },
+  "confusion": {
+    "Stag_Hunt": {
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_12,_D_Gives_11_\u2192_C_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_35,_D_Gives_26_\u2192_C_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_The_Payoff_Matrix:\n\n_______C___________D\nA___(43,_24)___(3,_8)\nB___(17,_6)____(10,_20)\n\nLet_Me_Analyze_The_Strategic": 1
+    },
+    "Hero": {
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_4,_D_Gives_23_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_1,_D_Gives_20_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "I_Need_To_Analyze_This_2X2_Game_By_Examining_The_Payoffs_And_Strategic_Structure.\n\nPayoff_Matrix:\n```\n_______C___________D\nA___(1,_24)____(9,_8)": 1
+    },
+    "Coordination_Game": {
+      "Chicken": 1,
+      "To_Classify_This_Game,_I_Need_To_Analyze_The_Payoff_Structure_And_Identify_The_Strategic_Characteristics.\n\nLet_Me_Examine_The_Payoffs:\n-_Row_Player:_A,C_(39)_>_B,D_(24)_>_A,D_(": 1,
+      "To_Classify_This_Game,_I_Need_To_Analyze_The_Payoff_Structure_And_Identify_The_Strategic_Incentives.\n\nLet_Me_Examine_The_Payoffs:\n-_Row_Player'S_Payoffs:_A,C_(32)_>_B,D_(20)_>": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_25_From_A,_7_From_B_\u2192_A_Is_Better\n-_If_Column_Plays_D": 1,
+      "To_Classify_This_Game,_I_Need_To_Analyze_The_Payoff_Structure_From_Both_Players'_Perspectives.\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_8_From_A,_20_From_B_\u2192_B_Is_Better": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_21,_D_Gives_5_\u2192_C_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_12,_D_Gives_1_\u2192_C_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_24,_D_Gives_1_\u2192_C_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1
+    },
+    "Battle_of_the_Sexes": {
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_3_From_A,_20_From_B_\u2192_B_Dominates\n-_If_Column_Plays": 1,
+      "I_Need_To_Analyze_This_2X2_Game_From_The_Column_Player'S_Perspective_To_Determine_The_Game_Type.\n\nPayoff_Matrix_(Row,_Column):\n```\n_______C___________D\nA___(5,_3)": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_19_From_A,_45_From_B_\u2192_B_Is_Better\n-_If_Column_Plays": 1,
+      "Looking_At_The_Payoff_Matrix_From_The_Row_Player'S_Perspective:\n\nRow_Player'S_Payoffs:\n-_If_Column_Plays_C:_A_Gives_7,_B_Gives_15_\u2192_B_Is_Better\n-_If_Column_Plays_D:_A_Gives": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_2,_D_Gives_6_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_9,_D_Gives_25_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_The_Payoff_Matrix_From_The_Row_Player'S_Perspective:\n\nRow_Player'S_Payoffs:\n-_If_Column_Plays_C:_A_Gives_8,_B_Gives_19_\u2192_B_Is_Better\n-_If_Column_Plays_D:_A_Gives": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_13,_D_Gives_43_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1
+    },
+    "Chicken": {
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_19,_D_Gives_32_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_8_From_A,_27_From_B_\u2192_B_Dominates\n-_If_Column_Plays": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_8,_D_Gives_19_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "I_Need_To_Analyze_This_2X2_Game_By_Examining_The_Payoff_Structure_And_Strategic_Incentives.\n\nGiven_Payoff_Matrix:\n```\n_______C___________D\nA___(21,_26)____(16,_45": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_9_From_A,_11_From_B_\u2192_B_Is_Better\n-_If_Column_Plays": 1
+    },
+    "Assurance_Game": {
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_18_From_A,_1_From_B_\u2192_A_Is_Better\n-_If_Column_Plays": 1,
+      "I_Need_To_Analyze_This_2X2_Game_By_Examining_The_Payoff_Structure_And_Strategic_Incentives.\n\nPayoff_Matrix:\n```\n_______C___________D\nA___(32,_4)____(1,_18": 1,
+      "To_Classify_This_Game,_I_Need_To_Analyze_The_Payoffs_And_Strategic_Structure_From_Both_Players'_Perspectives.\n\nPayoff_Matrix:\n```\n_______C___________D\nA___(33,_22)___(5,_17)": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_33_From_A,_4_From_B_\u2192_A_Is_Better\n-_If_Column_Plays": 1,
+      "I_Need_To_Analyze_This_2X2_Game_From_The_Column_Player'S_Perspective.\n\nPayoff_Matrix:\n```\n_______C___________D\nA___(42,_38)____(9,_16)\nB": 1
+    },
+    "Deadlock": {
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_5,_D_Gives_39_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_5_From_A,_26_From_B_\u2192_B_Dominates\n-_If_Column_Plays": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_8,_D_Gives_32_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_7_From_A,_13_From_B_\u2192_B_Is_Better\n-_If_Column_Plays": 1,
+      "Looking_At_The_Payoff_Matrix_From_The_Row_Player'S_Perspective:\n\nRow_Player'S_Payoffs:\n-_If_Column_Plays_C:_A_Gives_16,_B_Gives_32_\u2192_B_Is_Better\n-_If_Column_Plays_D:_A_Gives": 1
+    },
+    "Compromise": {
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_1,_D_Gives_32_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_1_With_A,_10_With_B_\u2192_B_Dominates\n-_If_Column_Plays": 1,
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_1_From_A,_33_From_B_\u2192_B_Is_Better\n-_If_Column_Plays": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_1,_D_Gives_27_\u2192_D_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1
+    },
+    "Prisoners_Dilemma": {
+      "Battle_of_the_Sexes": 1
+    },
+    "Harmony": {
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_The_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_17_From_A,_3_From_B_\u2192_A_Dominates\n-_If_Column_Plays": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_38,_D_Gives_10_\u2192_C_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1,
+      "I_Need_To_Analyze_This_2X2_Game_From_The_Column_Player'S_Perspective.\n\nPayoff_Matrix:\n_______C___________D\nA___(19,_24)____(1,_6)\nB___(11": 1,
+      "I_Need_To_Analyze_This_2X2_Game_By_Examining_The_Payoff_Structure_And_Strategic_Incentives.\n\nPayoff_Matrix:\n_______C___________D\nA___(32,_16)___(25,_15)": 1
+    },
+    "Peace": {
+      "To_Classify_This_Game,_I_Need_To_Analyze_The_Payoff_Structure_And_Strategic_Incentives.\n\nLet_Me_Examine_The_Payoffs:\n-_Row_Player'S_Payoffs:_A,C(22)_>_A,D(13)_>_B,": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_30,_D_Gives_8_\u2192_C_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1
+    },
+    "Concord": {
+      "Looking_At_This_Payoff_Matrix,_I_Need_To_Analyze_The_Strategic_Structure:\n\nFor_Row_Player:\n-_If_Column_Plays_C:_Row_Gets_18_From_A,_16_From_B_\u2192_A_Is_Better\n-_If_Column_Plays_D": 1,
+      "Looking_At_This_Payoff_Matrix_From_The_Column_Player'S_Perspective:\n\nColumn_Player'S_Payoffs:\n-_If_Row_Plays_A:_C_Gives_15,_D_Gives_14_\u2192_C_Is_Better\n-_If_Row_Plays_B:_C_Gives": 1
+    }
+  }
+}

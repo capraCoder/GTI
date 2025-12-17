@@ -1,0 +1,44 @@
+case_id: GTI-WWI_LIVE_LET_LIVE
+title: WWI Trench Warfare Cooperation
+payoffs:
+  players:
+  - Side_A
+  - Side_B
+  options:
+    Side_A:
+    - Hold_Fire
+    - Shell
+    Side_B:
+    - Hold_Fire
+    - Shell
+  matrix:
+    A_A:
+    - 3
+    - 3
+    A_B:
+    - 1
+    - 4
+    B_A:
+    - 4
+    - 1
+    B_B:
+    - 2
+    - 2
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: infinite
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - Daily interaction between same units
+  - Future matters due to prolonged conflict
+  - Retaliation strategies possible
+  flags:
+  - reputation-based
+  - shadow-of-future

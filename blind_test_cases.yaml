@@ -1,0 +1,85 @@
+# GTI Blind Test Cases
+# ====================
+# 5 scenarios in different styles for validation.
+# Answer key to be provided after classification.
+
+cases:
+
+  - id: "BLIND-001"
+    title: "The Price War (Corporate Memo)"
+    game_type: "UNKNOWN"  # To be graded
+    confidence: "test"
+    source: "Blind test set"
+    description: |
+      Listen, I know we're bleeding cash on this price war with Competitor X. 
+      Every time we drop our subscription fee by $5, they match it. We're both 
+      making 40% less revenue than we were a year ago. Ideally, we'd both just 
+      raise our prices back to the standard market rate tomorrow. But if we 
+      raise ours and they keep theirs low, we lose 90% of our customers overnight. 
+      I suspect they feel the exact same way. So, unless we can get a guarantee 
+      they will hike prices too (which is illegal collusion), we have to keep 
+      our prices at rock bottom.
+
+  - id: "BLIND-002"
+    title: "The Depleted Lake (Local News)"
+    game_type: "UNKNOWN"  # To be graded
+    confidence: "test"
+    source: "Blind test set"
+    description: |
+      Tensions are rising in the coastal town of Oakhaven. The local lake has 
+      always supported the community, but yields are dropping fast. Marine 
+      biologists warn that the fish population is on the brink of collapse and 
+      needs a season to recover. However, the three major fishing families are 
+      intensifying their efforts. 'If I stop fishing to let the stock recover,' 
+      said one captain, 'my neighbor will just go out and catch the fish I left 
+      behind. I'd love to save the lake, but I have a mortgage to pay, and I 
+      can't let them get rich at my expense.' Everyone is now fishing double shifts.
+
+  - id: "BLIND-003"
+    title: "The Friday Night Plan (Text Messages)"
+    game_type: "UNKNOWN"  # To be graded
+    confidence: "test"
+    source: "Blind test set"
+    description: |
+      So here's the issue. We both want to hang out tonight. I really want to 
+      go see that new sci-fi movie, but she hates sci-fi and really wants to 
+      go to the opera. I find the opera incredibly boring. However, the worst 
+      possible outcome is that we get into a fight and stay home alone in 
+      separate apartments. I'd rather suffer through the opera with her than 
+      be alone, and I know she'd rather sit through the sci-fi movie with me 
+      than be alone. We just have to pick one.
+
+  - id: "BLIND-004"
+    title: "The Interrogation Room (Crime Report)"
+    game_type: "UNKNOWN"  # To be graded
+    confidence: "test"
+    source: "Blind test set"
+    description: |
+      Police have arrested two members of the 'Red Hand' gang. They are currently 
+      being interrogated in separate wings of the precinct. There isn't enough 
+      hard evidence to convict either of them for the major robbery—only a minor 
+      trespassing charge that carries 1 year in jail. The DA is offering a deal: 
+      'If you testify against your partner, we will let you walk free, and your 
+      partner gets 10 years.' The catch? If both of them testify against each 
+      other, the deal is off, and they both get 5 years. They have no way to 
+      communicate.
+
+  - id: "BLIND-005"
+    title: "The One-Lane Bridge (Traffic Incident)"
+    game_type: "UNKNOWN"  # To be graded
+    confidence: "test"
+    source: "Blind test set"
+    description: |
+      Two cars are speeding toward a one-lane bridge from opposite directions. 
+      It is night. Neither driver is slowing down. If one swerves into the ditch, 
+      they damage their car and look like a coward, while the other driver 
+      crosses the bridge smoothly. If neither swerves, they will collide head-on, 
+      likely resulting in fatal injuries. Both drivers are flashing their high 
+      beams, signaling that they intend to stay the course.
+
+metadata:
+  version: "1.0"
+  created: "2025-12-17"
+  total_cases: 5
+  purpose: "Blind validation test"
+  notes: "Answer key to be provided after classification"

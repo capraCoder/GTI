@@ -1,0 +1,9 @@
+A couple is deciding where to go for dinner. One partner prefers Italian food, the other prefers Japanese food.
+
+If they both choose Italian, the Italian-lover is very happy while the Japanese-lover is moderately satisfied (being together matters).
+
+If they both choose Japanese, the Japanese-lover is very happy while the Italian-lover is moderately satisfied.
+
+If they choose different restaurants, they eat alone and both are unhappy.
+
+They are texting but the messages are delayed, so they effectively decide simultaneously.

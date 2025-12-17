@@ -1,0 +1,17 @@
+Texas Hold'em: Two players, one pot.
+
+Each player knows their own cards but not opponent's.
+
+Options: Bet/raise (aggressive) or check/fold (passive).
+
+Bluffing: Betting strong with weak cards to make opponent fold.
+Value betting: Betting strong with strong cards to get called.
+
+If you never bluff: Opponent folds whenever you bet, you win small pots only.
+If you always bluff: Opponent always calls, your bluffs lose.
+
+Optimal strategy: Randomize. Bluff some percentage that makes opponent indifferent between calling and folding.
+
+This is a zero-sum game with incomplete information. Pure strategies are exploitable. Mixed strategies required.
+
+The math determines optimal bluff frequency based on pot odds.

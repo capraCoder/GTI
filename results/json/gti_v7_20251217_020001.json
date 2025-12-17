@@ -1,0 +1,128 @@
+{
+  "accuracy": 0.06,
+  "by_role": {
+    "row": {
+      "correct": 3,
+      "total": 57
+    },
+    "col": {
+      "correct": 3,
+      "total": 43
+    }
+  },
+  "by_type": {
+    "Stag_Hunt": {
+      "correct": 1,
+      "total": 12
+    },
+    "Battle_of_the_Sexes": {
+      "correct": 1,
+      "total": 12
+    },
+    "Coordination_Game": {
+      "correct": 0,
+      "total": 22
+    },
+    "Hero": {
+      "correct": 2,
+      "total": 15
+    },
+    "Assurance_Game": {
+      "correct": 0,
+      "total": 16
+    },
+    "Chicken": {
+      "correct": 2,
+      "total": 15
+    },
+    "Compromise": {
+      "correct": 0,
+      "total": 2
+    },
+    "Deadlock": {
+      "correct": 0,
+      "total": 1
+    },
+    "Concord": {
+      "correct": 0,
+      "total": 2
+    },
+    "Harmony": {
+      "correct": 0,
+      "total": 2
+    },
+    "Peace": {
+      "correct": 0,
+      "total": 1
+    }
+  },
+  "confusion": {
+    "Stag_Hunt": {
+      "Chicken": 4,
+      "Prisoners_Dilemma": 2,
+      "ERROR": 3,
+      "Stag_Hunt": 1,
+      "Deadlock": 1,
+      "Battle_of_the_Sexes": 1
+    },
+    "Battle_of_the_Sexes": {
+      "Hero": 5,
+      "Battle_of_the_Sexes": 1,
+      "ERROR": 5,
+      "Chicken": 1
+    },
+    "Coordination_Game": {
+      "Battle_of_the_Sexes": 4,
+      "Peace": 1,
+      "Chicken": 4,
+      "ERROR": 4,
+      "Stag_Hunt": 3,
+      "Hero": 2,
+      "Assurance_Game": 1,
+      "Prisoners_Dilemma": 2,
+      "Deadlock": 1
+    },
+    "Hero": {
+      "Chicken": 2,
+      "Hero": 2,
+      "Compromise": 2,
+      "ERROR": 4,
+      "Battle_of_the_Sexes": 4,
+      "Stag_Hunt": 1
+    },
+    "Assurance_Game": {
+      "Battle_of_the_Sexes": 3,
+      "ERROR": 5,
+      "Stag_Hunt": 1,
+      "Prisoners_Dilemma": 2,
+      "Chicken": 2,
+      "Peace": 1,
+      "Hero": 1,
+      "Deadlock": 1
+    },
+    "Chicken": {
+      "ERROR": 8,
+      "Hero": 4,
+      "Prisoners_Dilemma": 1,
+      "Chicken": 2
+    },
+    "Compromise": {
+      "Deadlock": 1,
+      "Battle_of_the_Sexes": 1
+    },
+    "Deadlock": {
+      "Battle_of_the_Sexes": 1
+    },
+    "Concord": {
+      "Stag_Hunt": 1,
+      "ERROR": 1
+    },
+    "Harmony": {
+      "Prisoners_Dilemma": 1,
+      "Chicken": 1
+    },
+    "Peace": {
+      "Prisoners_Dilemma": 1
+    }
+  }
+}

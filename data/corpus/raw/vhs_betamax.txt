@@ -1,0 +1,14 @@
+1970s-80s: Two incompatible video formats compete. VHS (JVC) vs Betamax (Sony).
+
+Consumers want to buy the format that will have the most content available.
+Studios want to release on the format with the most players installed.
+
+If everyone coordinates on VHS: VHS wins, everyone benefits from compatibility.
+If everyone coordinates on Betamax: Betamax wins, everyone benefits.
+If market splits: Both formats struggle, consumers stuck with limited content.
+
+Technical quality favored Betamax. But VHS got early content deals and longer recording times.
+
+Once VHS pulled slightly ahead, network effects amplified the lead. Betamax died despite being "better."
+
+Classic coordination game where early momentum determined the outcome.

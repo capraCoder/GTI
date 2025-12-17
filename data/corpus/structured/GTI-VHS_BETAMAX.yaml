@@ -1,0 +1,45 @@
+case_id: GTI-VHS_BETAMAX
+title: VHS vs Betamax Format War
+payoffs:
+  players:
+  - VHS_Ecosystem
+  - Betamax_Ecosystem
+  options:
+    VHS_Ecosystem:
+    - Push_VHS
+    - Accept_Betamax
+    Betamax_Ecosystem:
+    - Push_Betamax
+    - Accept_VHS
+  matrix:
+    A_A:
+    - 2
+    - 1
+    A_B:
+    - 4
+    - 3
+    B_A:
+    - 3
+    - 4
+    B_B:
+    - 1
+    - 2
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: finite
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Network effects create winner-take-all dynamics
+  - Early momentum becomes self-reinforcing
+  - Technical superiority doesn't guarantee market success
+  flags:
+  - coordination-game
+  - network-effects
+  - first-mover-advantage

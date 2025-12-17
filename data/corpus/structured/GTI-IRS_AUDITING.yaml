@@ -1,0 +1,43 @@
+case_id: GTI-IRS_AUDITING
+title: Tax Compliance and Audit Enforcement
+payoffs:
+  players:
+  - Taxpayer
+  - IRS
+  options:
+    Taxpayer:
+    - Report_Honestly
+    - Cheat
+    IRS:
+    - Audit
+    - No_Audit
+  matrix:
+    A_A:
+    - 2
+    - 2
+    A_B:
+    - 4
+    - 3
+    B_A:
+    - 1
+    - 4
+    B_B:
+    - 3
+    - 1
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: infinite
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Limited audit resources
+  - Random audit strategy creates mixed equilibrium
+  - Risk scoring changes payoff structure
+  flags:
+  - mixed-strategy-equilibrium

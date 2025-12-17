@@ -1,0 +1,105 @@
+{
+  "scan_id": "BLIND-001",
+  "timestamp": "2024-12-01T12:00:00Z",
+  "version": "3.0.0",
+  "game_type": "Prisoners_Dilemma",
+  "game_description": "Two companies trapped in mutually destructive price war where cooperation (raising prices) benefits both but defection (keeping prices low) protects against exploitation",
+  "confidence_score": 0.95,
+  "players": [
+    {
+      "name": "Our Company",
+      "motive": "Profit",
+      "stated_preference": [
+        "raise prices back to market rate",
+        "end the bleeding"
+      ],
+      "revealed_preference": [
+        "keep prices at rock bottom",
+        "avoid customer loss"
+      ],
+      "irrationality_index": 0.1
+    },
+    {
+      "name": "Competitor X",
+      "motive": "Profit",
+      "stated_preference": [
+        "suspected to want price increases too"
+      ],
+      "revealed_preference": [
+        "matches every price cut",
+        "maintains low prices"
+      ],
+      "irrationality_index": 0.1
+    }
+  ],
+  "matrix": {
+    "T_temptation": "Capture 90% of competitor's customers by keeping prices low while they raise",
+    "R_reward": "Both return to 40% higher revenue at market rates",
+    "P_punishment": "Both stuck at 40% revenue loss in price war",
+    "S_sucker": "Lose 90% of customers by raising prices while competitor stays low",
+    "player_a_order": [
+      "T",
+      "R",
+      "P",
+      "S"
+    ],
+    "player_b_order": [
+      "T",
+      "R",
+      "P",
+      "S"
+    ],
+    "payoff_CC": [
+      3.0,
+      3.0
+    ],
+    "payoff_CD": [
+      0.0,
+      5.0
+    ],
+    "payoff_DC": [
+      5.0,
+      0.0
+    ],
+    "payoff_DD": [
+      1.0,
+      1.0
+    ]
+  },
+  "deception": {
+    "is_deceptive": false,
+    "deception_score": 0.0,
+    "cheap_talk_detected": false,
+    "stated_game": null,
+    "revealed_game": "Prisoners_Dilemma",
+    "credibility_score": 0.9,
+    "contradiction_evidence": [],
+    "cheap_talk_evidence": [],
+    "credible_signals": [
+      "actual price matching behavior",
+      "sustained 40% revenue loss"
+    ]
+  },
+  "equilibrium": {
+    "primary_outcome": "Defect/Defect",
+    "secondary_outcome": null,
+    "stability": "Stable",
+    "stability_score": 0.8,
+    "reasoning": "Without communication mechanism, both players rationally maintain low prices to avoid catastrophic customer loss"
+  },
+  "risk": {
+    "level": "High",
+    "sensitivity": "Misreading competitor's intentions could result in 90% customer loss",
+    "mad_potential": false,
+    "reasoning": "High financial stakes but no existential threat - companies bleeding money but surviving"
+  },
+  "prescription": {
+    "pivot_variable": "S",
+    "mechanism_design": "Implement gradual price signaling, product differentiation, or seek legal coordination alternatives like industry association standards",
+    "player_a_advice": "Signal price increase intentions through small incremental moves, not sudden jumps",
+    "player_b_advice": "Monitor for gradual price signals and respond cooperatively to build trust",
+    "mediator_advice": "Industry association could establish 'fair pricing guidelines' as legal coordination mechanism",
+    "victim_warning": null
+  },
+  "input_summary": "Listen, I know we're bleeding cash on this price war with Competitor X. \nEvery time we drop our subscription fee by $5, they match it. We're both \nmaking 40% less revenue than we were a year ago. Idea..."
+}

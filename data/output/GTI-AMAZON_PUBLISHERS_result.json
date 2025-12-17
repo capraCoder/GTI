@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-AMAZON_PUBLISHERS",
+  "title": "Amazon vs Publishers Agency Model Ultimatum",
+  "source_file": "data\\raw\\corpus\\amazon_publishers.txt",
+  "game_type": "Ultimatum",
+  "confidence": 85,
+  "reasoning": "Proposer-Responder structure with accept/reject decision"
+}

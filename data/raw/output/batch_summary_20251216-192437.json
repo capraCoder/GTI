@@ -1,0 +1,170 @@
+{
+  "timestamp": "20251216-192437",
+  "total": 18,
+  "success": 18,
+  "failed": 0,
+  "results": [
+    {
+      "file": "airbnb_trust.txt",
+      "case_id": "GTI-AIRBNB_TRUST",
+      "title": "Airbnb Trust Game with Platform Intermediation",
+      "game_type": "Unknown",
+      "confidence": 0,
+      "reasoning": "Could not normalize payoff matrix",
+      "status": "success"
+    },
+    {
+      "file": "airline_hub_entry.txt",
+      "case_id": "GTI-AIRLINE_HUB_ENTRY",
+      "title": "Airport Hub Entry and Predatory Pricing",
+      "game_type": "Entry_Deterrence",
+      "confidence": 85,
+      "reasoning": "Market entry with deterrence option",
+      "status": "success"
+    },
+    {
+      "file": "amazon_publishers.txt",
+      "case_id": "GTI-AMAZON_PUBLISHERS",
+      "title": "Amazon vs Publishers Agency Model Ultimatum",
+      "game_type": "Ultimatum",
+      "confidence": 85,
+      "reasoning": "Proposer-Responder structure with accept/reject decision",
+      "status": "success"
+    },
+    {
+      "file": "apple_epic_games.txt",
+      "case_id": "GTI-APPLE_EPIC_GAMES",
+      "title": "Epic vs Apple App Store Commission Dispute",
+      "game_type": "Principal_Agent",
+      "confidence": 85,
+      "reasoning": "Principal-agent structure with monitoring/effort decision",
+      "status": "success"
+    },
+    {
+      "file": "brexit_negotiation.txt",
+      "case_id": "GTI-BREXIT_NEGOTIATION",
+      "title": "Brexit Negotiation Game",
+      "game_type": "Incomplete_Info",
+      "confidence": 30,
+      "reasoning": "Incomplete information game - requires Bayesian analysis",
+      "status": "success"
+    },
+    {
+      "file": "cuban_missile_crisis.txt",
+      "case_id": "GTI-CUBAN_MISSILE_CRISIS",
+      "title": "Cuban Missile Crisis",
+      "game_type": "Mixed_Motive",
+      "confidence": 60,
+      "reasoning": "Asymmetric game (unknown) - no specific pattern matched",
+      "status": "success"
+    },
+    {
+      "file": "ebay_reputation.txt",
+      "case_id": "GTI-EBAY_REPUTATION",
+      "title": "eBay Trust and Reputation System",
+      "game_type": "Unknown",
+      "confidence": 0,
+      "reasoning": "Could not normalize payoff matrix",
+      "status": "success"
+    },
+    {
+      "file": "irs_auditing.txt",
+      "case_id": "GTI-IRS_AUDITING",
+      "title": "Tax Compliance and Audit Enforcement",
+      "game_type": "Inspection_Game",
+      "confidence": 85,
+      "reasoning": "Inspection/monitoring structure",
+      "status": "success"
+    },
+    {
+      "file": "nk_nuclear_talks.txt",
+      "case_id": "GTI-NK_NUCLEAR_TALKS",
+      "title": "US-North Korea Nuclear Commitment Problem",
+      "game_type": "Sequential_Bargaining",
+      "confidence": 75,
+      "reasoning": "Commitment/credibility problem in sequential exchange",
+      "status": "success"
+    },
+    {
+      "file": "opec_production.txt",
+      "case_id": "GTI-OPEC_PRODUCTION",
+      "title": "OPEC Production Quota Cartel",
+      "game_type": "Incomplete_Info",
+      "confidence": 30,
+      "reasoning": "Incomplete information game - requires Bayesian analysis",
+      "status": "success"
+    },
+    {
+      "file": "open_source_contrib.txt",
+      "case_id": "GTI-OPEN_SOURCE_CONTRIB",
+      "title": "Open Source Software Contribution Game",
+      "game_type": "Incomplete_Info",
+      "confidence": 30,
+      "reasoning": "Incomplete information game - requires Bayesian analysis",
+      "status": "success"
+    },
+    {
+      "file": "pepsi_coke_ads.txt",
+      "case_id": "GTI-PEPSI_COKE_ADS",
+      "title": "Pepsi-Coca-Cola Advertising Arms Race",
+      "game_type": "Prisoners_Dilemma",
+      "confidence": 95,
+      "reasoning": "T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma",
+      "status": "success"
+    },
+    {
+      "file": "poker_bluffing.txt",
+      "case_id": "GTI-POKER_BLUFFING",
+      "title": "Texas Hold'em Bluffing Equilibrium",
+      "game_type": "Incomplete_Info",
+      "confidence": 30,
+      "reasoning": "Incomplete information game - requires Bayesian analysis",
+      "status": "success"
+    },
+    {
+      "file": "sports_free_agency.txt",
+      "case_id": "GTI-SPORTS_FREE_AGENCY",
+      "title": "Free Agent Bidding War",
+      "game_type": "Incomplete_Info",
+      "confidence": 30,
+      "reasoning": "Incomplete information game - requires Bayesian analysis",
+      "status": "success"
+    },
+    {
+      "file": "uaw_strike_2023.txt",
+      "case_id": "GTI-UAW_STRIKE_2023",
+      "title": "UAW Stand Up Strike vs Auto Companies",
+      "game_type": "Unknown",
+      "confidence": 40,
+      "reasoning": "Sequential game - insufficient pattern match",
+      "status": "success"
+    },
+    {
+      "file": "uber_lyft_pricing.txt",
+      "case_id": "GTI-UBER_LYFT_PRICING",
+      "title": "Uber vs Lyft Pricing War",
+      "game_type": "Prisoners_Dilemma",
+      "confidence": 95,
+      "reasoning": "T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma",
+      "status": "success"
+    },
+    {
+      "file": "vhs_betamax.txt",
+      "case_id": "GTI-VHS_BETAMAX",
+      "title": "VHS vs Betamax Format War",
+      "game_type": "Coordination",
+      "confidence": 80,
+      "reasoning": "Coordination game with network effects - standard/platform adoption",
+      "status": "success"
+    },
+    {
+      "file": "wwi_live_let_live.txt",
+      "case_id": "GTI-WWI_LIVE_LET_LIVE",
+      "title": "WWI Trench Warfare Cooperation",
+      "game_type": "Prisoners_Dilemma",
+      "confidence": 95,
+      "reasoning": "T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma",
+      "status": "success"
+    }
+  ]
+}

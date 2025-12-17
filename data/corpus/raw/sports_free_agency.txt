@@ -1,0 +1,14 @@
+Star player enters free agency. Multiple teams want to sign them.
+
+Each team can bid aggressively (offer max contract) or stay disciplined (offer fair value).
+
+If multiple teams bid max: Price goes above player's value, winner overpays.
+If one team bids max alone: Gets the player at high but not insane price.
+If all stay disciplined: Player signs for reasonable money.
+
+Teams don't know others' true valuations or budget constraints.
+
+Often: Teams bid against themselves, assuming competition that doesn't exist.
+Sometimes: Teams tacitly coordinate to suppress prices (collusion, often illegal).
+
+The "winner's curse" - the team that values the player most may be the most wrong about their value.

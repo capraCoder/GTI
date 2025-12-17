@@ -1,0 +1,11 @@
+WWI trenches: Opposing soldiers faced each other for months. Each day, both sides could shell the enemy or hold fire.
+
+One-shot logic says always attack. But soldiers would face the same enemy tomorrow.
+
+Informal truces emerged: Don't shell during meals. Aim to miss. Establish patterns.
+
+If one side broke the truce, the other would retaliate massively, then return to cooperation if the first side stopped.
+
+Officers rotated troops specifically to break these cooperative equilibria.
+
+A repeated game where cooperation emerged despite official orders to fight, sustained by the threat of retaliation.

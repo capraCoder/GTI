@@ -1,0 +1,43 @@
+case_id: GTI-OPEC_PRODUCTION
+title: OPEC Production Quota Cartel
+payoffs:
+  players:
+  - Country1
+  - Country2
+  options:
+    Country1:
+    - Comply
+    - Cheat
+    Country2:
+    - Comply
+    - Cheat
+  matrix:
+    Comply_Comply:
+    - 3
+    - 3
+    Comply_Cheat:
+    - 1
+    - 4
+    Cheat_Comply:
+    - 4
+    - 1
+    Cheat_Cheat:
+    - 2
+    - 2
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: infinite
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - Imperfect monitoring of production quotas
+  - Saudi Arabia as potential enforcer/punisher
+  flags:
+  - n-player
+  - incomplete-info

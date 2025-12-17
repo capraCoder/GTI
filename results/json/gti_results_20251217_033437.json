@@ -1,0 +1,1398 @@
+{
+  "timestamp": "2025-12-17T03:34:37.897497",
+  "n": 100,
+  "core_only": true,
+  "accuracy_8": 0.99,
+  "accuracy_9": 0.92,
+  "by_type_9": {
+    "Coordination_Game": {
+      "correct": 19,
+      "total": 19,
+      "accuracy": 1.0
+    },
+    "Compromise": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 1.0
+    },
+    "Battle_of_the_Sexes": {
+      "correct": 11,
+      "total": 12,
+      "accuracy": 0.9166666666666666
+    },
+    "Assurance_Game": {
+      "correct": 14,
+      "total": 21,
+      "accuracy": 0.6666666666666666
+    },
+    "Stag_Hunt": {
+      "correct": 14,
+      "total": 14,
+      "accuracy": 1.0
+    },
+    "Prisoners_Dilemma": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "Chicken": {
+      "correct": 13,
+      "total": 13,
+      "accuracy": 1.0
+    },
+    "Hero": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 1.0
+    },
+    "Deadlock": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    }
+  },
+  "by_type_8": {
+    "Coordination_Game": {
+      "correct": 19,
+      "total": 19,
+      "accuracy": 1.0
+    },
+    "Compromise": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 1.0
+    },
+    "Battle_of_the_Sexes": {
+      "correct": 11,
+      "total": 12,
+      "accuracy": 0.9166666666666666
+    },
+    "Trust_Game": {
+      "correct": 35,
+      "total": 35,
+      "accuracy": 1.0
+    },
+    "Prisoners_Dilemma": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "Chicken": {
+      "correct": 13,
+      "total": 13,
+      "accuracy": 1.0
+    },
+    "Hero": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 1.0
+    },
+    "Deadlock": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    }
+  },
+  "results": [
+    {
+      "id": "1686",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        31,
+        9,
+        5,
+        25
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "83",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        2,
+        3,
+        16,
+        11
+      ],
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "909",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        2,
+        9,
+        14,
+        1
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "475",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        3,
+        9,
+        26,
+        1
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2265",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        5,
+        6,
+        13,
+        2
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "1035",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        22,
+        23,
+        30,
+        11
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "574",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        39,
+        17,
+        23,
+        27
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "650",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        37,
+        4,
+        6,
+        35
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "1471",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        18,
+        1,
+        6,
+        2
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "302",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        23,
+        6,
+        9,
+        7
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "615",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        11,
+        1,
+        13,
+        4
+      ],
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "1651",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        41,
+        14,
+        13,
+        21
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1233",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        24,
+        13,
+        12,
+        24
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "553",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        5,
+        11,
+        31,
+        18
+      ],
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "969",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        22,
+        16,
+        2,
+        20
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1507",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        2,
+        4,
+        6,
+        2
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "1815",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        18,
+        6,
+        40,
+        3
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "1839",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        10,
+        8,
+        16,
+        1
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "377",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        18,
+        10,
+        27,
+        6
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "121",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        3,
+        6,
+        19,
+        10
+      ],
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "953",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        9,
+        29,
+        31,
+        24
+      ],
+      "raw_response": "Hero"
+    },
+    {
+      "id": "2083",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        34,
+        4,
+        19,
+        10
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "175",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        17,
+        19,
+        41,
+        12
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2031",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        15,
+        9,
+        2,
+        14
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "913",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        8,
+        5,
+        11,
+        1
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "311",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        40,
+        1,
+        1,
+        4
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1401",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        34,
+        2,
+        5,
+        14
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1185",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        2,
+        7,
+        27,
+        5
+      ],
+      "raw_response": "Hero"
+    },
+    {
+      "id": "467",
+      "expected": "Deadlock",
+      "predicted": "Deadlock",
+      "correct": true,
+      "payoffs": [
+        5,
+        2,
+        39,
+        16
+      ],
+      "raw_response": "Deadlock"
+    },
+    {
+      "id": "292",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        42,
+        1,
+        6,
+        18
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "1764",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        23,
+        4,
+        2,
+        8
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "2338",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        12,
+        8,
+        6,
+        11
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1691",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        3,
+        5,
+        17,
+        11
+      ],
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "1945",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        17,
+        14,
+        22,
+        6
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "129",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        32,
+        21,
+        11,
+        23
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "749",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        14,
+        13,
+        19,
+        9
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "60",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        24,
+        4,
+        23,
+        11
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1311",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        32,
+        18,
+        21,
+        19
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1063",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        25,
+        5,
+        4,
+        6
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "2033",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        14,
+        19,
+        21,
+        1
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "71",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        2,
+        8,
+        45,
+        4
+      ],
+      "raw_response": "Hero"
+    },
+    {
+      "id": "1331",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        31,
+        2,
+        1,
+        13
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "128",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        16,
+        1,
+        8,
+        7
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1216",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        30,
+        7,
+        18,
+        12
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "119",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        15,
+        1,
+        3,
+        6
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "866",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        27,
+        2,
+        20,
+        15
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1975",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        7,
+        10,
+        36,
+        3
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "21",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        1,
+        9,
+        22,
+        6
+      ],
+      "raw_response": "Hero"
+    },
+    {
+      "id": "1315",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        10,
+        1,
+        33,
+        6
+      ],
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "666",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        39,
+        1,
+        5,
+        3
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1721",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        26,
+        15,
+        2,
+        20
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "2384",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        12,
+        1,
+        5,
+        5
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "679",
+      "expected": "Deadlock",
+      "predicted": "Deadlock",
+      "correct": true,
+      "payoffs": [
+        10,
+        4,
+        30,
+        20
+      ],
+      "raw_response": "Deadlock"
+    },
+    {
+      "id": "705",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        46,
+        2,
+        41,
+        14
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "644",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        19,
+        5,
+        14,
+        13
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "676",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        21,
+        1,
+        3,
+        17
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1025",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        13,
+        12,
+        32,
+        4
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "1788",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        26,
+        2,
+        13,
+        18
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "503",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        24,
+        4,
+        22,
+        9
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1393",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        22,
+        9,
+        4,
+        15
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "852",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        29,
+        9,
+        13,
+        14
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "1168",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        34,
+        2,
+        5,
+        10
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "1229",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        3,
+        34,
+        39,
+        1
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2163",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        34,
+        11,
+        15,
+        27
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "546",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        30,
+        1,
+        3,
+        20
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "970",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        22,
+        2,
+        16,
+        20
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "2095",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        1,
+        35,
+        37,
+        11
+      ],
+      "raw_response": "Hero"
+    },
+    {
+      "id": "1214",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        11,
+        7,
+        1,
+        10
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "759",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Looking_at_this_payoff_structure",
+      "correct": false,
+      "payoffs": [
+        18,
+        25,
+        34,
+        9
+      ],
+      "raw_response": "Looking at this payoff structure:\n\n- Both X: (34, "
+    },
+    {
+      "id": "46",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        17,
+        1,
+        7,
+        12
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "1465",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        19,
+        16,
+        23,
+        4
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "1607",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        15,
+        12,
+        5,
+        14
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1875",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        25,
+        13,
+        7,
+        21
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "813",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        2,
+        10,
+        19,
+        12
+      ],
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "2117",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        22,
+        2,
+        17,
+        20
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "2306",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        30,
+        2,
+        8,
+        25
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "1783",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        13,
+        1,
+        5,
+        11
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "2303",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        26,
+        1,
+        13,
+        23
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1869",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        17,
+        10,
+        23,
+        9
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "1150",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        18,
+        3,
+        11,
+        18
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "501",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        3,
+        4,
+        20,
+        3
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2231",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        20,
+        5,
+        6,
+        12
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1885",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        2,
+        31,
+        34,
+        13
+      ],
+      "raw_response": "Hero"
+    },
+    {
+      "id": "1443",
+      "expected": "Deadlock",
+      "predicted": "Deadlock",
+      "correct": true,
+      "payoffs": [
+        15,
+        15,
+        31,
+        30
+      ],
+      "raw_response": "Deadlock"
+    },
+    {
+      "id": "1403",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        14,
+        5,
+        30,
+        1
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "905",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        19,
+        12,
+        32,
+        10
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "1277",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        30,
+        15,
+        18,
+        20
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "331",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        3,
+        8,
+        37,
+        11
+      ],
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "2177",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        1,
+        19,
+        26,
+        3
+      ],
+      "raw_response": "Hero"
+    },
+    {
+      "id": "1961",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        32,
+        15,
+        10,
+        21
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "213",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        8,
+        4,
+        35,
+        5
+      ],
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "1354",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        34,
+        16,
+        33,
+        23
+      ],
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1811",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        45,
+        8,
+        18,
+        24
+      ],
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "1447",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        6,
+        12,
+        39,
+        26
+      ],
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "1255",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        25,
+        8,
+        31,
+        1
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "347",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        19,
+        29,
+        45,
+        14
+      ],
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2160",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        20,
+        7,
+        2,
+        11
+      ],
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "227",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        7,
+        1,
+        13,
+        4
+      ],
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "2131",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        16,
+        8,
+        33,
+        1
+      ],
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "625",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        16,
+        6,
+        1,
+        14
+      ],
+      "raw_response": "Coordination_Game"
+    }
+  ]
+}

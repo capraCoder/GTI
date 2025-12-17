@@ -1,0 +1,107 @@
+{
+  "scan_id": "BLIND-005",
+  "timestamp": "2024-12-19T20:15:30Z",
+  "version": "3.0.0",
+  "game_type": "Chicken",
+  "game_description": "Two drivers racing toward collision with mutual destruction as worst outcome",
+  "confidence_score": 0.95,
+  "players": [
+    {
+      "name": "Driver A",
+      "motive": "Honor",
+      "stated_preference": [
+        "Stay course",
+        "Don't back down"
+      ],
+      "revealed_preference": [
+        "Avoid being seen as coward",
+        "Maintain reputation"
+      ],
+      "irrationality_index": 0.7
+    },
+    {
+      "name": "Driver B",
+      "motive": "Honor",
+      "stated_preference": [
+        "Stay course",
+        "Don't back down"
+      ],
+      "revealed_preference": [
+        "Avoid being seen as coward",
+        "Maintain reputation"
+      ],
+      "irrationality_index": 0.7
+    }
+  ],
+  "matrix": {
+    "T_temptation": "Cross bridge smoothly while other swerves",
+    "R_reward": "Both somehow coordinate to share bridge",
+    "P_punishment": "Fatal collision from mutual defection",
+    "S_sucker": "Swerve into ditch, damaged car and reputation",
+    "player_a_order": [
+      "T",
+      "R",
+      "S",
+      "P"
+    ],
+    "player_b_order": [
+      "T",
+      "R",
+      "S",
+      "P"
+    ],
+    "payoff_CC": [
+      2.0,
+      2.0
+    ],
+    "payoff_CD": [
+      0.0,
+      5.0
+    ],
+    "payoff_DC": [
+      5.0,
+      0.0
+    ],
+    "payoff_DD": [
+      -10.0,
+      -10.0
+    ]
+  },
+  "deception": {
+    "is_deceptive": false,
+    "deception_score": 0.1,
+    "cheap_talk_detected": false,
+    "stated_game": "Chicken",
+    "revealed_game": "Chicken",
+    "credibility_score": 0.9,
+    "contradiction_evidence": [],
+    "cheap_talk_evidence": [],
+    "credible_signals": [
+      "High beam flashing",
+      "Not slowing down",
+      "Costly commitment to collision course"
+    ]
+  },
+  "equilibrium": {
+    "primary_outcome": "One swerves, one continues",
+    "secondary_outcome": "Fatal collision",
+    "stability": "Volatile",
+    "stability_score": 0.2,
+    "reasoning": "Mixed strategy equilibrium with catastrophic failure mode"
+  },
+  "risk": {
+    "level": "Critical_MAD",
+    "sensitivity": "Misreading opponent's commitment leads to mutual destruction",
+    "mad_potential": true,
+    "reasoning": "High irrationality + Chicken game + credible threats = extreme escalation risk"
+  },
+  "prescription": {
+    "pivot_variable": "P",
+    "mechanism_design": "Install traffic signals or make bridge two-way",
+    "player_a_advice": "Swerve immediately - car damage beats death",
+    "player_b_advice": "Swerve immediately - car damage beats death",
+    "mediator_advice": "Emergency intervention needed - both players trapped in honor spiral",
+    "victim_warning": null
+  },
+  "input_summary": "Two cars are speeding toward a one-lane bridge from opposite directions. \nIt is night. Neither driver is slowing down. If one swerves into the ditch, \nthey damage their car and look like a coward, whi..."
+}

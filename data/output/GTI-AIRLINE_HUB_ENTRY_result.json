@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-AIRLINE_HUB_ENTRY",
+  "title": "Airport Hub Entry and Predatory Pricing",
+  "source_file": "data\\raw\\corpus\\airline_hub_entry.txt",
+  "game_type": "Entry_Deterrence",
+  "confidence": 85,
+  "reasoning": "Market entry with deterrence option"
+}

@@ -1,0 +1,31 @@
+case_id: "TEST-STAG"
+title: "Classic Stag Hunt"
+
+payoffs:
+  players: ["P1", "P2"]
+  options:
+    P1: ["Stag", "Rabbit"]
+    P2: ["Stag", "Rabbit"]
+  matrix:
+    A_A: [4, 4]
+    A_B: [1, 2]
+    B_A: [2, 1]
+    B_B: [2, 2]
+
+information:
+  timing: "simultaneous"
+  move_order: null
+
+time:
+  repetition: "one-shot"
+  iterations: null
+
+commitment:
+  mechanism: "none"
+
+symmetry:
+  symmetric: true
+
+notes:
+  assumptions: []
+  flags: []

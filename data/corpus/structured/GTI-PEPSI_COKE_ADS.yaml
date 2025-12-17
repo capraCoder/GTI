@@ -1,0 +1,42 @@
+case_id: GTI-PEPSI_COKE_ADS
+title: Pepsi-Coca-Cola Advertising Arms Race
+payoffs:
+  players:
+  - Pepsi
+  - Coca-Cola
+  options:
+    Pepsi:
+    - No_Advertise
+    - Advertise
+    Coca-Cola:
+    - No_Advertise
+    - Advertise
+  matrix:
+    A_A:
+    - 3
+    - 3
+    A_B:
+    - 1
+    - 4
+    B_A:
+    - 4
+    - 1
+    B_B:
+    - 2
+    - 2
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: infinite
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - Quarterly budget decisions
+  - Market share drives profits
+  - Advertising costs are significant
+  flags: []

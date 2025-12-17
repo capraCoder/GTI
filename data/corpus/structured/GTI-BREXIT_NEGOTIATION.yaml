@@ -1,0 +1,46 @@
+case_id: GTI-BREXIT_NEGOTIATION
+title: Brexit Negotiation Game
+payoffs:
+  players:
+  - UK
+  - EU
+  options:
+    UK:
+    - Accept_Deal
+    - No_Deal
+    EU:
+    - Favorable_Terms
+    - Harsh_Terms
+  matrix:
+    Accept_Deal_Favorable_Terms:
+    - 3
+    - 4
+    Accept_Deal_Harsh_Terms:
+    - 2
+    - 3
+    No_Deal_Favorable_Terms:
+    - 1
+    - 2
+    No_Deal_Harsh_Terms:
+    - 1
+    - 1
+information:
+  timing: sequential
+  move_order:
+  - EU
+  - UK
+time:
+  repetition: finite
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - EU has structural leverage due to market size asymmetry
+  - Both sides prefer some deal to no deal
+  - Domestic political constraints affect UK's credible commitments
+  flags:
+  - incomplete-info
+  - sequential

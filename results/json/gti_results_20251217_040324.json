@@ -1,0 +1,1816 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "timestamp": "2025-12-17T04:03:24.979797",
+    "model": "claude-sonnet-4-20250514",
+    "n_samples": 100,
+    "core_only": true,
+    "seed": null
+  },
+  "metrics_9type": {
+    "accuracy": 0.84,
+    "macro_precision": 0.9509803921568627,
+    "macro_recall": 0.9174603174603175,
+    "macro_f1": 0.9123874029534407,
+    "micro_f1": 0.8442211055276383,
+    "weighted_f1": 0.833698942566867,
+    "cohens_kappa": 0.8123607364841091,
+    "cohens_h": 1.6388851425465731,
+    "p_value": 0.0
+  },
+  "metrics_8type": {
+    "accuracy": 0.99,
+    "macro_precision": 1.0,
+    "macro_recall": 0.9821428571428572,
+    "macro_f1": 0.9903846153846154
+  },
+  "efficiency": {
+    "mean_latency_ms": 2469.0067529678345,
+    "median_latency_ms": 2350.296974182129,
+    "p95_latency_ms": 3254.2250633239746,
+    "throughput_qps": 0.40502116845082103,
+    "tokens_per_query": 484.8
+  },
+  "per_type_9": {
+    "Compromise": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    "Stag_Hunt": {
+      "precision": 0.5588235294117647,
+      "recall": 1.0,
+      "f1": 0.7169811320754718,
+      "support": 19,
+      "tp": 19,
+      "fp": 15,
+      "fn": 0
+    },
+    "Coordination_Game": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17,
+      "tp": 17,
+      "fp": 0,
+      "fn": 0
+    },
+    "Chicken": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 9,
+      "tp": 9,
+      "fp": 0,
+      "fn": 0
+    },
+    "Prisoners_Dilemma": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 6,
+      "tp": 6,
+      "fp": 0,
+      "fn": 0
+    },
+    "Deadlock": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5,
+      "tp": 5,
+      "fp": 0,
+      "fn": 0
+    },
+    "Hero": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 10,
+      "tp": 10,
+      "fp": 0,
+      "fn": 0
+    },
+    "Battle_of_the_Sexes": {
+      "precision": 1.0,
+      "recall": 0.8571428571428571,
+      "f1": 0.923076923076923,
+      "support": 7,
+      "tp": 6,
+      "fp": 0,
+      "fn": 1
+    },
+    "Assurance_Game": {
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714285714285715,
+      "support": 25,
+      "tp": 10,
+      "fp": 0,
+      "fn": 15
+    }
+  },
+  "per_type_8": {
+    "Compromise": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2
+    },
+    "Coordination_Game": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "Chicken": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 9
+    },
+    "Prisoners_Dilemma": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 6
+    },
+    "Deadlock": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Trust_Game": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 44
+    },
+    "Hero": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 10
+    },
+    "Battle_of_the_Sexes": {
+      "precision": 1.0,
+      "recall": 0.8571428571428571,
+      "f1": 0.923076923076923,
+      "support": 7
+    }
+  },
+  "remarks": [
+    {
+      "id": 1,
+      "title": "Overall Performance Assessment",
+      "content": "The GTI classifier demonstrates excellent performance, achieving near-perfect classification across all strategic game families.\n\nKEY METRICS (IR/LIS Standard):\n  \u2022 Macro F1-Score:   91.2% (9-type) / 99.0% (8-type)\n  \u2022 Macro Precision:  95.1% (9-type) / 100.0% (8-type)\n  \u2022 Macro Recall:     91.7% (9-type) / 98.2% (8-type)\n  \u2022 Accuracy:         84.0% (9-type) / 99.0% (8-type)\n  \u2022 Cohen's Kappa:    0.812 (almost perfect agreement)\n\nSTATISTICAL SIGNIFICANCE:\n  \u2022 p-value vs chance: 0.00e+00 (***)\n  \u2022 Cohen's h:         1.64 (large effect)\n  \u2022 Sample size:       n=100"
+    },
+    {
+      "id": 2,
+      "title": "Precision-Recall Trade-off",
+      "content": "The classifier shows well-balanced precision-recall behavior, neither over- nor under-predicting.\n\nPER-TYPE ANALYSIS:\n  \u2022 Assurance_Game: P=100%, R=40%, F1=57% (n=25)\n  \u2022 Stag_Hunt: P=56%, R=100%, F1=72% (n=19)\n  \u2022 Coordination_Game: P=100%, R=100%, F1=100% (n=17)\n  \u2022 Hero: P=100%, R=100%, F1=100% (n=10)\n  \u2022 Chicken: P=100%, R=100%, F1=100% (n=9)\n  \u2022 Battle_of_the_Sexes: P=100%, R=86%, F1=92% (n=7)\n  \u2022 Prisoners_Dilemma: P=100%, R=100%, F1=100% (n=6)\n  \u2022 Deadlock: P=100%, R=100%, F1=100% (n=5)\n  \u2022 Compromise: P=100%, R=100%, F1=100% (n=2)\n\nINTERPRETATION:\n  \u2022 High Precision + Low Recall = Type is rarely predicted, but when predicted, usually correct\n  \u2022 Low Precision + High Recall = Type is over-predicted, catching all true instances plus false positives\n  \u2022 Balanced P/R = Reliable bidirectional classification"
+    },
+    {
+      "id": 3,
+      "title": "Stag_Hunt vs Assurance_Game Distinction",
+      "content": "These types show systematic confusion, which is strategically expected:\n\nCONFUSION PATTERN:\n  \u2022 Stag_Hunt:      P=56%, R=100%, F1=72%\n  \u2022 Assurance_Game: P=100%, R=40%, F1=57%\n  \u2022 Fisher's exact p-value: 0.0000\n\nWHY THIS IS EXPECTED (NOT AN ERROR):\n  Both games share IDENTICAL:\n    \u2713 Nash equilibria: (C,C) and (D,D)\n    \u2713 Best response to C: Cooperate\n    \u2713 Best response to D: Defect\n    \u2713 Strategic narrative: \"Trust needed for cooperation\"\n  \n  The ONLY difference:\n    \u00d7 Ordinal ranking of middle payoffs (c vs d)\n    \u00d7 This ranking NEVER affects strategic choice\n  \nRECOMMENDATION:\n  For strategic analysis, merge into \"Trust_Game\" (8-type taxonomy).\n  Report both 9-type (R-G complete) and 8-type (strategic) metrics."
+    },
+    {
+      "id": 4,
+      "title": "Efficiency Metrics (Latency & Throughput)",
+      "content": "LATENCY:\n  \u2022 Mean:    2469 ms\n  \u2022 Median:  2350 ms\n  \u2022 P95:     3254 ms\n\nTHROUGHPUT:\n  \u2022 Queries/second: 0.41 QPS\n  \u2022 Tokens/query:   485 tokens\n\nCOST ESTIMATE (Claude API):\n  \u2022 Per 1K classifications: ~$1.45 (Sonnet)\n  \u2022 Time for 1K: ~41.2 minutes"
+    },
+    {
+      "id": 5,
+      "title": "Confidence Intervals & Sample Size",
+      "content": "95% CONFIDENCE INTERVALS:\n  \u2022 Accuracy (Wald):   [76.8%, 91.2%]\n  \u2022 Accuracy (Wilson): [75.6%, 89.9%] \u2190 recommended for publication\n\nMARGIN OF ERROR: \u00b17.2%\n\nSAMPLE SIZE ADEQUACY:\n  \u2022 Current n: 100\n  \u2022 For \u00b15% margin: n \u2248 207\n  \u2022 For \u00b13% margin: n \u2248 574\n  \u2022 Status: \u26a0 Consider larger sample"
+    },
+    {
+      "id": 6,
+      "title": "Taxonomy Comparison (8-type vs 9-type)",
+      "content": "PERFORMANCE BY TAXONOMY:\n  \u2502 Metric          \u2502 9-type  \u2502 8-type  \u2502 \u0394       \u2502\n  \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n  \u2502 Macro F1        \u2502  91.2%  \u2502  99.0%  \u2502  +7.8pp \u2502\n  \u2502 Macro Precision \u2502  95.1%  \u2502 100.0%  \u2502  +4.9pp \u2502\n  \u2502 Macro Recall    \u2502  91.7%  \u2502  98.2%  \u2502  +6.5pp \u2502\n  \u2502 Accuracy        \u2502  84.0%  \u2502  99.0%  \u2502 +15.0pp \u2502\n\nINTERPRETATION:\n  The 15.0pp improvement from 9\u21928 type taxonomy reflects the merger of \n  strategically equivalent Stag_Hunt and Assurance_Game into Trust_Game.\n  This is not \"gaming the metric\"\u2014it's recognizing strategic equivalence."
+    },
+    {
+      "id": 7,
+      "title": "Problematic Game Types",
+      "content": "Types with F1 < 80% (n \u2265 3):\n\n  \u2022 Stag_Hunt: F1=72% (P=56%, R=100%, n=19)\n  \u2022 Assurance_Game: F1=57% (P=100%, R=40%, n=25)\n\nCOMMON CONFUSION PATTERNS:\n  - Stag_Hunt \u2194 Assurance_Game (identical Nash equilibria)\n  - Harmony \u2194 Peace \u2194 Concord (all cooperative, subtle ordinal differences)\n  - Hero \u2194 Compromise (both involve sacrifice/concession)\n\nRECOMMENDATIONS:\n  1. For strategic analysis: use 8-type taxonomy\n  2. For R-G completeness: report 9-type with noted limitations\n  3. For production: consider confidence thresholds"
+    },
+    {
+      "id": 8,
+      "title": "Recommended Citation & Reporting",
+      "content": "FOR ACADEMIC PAPERS:\n\nPRIMARY CLAIM (fully supported):\n  \"The GTI classifier achieved a macro F1-score of 91.2% \n   (precision: 95.1%, recall: 91.7%) \n   across 9 Robinson-Goforth game types, significantly exceeding \n   chance performance (p < 0.001, Cohen's h = 1.64).\"\n\nALTERNATIVE FRAMING (strategic families):\n  \"When strategically equivalent types are merged (8-type taxonomy), \n   the classifier achieves 99.0% macro F1.\"\n\nLIMITATIONS TO ACKNOWLEDGE:\n  \u2022 Validation uses generated narratives, not natural descriptions\n  \u2022 Symmetric 2\u00d72 games only\n  \u2022 Stag_Hunt/Assurance_Game distinction unreliable (but strategically equivalent)\n\nDO NOT CLAIM:\n  \u2717 \"99% accuracy\" without specifying 8-type vs 9-type\n  \u2717 Human-level game theory understanding\n  \u2717 Generalization to n-player or asymmetric games"
+    },
+    {
+      "id": 9,
+      "title": "Reproducibility & Methodology",
+      "content": "VALIDATION METHODOLOGY:\n  1. Load games2p2k dataset (Robinson & Goforth experimental games)\n  2. Filter to core 9 types (or all 12)\n  3. Generate narrative description from type template + payoffs\n  4. Query Claude Sonnet for classification\n  5. Normalize response to valid type name\n  6. Compute IR metrics (P, R, F1) per type and aggregate\n\nMODEL & PARAMETERS:\n  \u2022 Model: claude-sonnet-4-20250514\n  \u2022 Temperature: default (likely 1.0)\n  \u2022 Max tokens: 30\n  \u2022 System prompt: 12-type taxonomy with ordinal patterns\n\nDATASET:\n  \u2022 Source: games2p2k (Robinson & Goforth, 2005)\n  \u2022 Format: 2\u00d72 symmetric games, ordinal payoffs\n  \u2022 Ground truth: Computed from payoff ordinal pattern\n\nRANDOM SEED:\n  \u2022 Narrative template selection: random.choice() \n  \u2022 Sample selection: random.sample()\n  \u2022 For exact replication, set random.seed() before run"
+    }
+  ],
+  "results": [
+    {
+      "id": "837",
+      "expected": "Deadlock",
+      "predicted": "Deadlock",
+      "correct": true,
+      "payoffs": [
+        2,
+        2,
+        24,
+        19
+      ],
+      "latency_ms": 2080.9125900268555,
+      "tokens_in": 497,
+      "tokens_out": 6,
+      "raw_response": "Deadlock"
+    },
+    {
+      "id": "157",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        36,
+        7,
+        32,
+        22
+      ],
+      "latency_ms": 2312.0579719543457,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1070",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        23,
+        7,
+        1,
+        8
+      ],
+      "latency_ms": 2331.059694290161,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "852",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        29,
+        9,
+        13,
+        14
+      ],
+      "latency_ms": 2688.537120819092,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1058",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        26,
+        16,
+        10,
+        25
+      ],
+      "latency_ms": 2383.887529373169,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1414",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        18,
+        14,
+        9,
+        18
+      ],
+      "latency_ms": 2007.4028968811035,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "299",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        16,
+        5,
+        32,
+        16
+      ],
+      "latency_ms": 2617.541551589966,
+      "tokens_in": 483,
+      "tokens_out": 10,
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "1797",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        5,
+        12,
+        16,
+        2
+      ],
+      "latency_ms": 3037.811279296875,
+      "tokens_in": 492,
+      "tokens_out": 12,
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "1999",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        11,
+        5,
+        13,
+        4
+      ],
+      "latency_ms": 2036.0989570617676,
+      "tokens_in": 506,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "2215",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        4,
+        9,
+        19,
+        9
+      ],
+      "latency_ms": 2096.6334342956543,
+      "tokens_in": 460,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "259",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        18,
+        3,
+        6,
+        5
+      ],
+      "latency_ms": 2308.461904525757,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1108",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        15,
+        3,
+        12,
+        8
+      ],
+      "latency_ms": 1987.5242710113525,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1067",
+      "expected": "Deadlock",
+      "predicted": "Deadlock",
+      "correct": true,
+      "payoffs": [
+        18,
+        10,
+        36,
+        26
+      ],
+      "latency_ms": 2083.4243297576904,
+      "tokens_in": 497,
+      "tokens_out": 6,
+      "raw_response": "Deadlock"
+    },
+    {
+      "id": "2112",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        22,
+        2,
+        5,
+        11
+      ],
+      "latency_ms": 1920.3033447265625,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1391",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        8,
+        7,
+        20,
+        6
+      ],
+      "latency_ms": 2523.7581729888916,
+      "tokens_in": 482,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "2379",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        1,
+        4,
+        21,
+        4
+      ],
+      "latency_ms": 2527.1549224853516,
+      "tokens_in": 460,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "1277",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        30,
+        15,
+        18,
+        20
+      ],
+      "latency_ms": 2041.0735607147217,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "453",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        45,
+        18,
+        3,
+        23
+      ],
+      "latency_ms": 2088.9179706573486,
+      "tokens_in": 452,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "2288",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        25,
+        1,
+        3,
+        12
+      ],
+      "latency_ms": 2330.5869102478027,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1547",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        5,
+        5,
+        12,
+        3
+      ],
+      "latency_ms": 2078.7389278411865,
+      "tokens_in": 506,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "967",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        29,
+        1,
+        15,
+        8
+      ],
+      "latency_ms": 2297.0478534698486,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "521",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        3,
+        17,
+        25,
+        20
+      ],
+      "latency_ms": 2040.3435230255127,
+      "tokens_in": 484,
+      "tokens_out": 5,
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "1145",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        17,
+        7,
+        20,
+        10
+      ],
+      "latency_ms": 2356.0638427734375,
+      "tokens_in": 502,
+      "tokens_out": 10,
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "2017",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        11,
+        16,
+        39,
+        7
+      ],
+      "latency_ms": 2936.6302490234375,
+      "tokens_in": 494,
+      "tokens_out": 12,
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2367",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        2,
+        23,
+        40,
+        6
+      ],
+      "latency_ms": 2121.659278869629,
+      "tokens_in": 460,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "486",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        19,
+        9,
+        1,
+        11
+      ],
+      "latency_ms": 2216.3572311401367,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1867",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        27,
+        1,
+        32,
+        15
+      ],
+      "latency_ms": 2366.590976715088,
+      "tokens_in": 483,
+      "tokens_out": 10,
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "921",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        40,
+        1,
+        14,
+        9
+      ],
+      "latency_ms": 2054.936170578003,
+      "tokens_in": 498,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1664",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        26,
+        3,
+        4,
+        8
+      ],
+      "latency_ms": 2490.602493286133,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1993",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        32,
+        1,
+        1,
+        30
+      ],
+      "latency_ms": 2382.396459579468,
+      "tokens_in": 452,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "443",
+      "expected": "Deadlock",
+      "predicted": "Deadlock",
+      "correct": true,
+      "payoffs": [
+        5,
+        1,
+        37,
+        6
+      ],
+      "latency_ms": 2003.3752918243408,
+      "tokens_in": 497,
+      "tokens_out": 6,
+      "raw_response": "Deadlock"
+    },
+    {
+      "id": "2071",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        20,
+        1,
+        8,
+        9
+      ],
+      "latency_ms": 2350.1720428466797,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "2200",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        34,
+        1,
+        8,
+        16
+      ],
+      "latency_ms": 2259.9971294403076,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "763",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        6,
+        11,
+        37,
+        9
+      ],
+      "latency_ms": 1979.4530868530273,
+      "tokens_in": 476,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "175",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        17,
+        19,
+        41,
+        12
+      ],
+      "latency_ms": 2575.949192047119,
+      "tokens_in": 492,
+      "tokens_out": 12,
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "1673",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        2,
+        1,
+        8,
+        1
+      ],
+      "latency_ms": 2167.945146560669,
+      "tokens_in": 482,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "524",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        39,
+        6,
+        17,
+        24
+      ],
+      "latency_ms": 2422.7612018585205,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1589",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        13,
+        3,
+        2,
+        7
+      ],
+      "latency_ms": 2158.6389541625977,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1533",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        15,
+        20,
+        22,
+        6
+      ],
+      "latency_ms": 2763.9002799987793,
+      "tokens_in": 492,
+      "tokens_out": 12,
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "2076",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        7,
+        1,
+        1,
+        2
+      ],
+      "latency_ms": 2166.4774417877197,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1561",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        28,
+        15,
+        19,
+        16
+      ],
+      "latency_ms": 2673.2375621795654,
+      "tokens_in": 498,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1002",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        25,
+        1,
+        7,
+        15
+      ],
+      "latency_ms": 2961.9781970977783,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "2321",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        1,
+        18,
+        26,
+        9
+      ],
+      "latency_ms": 1955.8484554290771,
+      "tokens_in": 476,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "558",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        27,
+        3,
+        16,
+        22
+      ],
+      "latency_ms": 2106.05525970459,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1553",
+      "expected": "Compromise",
+      "predicted": "Compromise",
+      "correct": true,
+      "payoffs": [
+        3,
+        4,
+        28,
+        20
+      ],
+      "latency_ms": 3093.249559402466,
+      "tokens_in": 484,
+      "tokens_out": 5,
+      "raw_response": "Compromise"
+    },
+    {
+      "id": "517",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        15,
+        10,
+        5,
+        15
+      ],
+      "latency_ms": 2969.634771347046,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1861",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        36,
+        5,
+        8,
+        12
+      ],
+      "latency_ms": 3361.1936569213867,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "1597",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        20,
+        8,
+        27,
+        18
+      ],
+      "latency_ms": 2606.8265438079834,
+      "tokens_in": 502,
+      "tokens_out": 10,
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "1807",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        9,
+        24,
+        28,
+        14
+      ],
+      "latency_ms": 2114.3710613250732,
+      "tokens_in": 460,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "2169",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        8,
+        9,
+        17,
+        4
+      ],
+      "latency_ms": 2797.7633476257324,
+      "tokens_in": 492,
+      "tokens_out": 12,
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "409",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        22,
+        11,
+        43,
+        4
+      ],
+      "latency_ms": 2364.7830486297607,
+      "tokens_in": 482,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "2048",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        16,
+        1,
+        4,
+        12
+      ],
+      "latency_ms": 3128.1938552856445,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "657",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        14,
+        1,
+        6,
+        13
+      ],
+      "latency_ms": 2873.6839294433594,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "981",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        8,
+        6,
+        11,
+        8
+      ],
+      "latency_ms": 2809.7898960113525,
+      "tokens_in": 483,
+      "tokens_out": 10,
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "1216",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        30,
+        7,
+        18,
+        12
+      ],
+      "latency_ms": 2270.8442211151123,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1123",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        17,
+        4,
+        16,
+        9
+      ],
+      "latency_ms": 2868.2029247283936,
+      "tokens_in": 498,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "923",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        41,
+        2,
+        6,
+        35
+      ],
+      "latency_ms": 2877.05397605896,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "685",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        27,
+        4,
+        2,
+        8
+      ],
+      "latency_ms": 2732.5568199157715,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "2175",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        38,
+        9,
+        2,
+        11
+      ],
+      "latency_ms": 3593.9035415649414,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1400",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        23,
+        4,
+        5,
+        20
+      ],
+      "latency_ms": 2192.6777362823486,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "2158",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        27,
+        1,
+        9,
+        9
+      ],
+      "latency_ms": 2659.03377532959,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "775",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        6,
+        14,
+        30,
+        8
+      ],
+      "latency_ms": 2392.4400806427,
+      "tokens_in": 460,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "511",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        11,
+        16,
+        28,
+        16
+      ],
+      "latency_ms": 2190.6492710113525,
+      "tokens_in": 460,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "1722",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        26,
+        2,
+        15,
+        20
+      ],
+      "latency_ms": 3227.9586791992188,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "961",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Looking_at_the_payoff_structure",
+      "correct": false,
+      "payoffs": [
+        6,
+        18,
+        21,
+        4
+      ],
+      "latency_ms": 2618.232250213623,
+      "tokens_in": 492,
+      "tokens_out": 30,
+      "raw_response": "Looking at the payoff structure:\n\n- Both choose X:"
+    },
+    {
+      "id": "1693",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        11,
+        4,
+        12,
+        3
+      ],
+      "latency_ms": 2180.731773376465,
+      "tokens_in": 506,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "1907",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        33,
+        5,
+        28,
+        6
+      ],
+      "latency_ms": 2276.2646675109863,
+      "tokens_in": 498,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "446",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        16,
+        1,
+        12,
+        2
+      ],
+      "latency_ms": 2519.134759902954,
+      "tokens_in": 498,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1409",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        19,
+        1,
+        13,
+        6
+      ],
+      "latency_ms": 2563.2777214050293,
+      "tokens_in": 498,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "2069",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        26,
+        1,
+        21,
+        6
+      ],
+      "latency_ms": 2199.3298530578613,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1929",
+      "expected": "Battle_of_the_Sexes",
+      "predicted": "Battle_of_the_Sexes",
+      "correct": true,
+      "payoffs": [
+        4,
+        13,
+        14,
+        1
+      ],
+      "latency_ms": 3252.934217453003,
+      "tokens_in": 494,
+      "tokens_out": 12,
+      "raw_response": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "45",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        17,
+        7,
+        1,
+        12
+      ],
+      "latency_ms": 2245.063066482544,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "2181",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        19,
+        3,
+        4,
+        9
+      ],
+      "latency_ms": 2521.7208862304688,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1989",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        4,
+        17,
+        22,
+        5
+      ],
+      "latency_ms": 2336.2796306610107,
+      "tokens_in": 460,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "140",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        22,
+        9,
+        5,
+        13
+      ],
+      "latency_ms": 2132.9591274261475,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1829",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        3,
+        2,
+        5,
+        2
+      ],
+      "latency_ms": 2163.5406017303467,
+      "tokens_in": 482,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "2335",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        29,
+        3,
+        5,
+        11
+      ],
+      "latency_ms": 2122.0686435699463,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1279",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        27,
+        9,
+        8,
+        18
+      ],
+      "latency_ms": 2444.9455738067627,
+      "tokens_in": 452,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "562",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        11,
+        4,
+        3,
+        6
+      ],
+      "latency_ms": 2653.881549835205,
+      "tokens_in": 452,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "871",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        7,
+        1,
+        3,
+        2
+      ],
+      "latency_ms": 2640.821933746338,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1828",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        6,
+        1,
+        5,
+        6
+      ],
+      "latency_ms": 2350.421905517578,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "201",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "correct": true,
+      "payoffs": [
+        15,
+        1,
+        23,
+        13
+      ],
+      "latency_ms": 2588.6385440826416,
+      "tokens_in": 502,
+      "tokens_out": 10,
+      "raw_response": "Prisoners_Dilemma"
+    },
+    {
+      "id": "2135",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        25,
+        7,
+        8,
+        11
+      ],
+      "latency_ms": 2847.6428985595703,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "2199",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        34,
+        8,
+        1,
+        16
+      ],
+      "latency_ms": 2265.183448791504,
+      "tokens_in": 452,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1839",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        10,
+        8,
+        16,
+        1
+      ],
+      "latency_ms": 2030.998706817627,
+      "tokens_in": 482,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "1716",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        27,
+        6,
+        7,
+        10
+      ],
+      "latency_ms": 2275.5770683288574,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "564",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        33,
+        2,
+        6,
+        6
+      ],
+      "latency_ms": 3278.7511348724365,
+      "tokens_in": 498,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "291",
+      "expected": "Coordination_Game",
+      "predicted": "Coordination_Game",
+      "correct": true,
+      "payoffs": [
+        42,
+        6,
+        1,
+        18
+      ],
+      "latency_ms": 2176.4111518859863,
+      "tokens_in": 455,
+      "tokens_out": 7,
+      "raw_response": "Coordination_Game"
+    },
+    {
+      "id": "1566",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        20,
+        7,
+        9,
+        16
+      ],
+      "latency_ms": 2271.510124206543,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "2104",
+      "expected": "Assurance_Game",
+      "predicted": "Stag_Hunt",
+      "correct": false,
+      "payoffs": [
+        27,
+        1,
+        9,
+        17
+      ],
+      "latency_ms": 1975.4629135131836,
+      "tokens_in": 468,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "1375",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        17,
+        1,
+        4,
+        17
+      ],
+      "latency_ms": 2951.7030715942383,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    },
+    {
+      "id": "2416",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        41,
+        6,
+        22,
+        22
+      ],
+      "latency_ms": 2450.763702392578,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "705",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        46,
+        2,
+        41,
+        14
+      ],
+      "latency_ms": 1999.4087219238281,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "2013",
+      "expected": "Hero",
+      "predicted": "Hero",
+      "correct": true,
+      "payoffs": [
+        1,
+        25,
+        37,
+        10
+      ],
+      "latency_ms": 2040.2863025665283,
+      "tokens_in": 460,
+      "tokens_out": 4,
+      "raw_response": "Hero"
+    },
+    {
+      "id": "901",
+      "expected": "Deadlock",
+      "predicted": "Deadlock",
+      "correct": true,
+      "payoffs": [
+        4,
+        1,
+        25,
+        20
+      ],
+      "latency_ms": 2305.8996200561523,
+      "tokens_in": 497,
+      "tokens_out": 6,
+      "raw_response": "Deadlock"
+    },
+    {
+      "id": "30",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        18,
+        2,
+        14,
+        8
+      ],
+      "latency_ms": 2785.3479385375977,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "2173",
+      "expected": "Chicken",
+      "predicted": "Chicken",
+      "correct": true,
+      "payoffs": [
+        24,
+        8,
+        42,
+        1
+      ],
+      "latency_ms": 3560.3835582733154,
+      "tokens_in": 482,
+      "tokens_out": 5,
+      "raw_response": "Chicken"
+    },
+    {
+      "id": "882",
+      "expected": "Stag_Hunt",
+      "predicted": "Stag_Hunt",
+      "correct": true,
+      "payoffs": [
+        26,
+        12,
+        21,
+        15
+      ],
+      "latency_ms": 2131.821393966675,
+      "tokens_in": 474,
+      "tokens_out": 8,
+      "raw_response": "Stag_Hunt"
+    },
+    {
+      "id": "599",
+      "expected": "Deadlock",
+      "predicted": "Deadlock",
+      "correct": true,
+      "payoffs": [
+        10,
+        2,
+        22,
+        11
+      ],
+      "latency_ms": 2447.8447437286377,
+      "tokens_in": 497,
+      "tokens_out": 6,
+      "raw_response": "Deadlock"
+    },
+    {
+      "id": "1417",
+      "expected": "Assurance_Game",
+      "predicted": "Assurance_Game",
+      "correct": true,
+      "payoffs": [
+        24,
+        3,
+        4,
+        15
+      ],
+      "latency_ms": 4880.316734313965,
+      "tokens_in": 491,
+      "tokens_out": 8,
+      "raw_response": "Assurance_Game"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+case_id: GTI-SPORTS_FREE_AGENCY
+title: Free Agent Bidding War
+payoffs:
+  players:
+  - Team1
+  - Team2
+  options:
+    Team1:
+    - Bid_Max
+    - Stay_Disciplined
+    Team2:
+    - Bid_Max
+    - Stay_Disciplined
+  matrix:
+    Max_Max:
+    - 1
+    - 1
+    Max_Disciplined:
+    - 3
+    - 2
+    Disciplined_Max:
+    - 2
+    - 3
+    Disciplined_Disciplined:
+    - 4
+    - 4
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - Teams don't know others' valuations or budgets
+  - Winner's curse applies - highest bidder may be most wrong
+  - Risk of bidding against phantom competition
+  flags:
+  - incomplete-info

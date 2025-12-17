@@ -1,0 +1,42 @@
+{
+  "accuracy": 0.9,
+  "core_accuracy": 0.9,
+  "by_type": {
+    "Coordination_Game": {
+      "correct": 21,
+      "total": 21
+    },
+    "Battle_of_the_Sexes": {
+      "correct": 11,
+      "total": 11
+    },
+    "Hero": {
+      "correct": 11,
+      "total": 11
+    },
+    "Stag_Hunt": {
+      "correct": 16,
+      "total": 16
+    },
+    "Assurance_Game": {
+      "correct": 7,
+      "total": 17
+    },
+    "Compromise": {
+      "correct": 9,
+      "total": 9
+    },
+    "Prisoners_Dilemma": {
+      "correct": 2,
+      "total": 2
+    },
+    "Chicken": {
+      "correct": 8,
+      "total": 8
+    },
+    "Deadlock": {
+      "correct": 5,
+      "total": 5
+    }
+  }
+}

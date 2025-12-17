@@ -1,0 +1,96 @@
+{
+  "id": "BLIND-004",
+  "timestamp": "2025-12-17T05:32:51.513757",
+  "input_text": "Police have arrested two members of the 'Red Hand' gang. They are currently \nbeing interrogated in separate wings of the precinct. There isn't enough \nhard evidence to convict either of them for the major robbery\u2014only a minor \ntrespassing charge that carries 1 year in jail. The DA is offering a deal: \n'If you testify against your partner, we will let you walk free, and your \npartner gets 10 years.' The catch? If both of them testify against each \nother, the deal is off, and they both get 5 years...",
+  "game_type": "Prisoners_Dilemma",
+  "game_description": "Classic Prisoner's Dilemma structure where T=0 > R=1 > P=5 > S=10. Each prisoner has a dominant strategy to defect (testify) regardless of partner's choice, but mutual cooperation (silence) would yield better collective outcome.",
+  "interaction_type": "Non-Zero-Sum",
+  "symmetry": "Symmetric",
+  "timing": "Simultaneous",
+  "payoff_matrix": {
+    "T": "0 years jail (walk free while partner gets 10 years)",
+    "R": "1 year jail each (both stay silent on major charge)",
+    "P": "5 years jail each (both testify, deal nullified)",
+    "S": "10 years jail (stay silent while partner testifies)"
+  },
+  "player_a": {
+    "player_id": "Red Hand gang member #1",
+    "stated_preferences": [
+      "Gang loyalty would suggest: stay silent, protect partner"
+    ],
+    "revealed_preferences": [
+      "Self-preservation: minimize own jail time regardless of partner"
+    ],
+    "interpretation": "Despite any gang loyalty rhetoric, facing 10 vs 0 years creates overwhelming incentive to defect"
+  },
+  "player_b": {
+    "player_id": "Red Hand gang member #2",
+    "stated_preferences": [
+      "Gang loyalty would suggest: stay silent, protect partner"
+    ],
+    "revealed_preferences": [
+      "Self-preservation: minimize own jail time regardless of partner"
+    ],
+    "interpretation": "Identical incentive structure to Player A - loyalty rhetoric cannot overcome dominant strategy"
+  },
+  "deception": {
+    "deception_detected": false,
+    "deception_score": 15,
+    "stated_game": "Gang loyalty coordination game where silence is expected",
+    "revealed_game": "Prisoner's Dilemma where defection dominates despite loyalty norms",
+    "contradiction_signals": [
+      "Gang members may claim loyalty but face overwhelming defection incentives"
+    ],
+    "cheap_talk_indicators": [
+      "Any pre-arrest promises of loyalty are now costless"
+    ],
+    "credible_signals": [
+      "The legal consequences are binding and credible"
+    ],
+    "analysis": "No active deception by players - the dilemma structure itself creates the tragedy"
+  },
+  "evidence": {
+    "verbal_cooperation": [
+      "Implicit gang code of silence",
+      "Honor among thieves mythology"
+    ],
+    "verbal_defection": [
+      "No explicit defection statements - this is about revealed preferences"
+    ],
+    "action_cooperation": [
+      "Staying silent despite personal cost"
+    ],
+    "action_defection": [
+      "Testifying to secure personal freedom"
+    ],
+    "payoff_signals": [
+      "DA's explicit offer: 'walk free vs 10 years'",
+      "'both get 5 years' if both testify"
+    ]
+  },
+  "confidence": {
+    "score": 95,
+    "naive_classification": "Gang loyalty coordination game",
+    "structural_classification": "Prisoner's Dilemma with defection dominance",
+    "classification_divergence": true,
+    "reasoning": "This is the textbook Prisoner's Dilemma. Payoff structure T>R>P>S with dominant defection strategy regardless of social norms or stated loyalty"
+  },
+  "equilibrium": {
+    "outcome": "Both testify, both get 5 years (Nash equilibrium)",
+    "stability": "Stable",
+    "reasoning": "Testifying is dominant strategy for both players. Even with perfect gang loyalty beliefs, rational players must testify to avoid 10-year sucker payoff"
+  },
+  "risk": {
+    "level": "Critical",
+    "sensitivity": "Individual faces 10-year maximum exposure if they trust partner loyalty",
+    "reasoning": "Asymmetric risk - cooperation failure means decade in prison vs freedom. Stakes too high for trust"
+  },
+  "prescription": {
+    "mechanism": "Change the payoff structure - reduce T (temptation) or increase R (cooperation reward) relative to P and S",
+    "lever_variable": "T - reduce the temptation payoff (perhaps no immunity, just reduced sentence)",
+    "player_a_advice": "Rationally you must testify - the 10-year risk is too catastrophic to gamble on partner loyalty",
+    "player_b_advice": "Identical situation - testify to avoid worst-case 10-year outcome",
+    "mediator_advice": "This is why plea bargaining creates prisoner's dilemmas - consider reforming incentive structure",
+    "victim_warning": "Any gang member believing in 'honor among thieves' faces potential 10-year betrayal - loyalty rhetoric cannot overcome these incentives"
+  }
+}

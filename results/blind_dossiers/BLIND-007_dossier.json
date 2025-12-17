@@ -1,0 +1,103 @@
+{
+  "id": "BLIND-007",
+  "timestamp": "2025-12-17T05:34:15.128492",
+  "input_text": "The CEO of Company A issued a press release today praising the new \neco-friendly partnership with Company B: 'We are fully committed to this \njoint venture to reduce emissions. It is the right thing to do for the \nplanet, regardless of the cost.' However, leaked internal memos reveal \nthat Company A has secretly slashed the budget for this project to zero. \nThey are waiting for Company B to invest the initial capital so they can \nuse Company B's technology for free. If Company B finds out, the d...",
+  "game_type": "Prisoners_Dilemma",
+  "game_description": "This is a classic Prisoner's Dilemma disguised as environmental cooperation. Company A is attempting deception - publicly signaling cooperation while privately planning defection. The payoff structure shows T > R > P > S where Company A's temptation (free-riding on B's investment) dominates mutual cooperation.",
+  "interaction_type": "Non-Zero-Sum",
+  "symmetry": "Asymmetric",
+  "timing": "Sequential",
+  "payoff_matrix": {
+    "T": "Company A gets free technology access and record profits while Company B bears all costs",
+    "R": "Both companies share costs and benefits of genuine eco-partnership",
+    "P": "Deal collapses, both lose potential partnership value and reputation",
+    "S": "Company B invests heavily, gets exploited, bears all costs with no reciprocal investment"
+  },
+  "player_a": {
+    "player_id": "Company A (CEO and organization)",
+    "stated_preferences": [
+      "Environmental responsibility",
+      "Genuine partnership",
+      "Long-term sustainability regardless of cost"
+    ],
+    "revealed_preferences": [
+      "Zero financial commitment",
+      "Free technology access",
+      "Record quarterly profits",
+      "Exploiting partner's investment"
+    ],
+    "interpretation": "Complete contradiction between stated and revealed preferences. Classic deception pattern - using cooperation rhetoric to induce partner investment while planning defection."
+  },
+  "player_b": {
+    "player_id": "Company B",
+    "stated_preferences": [
+      "Environmental partnership",
+      "Shared investment in eco-technology"
+    ],
+    "revealed_preferences": [
+      "Unknown - potentially genuine cooperation based on A's public signals"
+    ],
+    "interpretation": "Appears to be operating under assumption of genuine partnership, unaware of A's deceptive strategy."
+  },
+  "deception": {
+    "deception_detected": true,
+    "deception_score": 95,
+    "stated_game": "Environmental Coordination Game - both companies working together for shared environmental goals",
+    "revealed_game": "Prisoner's Dilemma - Company A attempting to free-ride on Company B's environmental investment",
+    "contradiction_signals": [
+      "'fully committed to this joint venture' vs 'secretly slashed the budget for this project to zero'",
+      "'regardless of the cost' vs waiting for B to invest while A invests nothing"
+    ],
+    "cheap_talk_indicators": [
+      "Press release about environmental commitment with no binding financial commitment",
+      "Public praise for partnership with zero budget allocation"
+    ],
+    "credible_signals": [
+      "Internal memo revealing zero budget allocation - costly to leak, therefore credible signal of true intentions"
+    ],
+    "analysis": "Company A is engaging in strategic deception by using costly public environmental signaling to induce Company B's cooperation while privately planning complete defection. This is a textbook attempt to achieve the 'temptation' payoff in Prisoner's Dilemma."
+  },
+  "evidence": {
+    "verbal_cooperation": [
+      "'We are fully committed to this joint venture'",
+      "'reduce emissions'",
+      "'right thing to do for the planet, regardless of the cost'"
+    ],
+    "verbal_defection": [],
+    "action_cooperation": [],
+    "action_defection": [
+      "Secretly slashed budget to zero",
+      "Waiting for Company B to invest first",
+      "Planning to use B's technology for free"
+    ],
+    "payoff_signals": [
+      "'record profits this quarter' if B invests blindly",
+      "'deal dies' if B discovers the deception"
+    ]
+  },
+  "confidence": {
+    "score": 95,
+    "naive_classification": "Environmental Coordination Game or Partnership",
+    "structural_classification": "Prisoner's Dilemma with Deception",
+    "classification_divergence": true,
+    "reasoning": "The leaked internal memos provide credible signals that directly contradict public statements. Actions (zero budget) completely contradict words (full commitment). The payoff structure clearly shows Company A seeking temptation payoff through deception."
+  },
+  "equilibrium": {
+    "outcome": "If deception succeeds: Company A defects, Company B cooperates (Sucker outcome). If detected: Mutual defection (deal collapse)",
+    "stability": "Unstable/Volatile",
+    "reasoning": "Equilibrium depends entirely on whether Company B discovers the deception. Once discovered, immediate collapse to mutual defection."
+  },
+  "risk": {
+    "level": "Critical",
+    "sensitivity": "High - if deception succeeds, Company B suffers major losses. If discovered, both companies face reputational damage in environmental sector",
+    "reasoning": "Asymmetric risk where Company B faces potential complete exploitation, while discovery would damage both parties' environmental credibility."
+  },
+  "prescription": {
+    "mechanism": "Require simultaneous, transparent, and binding financial commitments from both parties before any technology sharing",
+    "lever_variable": "T - Reduce Company A's temptation payoff by eliminating ability to free-ride",
+    "player_a_advice": "This deception strategy is ethically wrong and risks catastrophic reputational damage. Genuine partnership would likely yield better long-term returns.",
+    "player_b_advice": "CRITICAL: Demand transparent financial commitments and verified budget allocations before investing. Do not proceed based solely on public statements.",
+    "mediator_advice": "Implement mandatory financial transparency and simultaneous commitment mechanisms for environmental partnerships",
+    "victim_warning": "WARNING TO COMPANY B: Do not invest based on public statements alone. Company A has zero budget allocated and is planning to free-ride on your investment. Demand verified financial commitments immediately."
+  }
+}

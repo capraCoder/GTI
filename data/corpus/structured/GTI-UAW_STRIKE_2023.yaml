@@ -1,0 +1,44 @@
+case_id: GTI-UAW_STRIKE_2023
+title: UAW Stand Up Strike vs Auto Companies
+payoffs:
+  players:
+  - UAW
+  - Companies
+  options:
+    UAW:
+    - Accept_Terms
+    - Escalate_Strike
+    Companies:
+    - Generous_Offer
+    - Hold_Firm
+  matrix:
+    Accept_Terms_Generous_Offer:
+    - 3
+    - 2
+    Accept_Terms_Hold_Firm:
+    - 2
+    - 4
+    Escalate_Strike_Generous_Offer:
+    - 4
+    - 1
+    Escalate_Strike_Hold_Firm:
+    - 1
+    - 3
+information:
+  timing: sequential
+  move_order:
+  - Companies
+  - UAW
+time:
+  repetition: finite
+  iterations: multiple_rounds
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Gradual escalation allows calibrated pressure
+  - Public negotiations create reputation stakes
+  flags:
+  - sequential

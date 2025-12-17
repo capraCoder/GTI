@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-POKER_BLUFFING",
+  "title": "Texas Hold'em Bluffing Equilibrium",
+  "source_file": "data\\raw\\corpus\\poker_bluffing.txt",
+  "game_type": "Incomplete_Info",
+  "confidence": 30,
+  "reasoning": "Incomplete information game - requires Bayesian analysis"
+}

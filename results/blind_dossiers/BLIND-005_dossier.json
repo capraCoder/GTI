@@ -1,0 +1,93 @@
+{
+  "id": "BLIND-005",
+  "timestamp": "2025-12-17T05:33:15.371534",
+  "input_text": "Two cars are speeding toward a one-lane bridge from opposite directions. \nIt is night. Neither driver is slowing down. If one swerves into the ditch, \nthey damage their car and look like a coward, while the other driver \ncrosses the bridge smoothly. If neither swerves, they will collide head-on, \nlikely resulting in fatal injuries. Both drivers are flashing their high \nbeams, signaling that they intend to stay the course.",
+  "game_type": "Chicken",
+  "game_description": "This is a pure Chicken game where mutual defection (continuing straight) leads to catastrophic outcomes for both players, while unilateral cooperation (swerving) creates asymmetric payoffs favoring the defector",
+  "interaction_type": "Non-Zero-Sum",
+  "symmetry": "Symmetric",
+  "timing": "Simultaneous",
+  "payoff_matrix": {
+    "T": "Cross bridge smoothly while opponent damages car and reputation",
+    "R": "No clear mutual cooperation outcome - bridge admits only one",
+    "P": "Fatal collision - catastrophic loss for both",
+    "S": "Damaged car, financial cost, social humiliation as 'coward'"
+  },
+  "player_a": {
+    "player_id": "Driver approaching from one direction",
+    "stated_preferences": [
+      "Cross bridge without yielding"
+    ],
+    "revealed_preferences": [
+      "Cross bridge without yielding",
+      "Avoid fatal collision"
+    ],
+    "interpretation": "Stated and revealed preferences align - driver is committed to aggressive strategy while using high beams as credible threat signal"
+  },
+  "player_b": {
+    "player_id": "Driver approaching from opposite direction",
+    "stated_preferences": [
+      "Cross bridge without yielding"
+    ],
+    "revealed_preferences": [
+      "Cross bridge without yielding",
+      "Avoid fatal collision"
+    ],
+    "interpretation": "Mirror situation to Player A - both using identical threat signaling"
+  },
+  "deception": {
+    "deception_detected": false,
+    "deception_score": 15,
+    "stated_game": "Chicken game with mutual commitment to aggression",
+    "revealed_game": "Chicken game with mutual commitment to aggression",
+    "contradiction_signals": [],
+    "cheap_talk_indicators": [],
+    "credible_signals": [
+      "Maintaining speed toward bridge",
+      "Flashing high beams as commitment signal",
+      "Neither driver slowing down"
+    ],
+    "analysis": "No deception detected - both players are honestly signaling aggressive intentions through costly commitment (not slowing down). High beam flashing serves as credible threat communication."
+  },
+  "evidence": {
+    "verbal_cooperation": [],
+    "verbal_defection": [],
+    "action_cooperation": [],
+    "action_defection": [
+      "Speeding toward bridge",
+      "Not slowing down",
+      "Flashing high beams as threat signal",
+      "Neither yielding right of way"
+    ],
+    "payoff_signals": [
+      "Fatal collision if neither swerves",
+      "Car damage and reputation loss for whoever yields",
+      "Smooth crossing for non-yielder"
+    ]
+  },
+  "confidence": {
+    "score": 95,
+    "naive_classification": "Chicken game",
+    "structural_classification": "Chicken game",
+    "classification_divergence": false,
+    "reasoning": "Clear Chicken structure where T > R > S > P, with catastrophic mutual defection outcome. No contradiction between signals and actions."
+  },
+  "equilibrium": {
+    "outcome": "Extremely dangerous - heading toward mutual defection (collision) unless one player blinks",
+    "stability": "Unstable/Volatile",
+    "reasoning": "Classic Chicken instability - both players committed to aggressive strategy leading toward worst possible outcome. Game will resolve when one player's nerve breaks or collision occurs."
+  },
+  "risk": {
+    "level": "Critical",
+    "sensitivity": "Fatal consequences if neither yields. Immediate life-or-death situation.",
+    "reasoning": "Maximum stakes Chicken game where mutual defection means death. Unlike theoretical Chicken, no opportunity for repeated play or reputation building."
+  },
+  "prescription": {
+    "mechanism": "Traffic infrastructure (traffic lights, clear right-of-way rules) or communication systems to coordinate before commitment phase",
+    "lever_variable": "P - need to make mutual defection less catastrophic through safety infrastructure, or change S to reduce humiliation of yielding",
+    "player_a_advice": "IMMEDIATE: Assess opponent's commitment level and your own survival value. If opponent appears equally committed, yield immediately. Pride is not worth death.",
+    "player_b_advice": "IMMEDIATE: Same as Player A. This is not about winning but surviving.",
+    "mediator_advice": "Install traffic infrastructure to prevent such encounters - traffic lights, alternating right-of-way systems, or separate lanes/timing",
+    "victim_warning": "CRITICAL: Both players are potential victims of fatal collision if neither yields immediately. This requires instant decision-making prioritizing survival over pride."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-1980-0001",
+  "title": "VHS vs Betamax Format War",
+  "source_file": "data\\raw\\corpus\\vhs_betamax.txt",
+  "game_type": "Battle_of_Sexes",
+  "confidence": 90,
+  "reasoning": "Asymmetric coordination: both prefer matching, different favorites"
+}

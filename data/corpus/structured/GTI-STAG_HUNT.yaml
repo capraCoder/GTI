@@ -1,0 +1,41 @@
+case_id: GTI-STAG_HUNT
+title: Stag Hunt Coordination Game
+payoffs:
+  players:
+  - Hunter1
+  - Hunter2
+  options:
+    Hunter1:
+    - Hunt_Stag
+    - Hunt_Rabbit
+    Hunter2:
+    - Hunt_Stag
+    - Hunt_Rabbit
+  matrix:
+    A_A:
+    - 4
+    - 4
+    A_B:
+    - 1
+    - 3
+    B_A:
+    - 3
+    - 1
+    B_B:
+    - 2
+    - 2
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - No communication once separated
+  - Perfect knowledge of payoff structure
+  flags: []

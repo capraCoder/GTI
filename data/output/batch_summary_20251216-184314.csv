@@ -1,0 +1,7 @@
+file,case_id,title,game_type,confidence,reasoning,status
+advertising_war.txt,GTI-ADVERTISING_WAR,Holiday Season Advertising War,Prisoners_Dilemma,95,"T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma",success
+chicken_road.txt,GTI-CHICKEN_ROAD,Chicken Game - Two Drivers,Unknown,0,No valid payoff matrix,success
+dinner_battle.txt,GTI-DINNER_BATTLE,Couple's Restaurant Choice Coordination,Asymmetric,70,Asymmetric game,success
+meeting_coordination.txt,GTI-MEETING_COORDINATION,Friends Meeting Coordination,Coordination,95,"R(4) ≈ P(4) >> T(1), S(1): Pure coordination",success
+stag_hunt.txt,GTI-STAG_HUNT,Stag Hunt Coordination Game,Stag_Hunt,95,"R(4) > T(3) > P(2) > S(1): Cooperate best, defect safe",success
+water_rights.txt,GTI-WATER_RIGHTS,River Water Allocation Between Countries,Chicken,95,"T(4) > R(3) > S(2) > P(1): No dominant, mutual extreme = disaster",success

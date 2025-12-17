@@ -1,0 +1,69 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                     GTI STRATEGIC DOSSIER v3.0                               ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║  Scan ID:    BLIND-003                                                       ║
+║  Timestamp:  2024-12-18T00:00:00Z                                            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+ CLASSIFICATION
+═══════════════════════════════════════════════════════════════════════════════
+
+  Game Type:   Battle_of_the_Sexes                                         
+  Confidence:  [█████████░] 95%
+  Description: Two players prefer different activities but both prefer being together
+
+═══════════════════════════════════════════════════════════════════════════════
+ PLAYERS
+═══════════════════════════════════════════════════════════════════════════════
+
+  Player A (Speaker):
+    Motive:      Companionship with entertainment preference
+    Rationality: 90%
+    SAYS:        wants sci-fi movie > prefers together over alone
+    DOES:        willing to compromise for companionship > values relationship over individual preference
+
+  Player B (She):
+    Motive:      Companionship with entertainment preference
+    Rationality: 90%
+    SAYS:        wants opera > prefers together over alone
+    DOES:        willing to compromise for companionship > values relationship over individual preference
+
+═══════════════════════════════════════════════════════════════════════════════
+ PAYOFF MATRIX
+═══════════════════════════════════════════════════════════════════════════════
+
+  T (Temptation): Getting preferred activity with partner
+  R (Reward):     Being together (either activity)
+  P (Punishment): Being alone at home
+  S (Sucker):     Partner gets preference while you compromise
+
+                        Player B (She)
+                    Cooperate      Defect
+  Player A (  Coop    (4.0, 1.0)    (1.0, 4.0) 
+              Defect  (0.0, 0.0)    (0.0, 0.0) 
+
+═══════════════════════════════════════════════════════════════════════════════
+ EQUILIBRIUM & RISK
+═══════════════════════════════════════════════════════════════════════════════
+
+  Primary Outcome:  Coordinate on one activity
+  Stability:        Trust_Dependent
+  Risk Level:       Low
+  MAD Potential:    No
+  
+  Reasoning: Two pure strategy Nash equilibria exist but coordination problem 
+
+═══════════════════════════════════════════════════════════════════════════════
+ PRESCRIPTION
+═══════════════════════════════════════════════════════════════════════════════
+
+  Pivot Variable: [R]
+  Mechanism:      Establish alternating choice system or mixed randomization
+  
+  For Player A (Speaker): Propose alternating weeks or coin flip to solve coordination
+  For Player B (She): Agree to fair randomization mechanism
+  For Mediator:  Implement turn-taking system or random selection device
+
+═══════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,45 @@
+case_id: GTI-NK_NUCLEAR_TALKS
+title: US-North Korea Nuclear Commitment Problem
+payoffs:
+  players:
+  - NK
+  - USA
+  options:
+    NK:
+    - Disarm
+    - Keep_Nukes
+    USA:
+    - Deliver_Benefits
+    - Renege
+  matrix:
+    Disarm_Deliver:
+    - 3
+    - 4
+    Disarm_Renege:
+    - 1
+    - 3
+    Keep_Deliver:
+    - 2
+    - 1
+    Keep_Keep:
+    - 2
+    - 2
+information:
+  timing: sequential
+  move_order:
+  - NK
+  - USA
+time:
+  repetition: finite
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - NK moves first in disarmament
+  - USA's credibility problem
+  - Nuclear weapons as leverage
+  flags:
+  - commitment-problem

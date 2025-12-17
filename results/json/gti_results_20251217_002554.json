@@ -1,0 +1,55 @@
+{
+  "timestamp": "20251217_002554",
+  "model": "claude-sonnet-4-20250514",
+  "total_cases": 5,
+  "correct": 4,
+  "accuracy": 80.0,
+  "elapsed_seconds": 30.749267101287842,
+  "results": [
+    {
+      "case_id": "PD-001",
+      "difficulty": "easy",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.98,
+      "correct": true,
+      "reasoning": "Both firms have a dominant strategy to advertise (defect) despite mutual non-advertising (cooperation) being better for both. Each firm is tempted to advertise regardless of what the other does - if opponent doesn't advertise, advertising captures most market; if opponent advertises, not advertising means losing market share. This creates the classic prisoners' dilemma structure where rational individual choices lead to mutually suboptimal outcomes."
+    },
+    {
+      "case_id": "PD-002",
+      "difficulty": "easy",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.98,
+      "correct": true,
+      "reasoning": "Classic prisoners' dilemma structure: mutual cooperation (limit production) benefits all, but each has dominant strategy to defect (cheat/overproduce). Individual cheating while others cooperate yields highest payoff, but mutual cheating (overproduction) leads to worst collective outcome (price crash). Despite mutual cooperation being Pareto optimal, defection is individually rational."
+    },
+    {
+      "case_id": "PD-003",
+      "difficulty": "medium",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.98,
+      "correct": true,
+      "reasoning": "Each athlete has a dominant strategy to dope regardless of others' choices (gaining advantage if others are clean, avoiding disadvantage if others dope), yet mutual doping creates the worst collective outcome with health risks and no competitive advantage. This matches the classic structure where individual rationality leads to collectively suboptimal results."
+    },
+    {
+      "case_id": "PD-004",
+      "difficulty": "medium",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Prisoners_Dilemma",
+      "confidence": 0.95,
+      "correct": true,
+      "reasoning": "Each country has a dominant strategy to arm regardless of what the other does (arms for security if other disarms, arms for defense if other arms), yet mutual disarmament would be better for both than the resulting arms race. Classic structure where individual rationality leads to collectively suboptimal outcome."
+    },
+    {
+      "case_id": "PD-005",
+      "difficulty": "medium",
+      "expected": "Prisoners_Dilemma",
+      "predicted": "Common_Pool",
+      "confidence": 0.98,
+      "correct": false,
+      "reasoning": "This is a classic common pool resource dilemma where multiple actors extract from a shared resource (the lake). Each fisherman faces incentive to overfish for individual gain, but collective overfishing leads to resource depletion - the tragedy of the commons. The sustainable outcome requires restraint from all parties, but individual defection is tempting."
+    }
+  ]
+}

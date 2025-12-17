@@ -1,0 +1,9 @@
+Two hunters in the wilderness must decide whether to hunt a stag or hunt rabbits.
+
+Hunting a stag requires both hunters to cooperate - if both hunt stag together, they catch it and both get a large feast.
+
+However, if one hunter goes for the stag while the other hunts rabbits, the stag hunter fails and gets nothing, while the rabbit hunter catches some small game.
+
+If both hunt rabbits independently, they each catch enough to eat but miss the opportunity for the larger prize.
+
+They cannot communicate once they separate in the forest and must choose their strategy beforehand.

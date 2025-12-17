@@ -1,0 +1,45 @@
+case_id: GTI-OPEN_SOURCE_CONTRIB
+title: Open Source Software Contribution Game
+payoffs:
+  players:
+  - Developer
+  - Community
+  options:
+    Developer:
+    - Contribute
+    - Free_Ride
+    Community:
+    - Contribute
+    - Free_Ride
+  matrix:
+    Contribute_Contribute:
+    - 3
+    - 4
+    Contribute_Free_Ride:
+    - 2
+    - 3
+    Free_Ride_Contribute:
+    - 4
+    - 2
+    Free_Ride_Free_Ride:
+    - 1
+    - 1
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: infinite
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: true
+notes:
+  assumptions:
+  - Reputation systems provide visibility of contributions
+  - Social norms encourage reciprocity
+  - Corporate backing changes individual incentives
+  - Intrinsic motivation supplements material payoffs
+  flags:
+  - n-player
+  - incomplete-info

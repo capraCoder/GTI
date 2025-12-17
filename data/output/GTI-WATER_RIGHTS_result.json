@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-WATER_RIGHTS",
+  "title": "River Water Allocation Between Countries",
+  "source_file": "D:\\CaprazliIndex\\GTI\\data\\raw\\water_rights.txt",
+  "game_type": "Chicken",
+  "confidence": 95,
+  "reasoning": "T(4) > R(3) > S(2) > P(1): No dominant, mutual extreme = disaster"
+}

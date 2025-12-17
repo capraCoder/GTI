@@ -1,0 +1,123 @@
+{
+  "scan_id": "BLIND-002",
+  "timestamp": "2024-12-18T10:30:00Z",
+  "version": "3.0.0",
+  "game_type": "Prisoners_Dilemma",
+  "game_description": "Three fishing families simultaneously choosing between sustainable fishing (cooperate) or intensive fishing (defect) with collective resource at stake",
+  "confidence_score": 0.95,
+  "players": [
+    {
+      "name": "Family A Captain",
+      "motive": "Survival",
+      "stated_preference": [
+        "save the lake",
+        "sustainable fishing"
+      ],
+      "revealed_preference": [
+        "intensive fishing",
+        "double shifts",
+        "maximize immediate catch"
+      ],
+      "irrationality_index": 0.2
+    },
+    {
+      "name": "Family B",
+      "motive": "Survival",
+      "stated_preference": [
+        "implied concern for lake"
+      ],
+      "revealed_preference": [
+        "intensive fishing",
+        "double shifts"
+      ],
+      "irrationality_index": 0.2
+    },
+    {
+      "name": "Family C",
+      "motive": "Survival",
+      "stated_preference": [
+        "implied concern for lake"
+      ],
+      "revealed_preference": [
+        "intensive fishing",
+        "double shifts"
+      ],
+      "irrationality_index": 0.2
+    }
+  ],
+  "matrix": {
+    "T_temptation": "Fish intensively while others conserve - maximum catch, no competition",
+    "R_reward": "All conserve - lake recovers, sustainable long-term profits",
+    "P_punishment": "All fish intensively - lake collapses, everyone loses",
+    "S_sucker": "Conserve while others fish intensively - lose income and market share",
+    "player_a_order": [
+      "T",
+      "R",
+      "P",
+      "S"
+    ],
+    "player_b_order": [
+      "T",
+      "R",
+      "P",
+      "S"
+    ],
+    "payoff_CC": [
+      6.0,
+      6.0
+    ],
+    "payoff_CD": [
+      0.0,
+      8.0
+    ],
+    "payoff_DC": [
+      8.0,
+      0.0
+    ],
+    "payoff_DD": [
+      1.0,
+      1.0
+    ]
+  },
+  "deception": {
+    "is_deceptive": true,
+    "deception_score": 0.8,
+    "cheap_talk_detected": true,
+    "stated_game": "Coordination_Game",
+    "revealed_game": "Prisoners_Dilemma",
+    "credibility_score": 0.1,
+    "contradiction_evidence": [
+      "'I'd love to save the lake' vs 'fishing double shifts'",
+      "concern for sustainability vs intensifying efforts"
+    ],
+    "cheap_talk_evidence": [
+      "'I'd love to save the lake' - costless statement",
+      "blaming neighbors while doing same behavior"
+    ],
+    "credible_signals": [
+      "actually fishing double shifts - costly commitment to defection"
+    ]
+  },
+  "equilibrium": {
+    "primary_outcome": "Defect/Defect/Defect",
+    "secondary_outcome": null,
+    "stability": "Stable",
+    "stability_score": 0.9,
+    "reasoning": "Each player has dominant strategy to fish intensively regardless of others' choices due to immediate financial pressures"
+  },
+  "risk": {
+    "level": "Critical_MAD",
+    "sensitivity": "Lake ecosystem collapse destroys all players' long-term viability",
+    "mad_potential": true,
+    "reasoning": "Mutual defection leads to resource collapse - mutually assured destruction of fishing industry"
+  },
+  "prescription": {
+    "pivot_variable": "S",
+    "mechanism_design": "External enforcement or compensation fund - reduce Sucker payoff penalty through guaranteed income during conservation periods",
+    "player_a_advice": "Form binding conservation pact with penalties for violations",
+    "player_b_advice": "Coordinate on rotating fishing schedules to maintain some income while allowing recovery",
+    "mediator_advice": "Implement quota system with tradeable permits or government buyout program during recovery period",
+    "victim_warning": "All families claiming to want sustainability while actively preventing it - collective self-deception masking tragedy of commons"
+  },
+  "input_summary": "Tensions are rising in the coastal town of Oakhaven. The local lake has \nalways supported the community, but yields are dropping fast. Marine \nbiologists warn that the fish population is on the brink ..."
+}

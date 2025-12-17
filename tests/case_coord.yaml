@@ -1,0 +1,31 @@
+case_id: "TEST-COORD"
+title: "Pure Coordination"
+
+payoffs:
+  players: ["P1", "P2"]
+  options:
+    P1: ["Left", "Right"]
+    P2: ["Left", "Right"]
+  matrix:
+    A_A: [4, 4]
+    A_B: [1, 1]
+    B_A: [1, 1]
+    B_B: [4, 4]
+
+information:
+  timing: "simultaneous"
+  move_order: null
+
+time:
+  repetition: "one-shot"
+  iterations: null
+
+commitment:
+  mechanism: "none"
+
+symmetry:
+  symmetric: true
+
+notes:
+  assumptions: []
+  flags: []

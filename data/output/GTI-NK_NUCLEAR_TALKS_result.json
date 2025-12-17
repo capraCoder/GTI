@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-NK_NUCLEAR_TALKS",
+  "title": "US-North Korea Nuclear Commitment Problem",
+  "source_file": "data\\raw\\corpus\\nk_nuclear_talks.txt",
+  "game_type": "Sequential_Bargaining",
+  "confidence": 75,
+  "reasoning": "Commitment/credibility problem in sequential exchange"
+}

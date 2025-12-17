@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-VHS_BETAMAX",
+  "title": "VHS vs Betamax Format War",
+  "source_file": "data\\raw\\corpus\\vhs_betamax.txt",
+  "game_type": "Coordination",
+  "confidence": 80,
+  "reasoning": "Coordination game with network effects - standard/platform adoption"
+}

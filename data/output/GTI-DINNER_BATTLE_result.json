@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-DINNER_BATTLE",
+  "title": "Couple's Restaurant Choice Coordination",
+  "source_file": "D:\\CaprazliIndex\\GTI\\data\\raw\\dinner_battle.txt",
+  "game_type": "Asymmetric",
+  "confidence": 70,
+  "reasoning": "Asymmetric game"
+}

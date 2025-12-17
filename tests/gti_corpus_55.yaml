@@ -1,0 +1,432 @@
+# GTI Validation Corpus - 55 Cases
+# Tests classifier accuracy across game types and difficulty levels
+
+cases:
+  # ============================================================
+  # PRISONERS DILEMMA (8 cases)
+  # ============================================================
+  - case_id: PD-001
+    difficulty: easy
+    expected: Prisoners_Dilemma
+    description: |
+      Two firms can either advertise heavily or not. If both advertise, they split the market but waste money on ads.
+      If neither advertises, they split the market and save costs. If one advertises while the other doesn't,
+      the advertiser captures most of the market. Both are tempted to advertise.
+
+  - case_id: PD-002
+    difficulty: easy
+    expected: Prisoners_Dilemma
+    description: |
+      OPEC members agree to limit oil production. Each country is tempted to cheat and pump more oil secretly.
+      If all cheat, prices crash. If one cheats while others cooperate, the cheater profits enormously.
+
+  - case_id: PD-003
+    difficulty: medium
+    expected: Prisoners_Dilemma
+    description: |
+      Athletes in a sport can choose to dope or stay clean. If all stay clean, fair competition.
+      If one dopes while others don't, they gain advantage. If all dope, health risks for everyone with no advantage.
+
+  - case_id: PD-004
+    difficulty: medium
+    expected: Prisoners_Dilemma
+    description: |
+      Two neighboring countries can either arm or disarm. If both disarm, peace and savings.
+      If one arms while other disarms, the armed country dominates. Both are tempted to arm, leading to arms race.
+
+  - case_id: PD-005
+    difficulty: medium
+    expected: Prisoners_Dilemma
+    description: |
+      Fishermen share a lake. Each can fish moderately or overfish. If all fish moderately, sustainable.
+      If one overfishes, they profit while others suffer. If all overfish, the lake is depleted.
+
+  - case_id: PD-006
+    difficulty: hard
+    expected: Prisoners_Dilemma
+    description: |
+      Tech companies can compete on price or maintain high margins. Price war hurts everyone.
+      Maintaining margins is better for all but each is tempted to cut prices to steal customers.
+
+  - case_id: PD-007
+    difficulty: easy
+    expected: Prisoners_Dilemma
+    description: |
+      Two stores can have a sale or not. If both have sales, neither gains advantage but both lose margin.
+      If one has a sale alone, it captures customers from the other. Both are tempted to defect.
+
+  - case_id: PD-008
+    difficulty: hard
+    expected: Prisoners_Dilemma
+    description: |
+      Employees can work hard or slack off. If everyone works hard, the project succeeds.
+      Each employee is tempted to free-ride on others' efforts while still sharing the rewards.
+
+  # ============================================================
+  # CHICKEN (6 cases)
+  # ============================================================
+  - case_id: CH-001
+    difficulty: easy
+    expected: Chicken
+    description: |
+      Two cars drive toward each other on a narrow road. Each can swerve or go straight.
+      If both go straight, they crash - catastrophic for both. If one swerves and the other doesn't,
+      the one who swerves loses face but avoids collision.
+
+  - case_id: CH-002
+    difficulty: easy
+    expected: Chicken
+    description: |
+      Cuban Missile Crisis: USA and USSR in standoff. Each can escalate or back down.
+      If both escalate, nuclear war. Neither wants to yield first and appear weak.
+      Both hold firm, hoping the other backs down.
+
+  - case_id: CH-003
+    difficulty: medium
+    expected: Chicken
+    description: |
+      Two unions threaten to strike. If both strike simultaneously, the company fails and everyone loses.
+      If one backs down, they get less. Neither wants to be the one who caves first.
+
+  - case_id: CH-004
+    difficulty: medium
+    expected: Chicken
+    description: |
+      Uber and Lyft engage in price war. If both subsidize heavily, both burn cash - mutual destruction.
+      If one maintains prices while other cuts, they lose market share. Neither wants to back down.
+
+  - case_id: CH-005
+    difficulty: hard
+    expected: Chicken
+    description: |
+      Brexit negotiations: UK and EU in brinkmanship. No-deal hurts both but neither wants to concede first.
+      Each hopes the other will yield as the deadline approaches.
+
+  - case_id: CH-006
+    difficulty: hard
+    expected: Chicken
+    description: |
+      Two startups compete for the same market. Both can burn cash aggressively or maintain discipline.
+      If both burn cash, both may go bankrupt. Neither wants to be the one who loses face by backing down.
+
+  # ============================================================
+  # STAG HUNT (5 cases)
+  # ============================================================
+  - case_id: SH-001
+    difficulty: easy
+    expected: Stag_Hunt
+    description: |
+      Two hunters can hunt stag together or hunt rabbit alone. Hunting stag requires both to cooperate.
+      If both hunt stag, they get a large reward. If one hunts rabbit while the other goes for stag,
+      the rabbit hunter gets something, the stag hunter gets nothing.
+
+  - case_id: SH-002
+    difficulty: medium
+    expected: Stag_Hunt
+    description: |
+      Bank run scenario: Depositors can wait or withdraw early. If all wait, bank survives and pays full interest.
+      If enough withdraw early, bank collapses and late withdrawers lose everything.
+
+  - case_id: SH-003
+    difficulty: medium
+    expected: Stag_Hunt
+    description: |
+      Electric vehicle adoption: Range anxiety makes early adopters risky. If enough people adopt,
+      infrastructure expands and everyone benefits. If too few adopt, early adopters are stranded.
+
+  - case_id: SH-004
+    difficulty: hard
+    expected: Stag_Hunt
+    description: |
+      Climate agreement: Countries can commit fully to ambitious targets or hedge.
+      If all commit fully, climate is saved. If some hedge while others commit, the committers bear costs alone.
+
+  - case_id: SH-005
+    difficulty: easy
+    expected: Stag_Hunt
+    description: |
+      Social network adoption: Everyone joining makes the platform valuable.
+      If you join alone, you have no connections. Need mass adoption for the network to work.
+
+  # ============================================================
+  # COORDINATION (5 cases)
+  # ============================================================
+  - case_id: CO-001
+    difficulty: easy
+    expected: Coordination
+    description: |
+      Two friends want to meet up but their phones died. They discussed two spots: the plaza or the station.
+      They just need to coordinate on the same choice - neither has a strong preference for which one.
+
+  - case_id: CO-002
+    difficulty: easy
+    expected: Coordination
+    description: |
+      Which side of the road to drive on? Everyone just needs to use the same side.
+      No one has a preference for left or right - what matters is that everyone uses same side.
+
+  - case_id: CO-003
+    difficulty: medium
+    expected: Coordination
+    description: |
+      VHS vs Betamax format war. Consumers and studios all prefer being on the same standard.
+      Network effects mean everyone wants to coordinate on one format, regardless of which one wins.
+
+  - case_id: CO-004
+    difficulty: medium
+    expected: Coordination
+    description: |
+      Setting a meeting time. Everyone needs to show up at the same time.
+      The exact time matters less than everyone coordinating on the same one.
+
+  - case_id: CO-005
+    difficulty: hard
+    expected: Coordination
+    description: |
+      Industry adopting a technical standard. Everyone benefits from using the same protocol.
+      Multiple equilibria exist - what matters is coordinating on one.
+
+  # ============================================================
+  # BATTLE OF SEXES (4 cases)
+  # ============================================================
+  - case_id: BoS-001
+    difficulty: easy
+    expected: Battle_of_Sexes
+    description: |
+      A couple deciding where to go for dinner. One prefers Italian, the other Japanese.
+      Both prefer to be together than alone, but each prefers their own restaurant choice.
+
+  - case_id: BoS-002
+    difficulty: medium
+    expected: Battle_of_Sexes
+    description: |
+      Two companies merging need to decide whose terms to use. Each prefers their own standards
+      but both prefer agreement to failed merger. Dispute over whose CEO leads combined company.
+
+  - case_id: BoS-003
+    difficulty: medium
+    expected: Battle_of_Sexes
+    description: |
+      Countries negotiating trade deal. Both prefer agreement but disagree on exchange ratio.
+      Each wants terms favorable to their industries. Coordination needed but each prefers their own terms.
+
+  - case_id: BoS-004
+    difficulty: hard
+    expected: Battle_of_Sexes
+    description: |
+      HD-DVD vs Blu-ray: Industry needed to coordinate on one format but each prefers their own.
+      Both prefer agreement to format war, but each wants to win the standard.
+
+  # ============================================================
+  # ULTIMATUM (4 cases)
+  # ============================================================
+  - case_id: UL-001
+    difficulty: easy
+    expected: Ultimatum
+    description: |
+      A proposer has $100 to split. They make an offer to the responder who can accept or reject.
+      If rejected, neither gets anything. Take-it-or-leave-it offer structure.
+
+  - case_id: UL-002
+    difficulty: medium
+    expected: Ultimatum
+    description: |
+      Employer makes salary offer to candidate. Candidate must accept or reject and walk away.
+      One-shot negotiation where responder has no counter-offer option.
+
+  - case_id: UL-003
+    difficulty: medium
+    expected: Ultimatum
+    description: |
+      Settlement demand in lawsuit. Plaintiff makes final offer. Defendant must accept or go to trial.
+      Accept or reject structure with no negotiation.
+
+  - case_id: UL-004
+    difficulty: hard
+    expected: Ultimatum
+    description: |
+      Amazon to publishers: Accept our pricing terms or we remove your buy button.
+      Take-it-or-leave-it ultimatum where publishers must accept or lose access to platform.
+
+  # ============================================================
+  # TRUST GAME (4 cases)
+  # ============================================================
+  - case_id: TG-001
+    difficulty: easy
+    expected: Trust_Game
+    description: |
+      Investor sends money to entrepreneur. Money is tripled. Entrepreneur chooses how much to return.
+      Trustor sends capital, trustee can reciprocate or exploit.
+
+  - case_id: TG-002
+    difficulty: medium
+    expected: Trust_Game
+    description: |
+      Online buyer sends payment first. Seller can ship quality product or abscond with money.
+      Buyer trusts first, seller can honor or betray.
+
+  - case_id: TG-003
+    difficulty: medium
+    expected: Trust_Game
+    description: |
+      eBay transaction: Buyer pays, seller ships. The reputation system makes ongoing cooperation valuable.
+      Each transaction is a trust game where seller could cheat.
+
+  - case_id: TG-004
+    difficulty: hard
+    expected: Trust_Game
+    description: |
+      VC invests in startup. Founders can work hard to build value or take comfortable salaries.
+      VC trusts first with capital, founders can reciprocate with effort or exploit.
+
+  # ============================================================
+  # ENTRY DETERRENCE (3 cases)
+  # ============================================================
+  - case_id: ED-001
+    difficulty: easy
+    expected: Entry_Deterrence
+    description: |
+      Incumbent threatens price war if competitor enters market. Entrant must judge if threat is credible.
+      If threat isn't credible, entrant should enter. Entry deterrence through threatened punishment.
+
+  - case_id: ED-002
+    difficulty: medium
+    expected: Entry_Deterrence
+    description: |
+      Delta dominates hub. Southwest considers entering. Delta can accommodate or fight.
+      Southwest enters, then Delta responds. Fight or accommodate decision for incumbent.
+
+  - case_id: ED-003
+    difficulty: hard
+    expected: Entry_Deterrence
+    description: |
+      Microsoft threatens to bundle features if competitor enters. Threat may or may not be credible.
+      Potential entrant must assess whether incumbent will actually fight or is bluffing.
+
+  # ============================================================
+  # MATCHING PENNIES / ZERO SUM (4 cases)
+  # ============================================================
+  - case_id: MP-001
+    difficulty: easy
+    expected: Matching_Pennies
+    description: |
+      Penalty kick: Kicker chooses left or right. Goalkeeper simultaneously dives left or right.
+      If they match, goalkeeper wins. If mismatch, kicker scores. Pure opposition.
+
+  - case_id: MP-002
+    difficulty: medium
+    expected: Matching_Pennies
+    description: |
+      Military flanking: Attacker chooses which flank to attack. Defender chooses which to reinforce.
+      Zero-sum: attacker wins if defender guesses wrong. Pure conflict, no mutual benefit possible.
+
+  - case_id: MP-003
+    difficulty: medium
+    expected: Matching_Pennies
+    description: |
+      Heads or tails: One player wants to match, other wants to mismatch.
+      Pure opposition with no cooperative outcome possible.
+
+  - case_id: MP-004
+    difficulty: hard
+    expected: Matching_Pennies
+    description: |
+      Tennis serve: Server chooses direction, receiver guesses. Zero-sum outcome.
+      Each wants to outguess the other. No mutual benefit from coordination.
+
+  # ============================================================
+  # INSPECTION GAME (3 cases)
+  # ============================================================
+  - case_id: IG-001
+    difficulty: easy
+    expected: Inspection_Game
+    description: |
+      Tax authority decides whether to audit. Taxpayer decides whether to evade or comply.
+      If taxpayer evades and is audited, caught and penalized. Inspector vs evader.
+
+  - case_id: IG-002
+    difficulty: medium
+    expected: Inspection_Game
+    description: |
+      Employer monitors employee. Employee can work or slack.
+      Monitoring is costly but catches slackers. Inspection vs compliance game.
+
+  - case_id: IG-003
+    difficulty: hard
+    expected: Inspection_Game
+    description: |
+      Arms treaty verification. Inspector checks for violations. Country can comply or cheat.
+      Inspection resources are limited. Enforcement through random audits.
+
+  # ============================================================
+  # PRINCIPAL AGENT (3 cases)
+  # ============================================================
+  - case_id: PA-001
+    difficulty: medium
+    expected: Principal_Agent
+    description: |
+      Factory owner hires manager. Manager can work hard or slack off.
+      Owner can monitor (costly) or trust. Moral hazard - manager's effort is hidden.
+
+  - case_id: PA-002
+    difficulty: medium
+    expected: Principal_Agent
+    description: |
+      Insurance company and policyholders. After getting insurance, people may take more risks.
+      Moral hazard from hidden action. Insurer cannot observe all behavior.
+
+  - case_id: PA-003
+    difficulty: hard
+    expected: Principal_Agent
+    description: |
+      Shareholders and executives. Executives may pursue private benefits instead of shareholder value.
+      Hidden information about executive effort and motives. Classic agency problem.
+
+  # ============================================================
+  # SEQUENTIAL BARGAINING (3 cases)
+  # ============================================================
+  - case_id: SB-001
+    difficulty: medium
+    expected: Sequential_Bargaining
+    description: |
+      North Korea and US negotiate. Any deal requires sequential moves. Neither can credibly commit
+      to their part of a deal. If NK disarms first, US might not deliver benefits.
+      Commitment problem prevents agreement.
+
+  - case_id: SB-002
+    difficulty: hard
+    expected: Sequential_Bargaining
+    description: |
+      Labor negotiation with alternating offers. Union proposes, company counters.
+      Each round of bargaining erodes total value. Sequential exchange of offers.
+
+  - case_id: SB-003
+    difficulty: hard
+    expected: Sequential_Bargaining
+    description: |
+      M&A negotiation: Buyer and seller make alternating offers. Neither can credibly commit
+      to a price. Hold-up problem if one side invests before deal closes.
+
+  # ============================================================
+  # PUBLIC GOODS (3 cases)
+  # ============================================================
+  - case_id: PG-001
+    difficulty: medium
+    expected: Public_Goods
+    description: |
+      Open source project: Contributors spend time improving software everyone can use for free.
+      Individual cost, collective benefit. Free rider problem but project survives through shared codebase.
+
+  - case_id: PG-002
+    difficulty: medium
+    expected: Public_Goods
+    description: |
+      Village maintains irrigation system. Each farmer benefits if others contribute to maintenance.
+      Public goods problem - benefits all users but each prefers others to bear the cost.
+
+  - case_id: PG-003
+    difficulty: hard
+    expected: Public_Goods
+    description: |
+      Wikipedia contributions: Editors spend time creating content that benefits everyone.
+      Individual cost for collective benefit. Classic public goods provision.

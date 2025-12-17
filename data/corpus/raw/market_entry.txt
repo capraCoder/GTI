@@ -1,0 +1,7 @@
+A large retail chain is deciding whether to enter a small town market currently dominated by a local store.
+
+If the retailer enters, the local store can either accommodate (accept reduced market share, both make modest profits) or fight (start a price war that hurts both businesses severely).
+
+If the retailer stays out, the local store keeps its monopoly and high profits, while the retailer makes nothing in this market.
+
+The retailer announces its decision first, then the local store responds.

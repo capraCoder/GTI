@@ -1,0 +1,15 @@
+Advertising War
+
+Two competing smartphone companies, TechCorp and MobileInc, must decide their advertising strategy for the upcoming holiday season. Each company can either:
+- Maintain their current modest advertising budget (Cooperate)
+- Launch an aggressive advertising campaign (Defect)
+
+If both maintain modest budgets, they split the market evenly and keep costs low - both profit well.
+
+If both launch aggressive campaigns, they still split the market but waste money on competing ads - both profit less.
+
+If one company advertises aggressively while the other stays modest, the aggressive advertiser captures most of the market and profits greatly, while the modest company loses market share and profits poorly.
+
+Both companies must commit to their advertising budgets simultaneously before the season begins, without knowing the other's choice.
+
+This is a one-time decision for this holiday season.

@@ -1,0 +1,98 @@
+{
+  "id": "BLIND-001",
+  "timestamp": "2025-12-17T05:31:33.297634",
+  "input_text": "Listen, I know we're bleeding cash on this price war with Competitor X. \nEvery time we drop our subscription fee by $5, they match it. We're both \nmaking 40% less revenue than we were a year ago. Ideally, we'd both just \nraise our prices back to the standard market rate tomorrow. But if we \nraise ours and they keep theirs low, we lose 90% of our customers overnight. \nI suspect they feel the exact same way. So, unless we can get a guarantee \nthey will hike prices too (which is illegal collusion),...",
+  "game_type": "Prisoners_Dilemma",
+  "game_description": "Classic PD structure where mutual cooperation (raising prices) benefits both, but unilateral defection (keeping prices low while competitor raises) creates massive advantage. Both trapped in mutually destructive equilibrium.",
+  "interaction_type": "Non-Zero-Sum",
+  "symmetry": "Symmetric",
+  "timing": "Simultaneous",
+  "payoff_matrix": {
+    "T": "90% market share if you keep prices low while competitor raises",
+    "R": "Both return to standard market rates with normal profit margins",
+    "P": "Both stuck at rock-bottom prices with 40% revenue loss",
+    "S": "Lose 90% of customers if you raise prices while competitor stays low"
+  },
+  "player_a": {
+    "player_id": "Speaking company in price war",
+    "stated_preferences": [
+      "Stop the price war",
+      "Return to standard market rates",
+      "End mutual destruction"
+    ],
+    "revealed_preferences": [
+      "Avoid being the sucker who raises first",
+      "Maintain market share",
+      "Don't lose 90% of customers"
+    ],
+    "interpretation": "Stated and revealed preferences align - genuine desire to escape PD trap but rational fear of unilateral cooperation"
+  },
+  "player_b": {
+    "player_id": "Competitor X",
+    "stated_preferences": [
+      "Unknown - no direct quotes"
+    ],
+    "revealed_preferences": [
+      "Match every price cut",
+      "Maintain competitive position",
+      "Don't let competitor gain advantage"
+    ],
+    "interpretation": "Actions show identical strategic position - trapped in same PD structure"
+  },
+  "deception": {
+    "deception_detected": false,
+    "deception_score": 15,
+    "stated_game": "Prisoners_Dilemma with mutual recognition of trap",
+    "revealed_game": "Prisoners_Dilemma with mutual recognition of trap",
+    "contradiction_signals": [],
+    "cheap_talk_indicators": [
+      "'Ideally we'd both raise prices' - costless statement of preference"
+    ],
+    "credible_signals": [
+      "Actual price matching behavior",
+      "Continued participation in price war despite losses"
+    ],
+    "analysis": "No deception detected. Speaker honestly acknowledges the structural trap and legal constraints preventing coordination."
+  },
+  "evidence": {
+    "verbal_cooperation": [
+      "'Ideally, we'd both just raise our prices back to the standard market rate'"
+    ],
+    "verbal_defection": [],
+    "action_cooperation": [],
+    "action_defection": [
+      "Every time we drop our subscription fee by $5, they match it",
+      "Both keeping prices at rock bottom"
+    ],
+    "payoff_signals": [
+      "40% less revenue",
+      "lose 90% of customers overnight",
+      "illegal collusion"
+    ]
+  },
+  "confidence": {
+    "score": 95,
+    "naive_classification": "Prisoners_Dilemma",
+    "structural_classification": "Prisoners_Dilemma",
+    "classification_divergence": false,
+    "reasoning": "Clear PD payoff structure: T(90% market share) > R(normal profits) > P(40% loss) > S(lose 90% customers). Both words and actions align perfectly with PD analysis."
+  },
+  "equilibrium": {
+    "outcome": "Continued mutual defection (low prices) despite both preferring cooperation",
+    "stability": "Stable",
+    "reasoning": "Nash equilibrium at mutual defection. Neither player can unilaterally improve by raising prices due to massive customer loss risk."
+  },
+  "risk": {
+    "level": "Critical",
+    "sensitivity": "Continued value destruction for both companies until one exits market or finds alternative solution",
+    "reasoning": "Unsustainable 40% revenue loss will eventually force market consolidation or business model changes"
+  },
+  "prescription": {
+    "mechanism": "Price leadership, market segmentation, or regulatory intervention to enable coordination",
+    "lever_variable": "T - Reduce temptation payoff through differentiation or increase switching costs",
+    "player_a_advice": "Differentiate product to reduce price sensitivity, build switching costs, or seek non-price competitive advantages",
+    "player_b_advice": "Same strategic advice - escape pure price competition through differentiation",
+    "mediator_advice": "Industry association could facilitate non-collusive coordination mechanisms or government could modify antitrust interpretation",
+    "victim_warning": "No victim - both players trapped in mutually destructive equilibrium"
+  }
+}

@@ -1,0 +1,41 @@
+case_id: GTI-DINNER_BATTLE
+title: Couple's Restaurant Choice Coordination
+payoffs:
+  players:
+  - Italian_lover
+  - Japanese_lover
+  options:
+    Italian_lover:
+    - Italian
+    - Japanese
+    Japanese_lover:
+    - Italian
+    - Japanese
+  matrix:
+    A_A:
+    - 4
+    - 3
+    A_B:
+    - 1
+    - 1
+    B_A:
+    - 1
+    - 1
+    B_B:
+    - 3
+    - 4
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Coordination valued over individual preference
+  - No communication before decision
+  flags: []

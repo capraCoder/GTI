@@ -1,0 +1,62 @@
+{
+  "timestamp": "20251216-184314",
+  "total": 6,
+  "success": 6,
+  "failed": 0,
+  "results": [
+    {
+      "file": "advertising_war.txt",
+      "case_id": "GTI-ADVERTISING_WAR",
+      "title": "Holiday Season Advertising War",
+      "game_type": "Prisoners_Dilemma",
+      "confidence": 95,
+      "reasoning": "T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma",
+      "status": "success"
+    },
+    {
+      "file": "chicken_road.txt",
+      "case_id": "GTI-CHICKEN_ROAD",
+      "title": "Chicken Game - Two Drivers",
+      "game_type": "Unknown",
+      "confidence": 0,
+      "reasoning": "No valid payoff matrix",
+      "status": "success"
+    },
+    {
+      "file": "dinner_battle.txt",
+      "case_id": "GTI-DINNER_BATTLE",
+      "title": "Couple's Restaurant Choice Coordination",
+      "game_type": "Asymmetric",
+      "confidence": 70,
+      "reasoning": "Asymmetric game",
+      "status": "success"
+    },
+    {
+      "file": "meeting_coordination.txt",
+      "case_id": "GTI-MEETING_COORDINATION",
+      "title": "Friends Meeting Coordination",
+      "game_type": "Coordination",
+      "confidence": 95,
+      "reasoning": "R(4) \u2248 P(4) >> T(1), S(1): Pure coordination",
+      "status": "success"
+    },
+    {
+      "file": "stag_hunt.txt",
+      "case_id": "GTI-STAG_HUNT",
+      "title": "Stag Hunt Coordination Game",
+      "game_type": "Stag_Hunt",
+      "confidence": 95,
+      "reasoning": "R(4) > T(3) > P(2) > S(1): Cooperate best, defect safe",
+      "status": "success"
+    },
+    {
+      "file": "water_rights.txt",
+      "case_id": "GTI-WATER_RIGHTS",
+      "title": "River Water Allocation Between Countries",
+      "game_type": "Chicken",
+      "confidence": 95,
+      "reasoning": "T(4) > R(3) > S(2) > P(1): No dominant, mutual extreme = disaster",
+      "status": "success"
+    }
+  ]
+}

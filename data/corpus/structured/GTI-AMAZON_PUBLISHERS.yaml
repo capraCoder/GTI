@@ -1,0 +1,45 @@
+case_id: GTI-AMAZON_PUBLISHERS
+title: Amazon vs Publishers Agency Model Ultimatum
+payoffs:
+  players:
+  - Publishers
+  - Amazon
+  options:
+    Publishers:
+    - Demand_Agency
+    - Accept_Wholesale
+    Amazon:
+    - Accept_Demand
+    - Reject_Demand
+  matrix:
+    Demand_Accept:
+    - 3
+    - 2
+    Demand_Reject:
+    - 1
+    - 1
+    Accept_Accept:
+    - 2
+    - 4
+    Accept_Reject:
+    - 2
+    - 4
+information:
+  timing: sequential
+  move_order:
+  - Publishers
+  - Amazon
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: reputation
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Publishers coordinated demand despite antitrust risk
+  - Amazon's market dominance in ebooks creates asymmetric power
+  - Loss of new releases hurts both parties during standoff
+  flags:
+  - sequential

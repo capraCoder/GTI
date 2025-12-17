@@ -1,0 +1,161 @@
+{
+  "accuracy": 0.435,
+  "by_type": {
+    "Hero": {
+      "correct": 8,
+      "total": 9
+    },
+    "Stag_Hunt": {
+      "correct": 11,
+      "total": 14
+    },
+    "Unknown:('b', 'c', 'a', 'd')": {
+      "correct": 0,
+      "total": 13
+    },
+    "Chicken": {
+      "correct": 11,
+      "total": 16
+    },
+    "Coordination_Game": {
+      "correct": 19,
+      "total": 22
+    },
+    "Compromise": {
+      "correct": 3,
+      "total": 3
+    },
+    "Concord": {
+      "correct": 0,
+      "total": 9
+    },
+    "Unknown:('b', 'd', 'c', 'a')": {
+      "correct": 0,
+      "total": 3
+    },
+    "Battle_of_the_Sexes": {
+      "correct": 11,
+      "total": 12
+    },
+    "Peace": {
+      "correct": 0,
+      "total": 20
+    },
+    "Prisoners_Dilemma": {
+      "correct": 8,
+      "total": 8
+    },
+    "Assurance_Game": {
+      "correct": 9,
+      "total": 15
+    },
+    "Unknown:('b', 'c', 'd', 'a')": {
+      "correct": 0,
+      "total": 11
+    },
+    "Unknown:('b', 'a', 'c', 'd')": {
+      "correct": 0,
+      "total": 13
+    },
+    "Unknown:('b', 'd', 'a', 'c')": {
+      "correct": 0,
+      "total": 7
+    },
+    "Harmony": {
+      "correct": 6,
+      "total": 14
+    },
+    "Deadlock": {
+      "correct": 1,
+      "total": 2
+    },
+    "Unknown:('b', 'a', 'd', 'c')": {
+      "correct": 0,
+      "total": 9
+    }
+  },
+  "confusion": {
+    "Hero": {
+      "Hero": 8,
+      "ERROR": 1
+    },
+    "Stag_Hunt": {
+      "Stag_Hunt": 11,
+      "ERROR": 3
+    },
+    "Unknown:('b', 'c', 'a', 'd')": {
+      "Prisoners_Dilemma": 12,
+      "ERROR": 1
+    },
+    "Chicken": {
+      "Chicken": 11,
+      "ERROR": 5
+    },
+    "Coordination_Game": {
+      "Coordination_Game": 19,
+      "ERROR": 3
+    },
+    "Compromise": {
+      "Compromise": 3
+    },
+    "Concord": {
+      "Coordination_Game": 2,
+      "Stag_Hunt": 2,
+      "Harmony": 2,
+      "ERROR": 3
+    },
+    "Unknown:('b', 'd', 'c', 'a')": {
+      "Deadlock": 2,
+      "Chicken": 1
+    },
+    "Battle_of_the_Sexes": {
+      "Battle_of_the_Sexes": 11,
+      "ERROR": 1
+    },
+    "Peace": {
+      "Harmony": 12,
+      "Stag_Hunt": 4,
+      "ERROR": 3,
+      "Assurance_Game": 1
+    },
+    "Prisoners_Dilemma": {
+      "Prisoners_Dilemma": 8
+    },
+    "Assurance_Game": {
+      "Assurance_Game": 9,
+      "Stag_Hunt": 3,
+      "ERROR": 3
+    },
+    "Unknown:('b', 'c', 'd', 'a')": {
+      "Prisoners_Dilemma": 6,
+      "Looking_at_the_payoffs": 1,
+      "Chicken": 1,
+      "ERROR": 2,
+      "Deadlock": 1
+    },
+    "Unknown:('b', 'a', 'c', 'd')": {
+      "Prisoners_Dilemma": 10,
+      "ERROR": 3
+    },
+    "Unknown:('b', 'd', 'a', 'c')": {
+      "Deadlock": 2,
+      "Looking_at_the_payoffs": 1,
+      "Prisoners_Dilemma": 2,
+      "ERROR": 2
+    },
+    "Harmony": {
+      "Assurance_Game": 3,
+      "Harmony": 6,
+      "Coordination_Game": 1,
+      "ERROR": 4
+    },
+    "Deadlock": {
+      "Deadlock": 1,
+      "ERROR": 1
+    },
+    "Unknown:('b', 'a', 'd', 'c')": {
+      "Prisoners_Dilemma": 6,
+      "ERROR": 3
+    }
+  }
+}

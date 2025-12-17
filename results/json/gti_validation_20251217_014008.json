@@ -1,0 +1,202 @@
+{
+  "n_games": 50,
+  "n_correct": 3,
+  "accuracy": 0.06,
+  "by_type": {
+    "Peace": {
+      "correct": 0,
+      "total": 4
+    },
+    "Deadlock": {
+      "correct": 0,
+      "total": 4
+    },
+    "Prisoners_Dilemma": {
+      "correct": 0,
+      "total": 6
+    },
+    "Chicken": {
+      "correct": 1,
+      "total": 7
+    },
+    "Coordination_Game": {
+      "correct": 0,
+      "total": 4
+    },
+    "Assurance_Game": {
+      "correct": 0,
+      "total": 6
+    },
+    "Battle_of_the_Sexes": {
+      "correct": 2,
+      "total": 9
+    },
+    "Stag_Hunt": {
+      "correct": 0,
+      "total": 5
+    },
+    "Hero": {
+      "correct": 0,
+      "total": 3
+    },
+    "Concord": {
+      "correct": 0,
+      "total": 1
+    },
+    "Compromise": {
+      "correct": 0,
+      "total": 1
+    }
+  },
+  "confusion": {
+    "Peace": {
+      "Unknown": 4
+    },
+    "Deadlock": {
+      "Battle_of_the_Sexes": 2,
+      "Unknown": 2
+    },
+    "Prisoners_Dilemma": {
+      "Unknown": 5,
+      "Battle_of_the_Sexes": 1
+    },
+    "Chicken": {
+      "Unknown": 5,
+      "Battle_of_the_Sexes": 1,
+      "Chicken": 1
+    },
+    "Coordination_Game": {
+      "Unknown": 3,
+      "Battle_of_the_Sexes": 1
+    },
+    "Assurance_Game": {
+      "Unknown": 5,
+      "Deadlock": 1
+    },
+    "Battle_of_the_Sexes": {
+      "Unknown": 5,
+      "Chicken": 1,
+      "Battle_of_the_Sexes": 2,
+      "Deadlock": 1
+    },
+    "Stag_Hunt": {
+      "Battle_of_the_Sexes": 1,
+      "Unknown": 4
+    },
+    "Hero": {
+      "Unknown": 2,
+      "Battle_of_the_Sexes": 1
+    },
+    "Concord": {
+      "Unknown": 1
+    },
+    "Compromise": {
+      "Unknown": 1
+    }
+  },
+  "raw_responses": [
+    {
+      "id": "1139",
+      "raw": "I need to analyze this 2x2 game from the row player's perspective by examining the payoff structure.\n\nRow player's payoffs",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "690",
+      "raw": "Battle_of_the_Sexes",
+      "extracted": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "937",
+      "raw": "To classify this game, I need to analyze the payoff structure from the row player's perspective.\n\nRow player's payoffs:\n- A",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "1835",
+      "raw": "I need to analyze this 2x2 game by examining the payoff structure and identifying the strategic characteristics.\n\nLooking at the payoffs from",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "2401",
+      "raw": "I need to analyze this 2x2 game from the row player's perspective to classify it.\n\nLet me examine the payoffs for the",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "188",
+      "raw": "Looking at this game from the column player's perspective, I need to analyze their payoffs and strategic structure.\n\nColumn player's payoffs:",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "577",
+      "raw": "I need to analyze this 2x2 game from the row player's perspective.\n\nRow player's payoffs:\n- A,C",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "2124",
+      "raw": "I need to analyze this 2x2 game from the column player's perspective.\n\nFrom the column player's perspective, their payoffs are",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "1440",
+      "raw": "Battle_of_the_Sexes",
+      "extracted": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "785",
+      "raw": "Battle_of_the_Sexes",
+      "extracted": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "1189",
+      "raw": "Battle_of_the_Sexes",
+      "extracted": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "220",
+      "raw": "Battle_of_the_Sexes",
+      "extracted": "Battle_of_the_Sexes"
+    },
+    {
+      "id": "1283",
+      "raw": "To classify this game, I need to analyze the payoff structure from the row player's perspective.\n\nRow player's payoffs:\n- A",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "2240",
+      "raw": "Looking at this game from the column player's perspective, I need to analyze the payoff structure and strategic dynamics.\n\nFrom the column player's pay",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "1149",
+      "raw": "To classify this game, I need to analyze the payoff structure from the row player's perspective.\n\nLet me examine the payoffs:\n-",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "1960",
+      "raw": "Chicken",
+      "extracted": "Chicken"
+    },
+    {
+      "id": "1401",
+      "raw": "I need to analyze this 2x2 game from the row player's perspective by comparing payoffs.\n\nRow player's payoffs:",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "1205",
+      "raw": "I need to analyze this 2x2 game from the row player's perspective to classify it.\n\nRow player's payoffs:\n-",
+      "extracted": "Unknown"
+    },
+    {
+      "id": "1138",
+      "raw": "Deadlock",
+      "extracted": "Deadlock"
+    },
+    {
+      "id": "1870",
+      "raw": "I need to analyze this 2x2 game from the column player's perspective.\n\nFrom the column player's perspective, their payoffs are",
+      "extracted": "Unknown"
+    }
+  ],
+  "api_calls": 50,
+  "tokens": 8890,
+  "elapsed": 145.03178453445435
+}

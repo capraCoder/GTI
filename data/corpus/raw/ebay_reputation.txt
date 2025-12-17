@@ -1,0 +1,16 @@
+eBay: Buyers and sellers who will never meet in person must trust each other.
+
+Seller could ship fake goods. Buyer could claim non-delivery and get refund.
+
+One-shot game: Strong temptation to cheat.
+
+eBay solution: Reputation scores. Every transaction rated. History visible to all.
+
+Sellers with good ratings get more sales and can charge higher prices.
+Cheating once destroys reputation built over hundreds of transactions.
+
+Buyers check ratings before purchasing. Low-rated sellers struggle to sell.
+
+Repeated game structure transforms incentives: Long-term reputation value exceeds one-time cheating gain.
+
+Trust emerges from mechanism design, not inherent honesty.

@@ -1,0 +1,45 @@
+case_id: GTI-2024-0001
+title: Principal-Agent Monitoring Problem
+payoffs:
+  players:
+  - Owner
+  - Manager
+  options:
+    Owner:
+    - Monitor
+    - Trust
+    Manager:
+    - Work_Hard
+    - Slack
+  matrix:
+    A_A:
+    - 3
+    - 2
+    A_B:
+    - 1
+    - 1
+    B_A:
+    - 4
+    - 2
+    B_B:
+    - 2
+    - 4
+information:
+  timing: sequential
+  move_order:
+  - Owner
+  - Manager
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Manager's effort choice is unobservable to owner when made
+  - Monitoring reveals manager's actual effort level
+  - Owner must set monitoring policy before manager chooses effort
+  flags:
+  - sequential

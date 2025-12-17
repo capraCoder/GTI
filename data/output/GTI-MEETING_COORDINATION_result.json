@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-MEETING_COORDINATION",
+  "title": "Friends Meeting Coordination",
+  "source_file": "D:\\CaprazliIndex\\GTI\\data\\raw\\meeting_coordination.txt",
+  "game_type": "Coordination",
+  "confidence": 95,
+  "reasoning": "R(4) \u2248 P(4) >> T(1), S(1): Pure coordination"
+}

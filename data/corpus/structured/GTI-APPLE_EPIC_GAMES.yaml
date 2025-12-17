@@ -1,0 +1,46 @@
+case_id: GTI-APPLE_EPIC_GAMES
+title: Epic vs Apple App Store Commission Dispute
+payoffs:
+  players:
+  - Epic
+  - Apple
+  options:
+    Epic:
+    - Follow_Rules
+    - Bypass_Store
+    Apple:
+    - Allow_Bypass
+    - Enforce_Rules
+  matrix:
+    Follow_Rules_Allow_Bypass:
+    - 2
+    - 2
+    Follow_Rules_Enforce_Rules:
+    - 2
+    - 4
+    Bypass_Store_Allow_Bypass:
+    - 4
+    - 1
+    Bypass_Store_Enforce_Rules:
+    - 1
+    - 3
+information:
+  timing: sequential
+  move_order:
+  - Epic
+  - Apple
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: contract
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - Epic moved first by implementing direct payments
+  - Apple responded by removing Fortnite from store
+  - Contract terms give Apple enforcement rights
+  - Court involvement represents external arbitration
+  flags:
+  - principal-agent

@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-CHICKEN_ROAD",
+  "title": "Chicken Game - Two Drivers",
+  "source_file": "D:\\CaprazliIndex\\GTI\\data\\raw\\chicken_road.txt",
+  "game_type": "Unknown",
+  "confidence": 0,
+  "reasoning": "No valid payoff matrix"
+}

@@ -1,0 +1,45 @@
+case_id: GTI-1980-0001
+title: VHS vs Betamax Format War
+payoffs:
+  players:
+  - VHS_Ecosystem
+  - Betamax_Ecosystem
+  options:
+    VHS_Ecosystem:
+    - Coordinate_VHS
+    - Coordinate_Betamax
+    Betamax_Ecosystem:
+    - Coordinate_VHS
+    - Coordinate_Betamax
+  matrix:
+    A_A:
+    - 4
+    - 3
+    A_B:
+    - 1
+    - 1
+    B_A:
+    - 1
+    - 1
+    B_B:
+    - 3
+    - 4
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: finite
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: false
+notes:
+  assumptions:
+  - VHS_Ecosystem includes JVC and content partners
+  - Betamax_Ecosystem includes Sony and content partners
+  - Network effects create winner-take-all dynamics
+  - Early market moves influence coordination outcome
+  flags:
+  - network-effects
+  - first-mover-advantage

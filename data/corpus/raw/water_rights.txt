@@ -1,0 +1,9 @@
+Two neighboring countries share a river for irrigation. Each country can either take a moderate amount of water or try to take as much as possible.
+
+If both take moderate amounts, the river sustains both countries' agriculture well - a good outcome for both.
+
+If both try to maximize their take, the river is depleted and both countries suffer drought - bad for everyone.
+
+If one takes moderately while the other maximizes, the maximizing country thrives with abundant water while the moderate country suffers shortages.
+
+Water allocation decisions are made annually without knowledge of the other country's choice.

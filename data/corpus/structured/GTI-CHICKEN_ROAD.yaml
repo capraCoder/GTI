@@ -1,0 +1,39 @@
+case_id: GTI-CHICKEN_ROAD
+title: Chicken Game - Two Drivers
+payoffs:
+  players:
+  - Driver1
+  - Driver2
+  options:
+    Driver1:
+    - Swerve
+    - Straight
+    Driver2:
+    - Swerve
+    - Straight
+  matrix:
+    Swerve_Swerve:
+    - 3
+    - 3
+    Swerve_Straight:
+    - 2
+    - 4
+    Straight_Swerve:
+    - 4
+    - 2
+    Straight_Straight:
+    - 1
+    - 1
+information:
+  timing: simultaneous
+  move_order: null
+time:
+  repetition: one-shot
+  iterations: null
+commitment:
+  mechanism: none
+symmetry:
+  symmetric: true
+notes:
+  assumptions: []
+  flags: []

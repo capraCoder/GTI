@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-BREXIT_NEGOTIATION",
+  "title": "Brexit Negotiation Game",
+  "source_file": "data\\raw\\corpus\\brexit_negotiation.txt",
+  "game_type": "Incomplete_Info",
+  "confidence": 30,
+  "reasoning": "Incomplete information game - requires Bayesian analysis"
+}

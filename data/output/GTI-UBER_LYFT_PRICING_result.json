@@ -1,0 +1,8 @@
+{
+  "case_id": "GTI-UBER_LYFT_PRICING",
+  "title": "Uber vs Lyft Pricing War",
+  "source_file": "data\\raw\\corpus\\uber_lyft_pricing.txt",
+  "game_type": "Prisoners_Dilemma",
+  "confidence": 95,
+  "reasoning": "T(4) > R(3) > P(2) > S(1): Defect dominates, social dilemma"
+}
