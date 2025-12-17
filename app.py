@@ -190,6 +190,39 @@ st.markdown("""
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     
+    /* Input text area styling */
+    .stTextArea textarea {
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+        border: 2px dashed #f59e0b !important;
+        border-radius: 12px !important;
+        font-size: 1rem !important;
+        padding: 1rem !important;
+    }
+    
+    .stTextArea textarea:focus {
+        border: 2px solid #f59e0b !important;
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.3) !important;
+    }
+    
+    .stTextArea textarea::placeholder {
+        color: #92400e !important;
+        opacity: 0.7 !important;
+    }
+    
+    .input-instructions {
+        background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        border-left: 4px solid #f59e0b;
+        margin-bottom: 1rem;
+        color: #78350f;
+    }
+    
+    .input-instructions h4 {
+        margin: 0 0 0.5rem 0;
+        color: #92400e;
+    }
+    
     /* Improve button styling */
     .stButton > button {
         background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
@@ -359,15 +392,27 @@ def render_sidebar():
 def render_input_section():
     st.markdown("### 📥 Intelligence Input")
     
+    # Instruction box
+    st.markdown("""
+    <div class="input-instructions">
+        <h4>📋 Copy & Paste Your Situation Here</h4>
+        <p style="margin: 0;">
+            Drop any <b>contract</b>, <b>news article</b>, <b>negotiation</b>, or <b>problematic situation</b> 
+            in the yellow box below — <b>any language</b> works! 
+            Then click <b>RUN STRATEGIC ANALYSIS</b> and watch the magic. ✨
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
     # Initialize session state
     if 'input_text' not in st.session_state:
         st.session_state.input_text = ""
     
     text = st.text_area(
-        "Paste scenario, news article, contract excerpt, or negotiation log:",
+        "👇 Your text goes here:",
         value=st.session_state.input_text,
         height=150,
-        placeholder="e.g., 'Company A announced a partnership, but leaked documents reveal...'"
+        placeholder="Paste your contract, email, news article, or describe a conflict situation here..."
     )
     
     col1, col2 = st.columns([3, 1])
